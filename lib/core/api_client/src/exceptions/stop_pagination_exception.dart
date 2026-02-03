@@ -1,0 +1,1 @@
+class StopPaginationException implements Exception {}

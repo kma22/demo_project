@@ -1,16 +1,49 @@
-# demo_project
+# Flutter Demo Project: Pure Modular Architecture
 
-A new Flutter project.
+Данный проект является демонстрацией современного подхода к разработке на Flutter с использованием **чистой модульной архитектуры**.
 
-## Getting Started
+## Концепция и модульность
+Проект спроектирован с учетом строгой модульности. Основная цель — показать архитектурные подходы, позволяющие масштабировать приложение на неограниченное количество независимых модулей (фич).
 
-This project is a starting point for a Flutter application.
+> **Важно:** На текущем этапе реализован фундамент и архитектурные контракты (Core-слой, навигация, API-клиент). Слой функциональных модулей (`features`) подготовлен к наполнению бизнес-логикой согласно описанным архитектурным правилам.
 
-A few resources to get you started if this is your first Flutter project:
+## Стек технологий
+В проекте используются следующие инструменты:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **State Management:** `flutter_bloc` для предсказуемой бизнес-логики.
+- **Dependency Injection:** `get_it` в связке с `injectable` для автоматической регистрации зависимостей.
+- **Navigation:** `auto_route` с логикой «Оркестратора», разделяющей описание маршрутов и их реализацию.
+- **Networking:** `dio` с кастомной обработкой ошибок и интерцепторами.
+- **Local Storage:** `drift` (SQLite) для реактивного хранения данных и `flutter_secure_storage` для токенов.
+- **Logging:** `talker` для детального мониторинга логов, сетевых запросов и ошибок.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Структура проекта
+Приложение разделено на три ключевых слоя:
+
+1. **App Layer (`lib/app/`)**: «Верхушка» приложения. Содержит точку входа, конфигурацию DI и главный роутер, который склеивает проект воедино.
+2. **Core Layer (`lib/core/`)**: Базис приложения. Здесь реализованы общие сервисы: API-клиент, база данных, логирование, работа с конфигурациями. Модули ядра не зависят от фич.
+3. **Features Layer (`lib/features/`)**: Функциональные модули. Каждый модуль автономен и взаимодействует с другими только через интерфейсы, определенные в Core.
+
+## Правила разработки
+Для поддержания качества кода соблюдаются следующие правила:
+
+- **Dependency Inversion:** Модули зависят от абстракций (интерфейсов) из Core, а не от конкретных реализаций.
+- **Error Handling:** Ошибки сетевого и системного уровней маппятся в доменные исключения перед тем, как попасть в UI/BLoC.
+- **Strict Linting:** Применение строгих правил линтера для обеспечения единообразия кода.
+- **Code Generation:** Активное использование `build_runner` для генерации роутов, DI и сериализации (минимизирует риск человеческой ошибки).
+
+## Как запустить
+
+### Использование Makefile (рекомендуется)
+```bash
+make run-dev         # Запуск в dev-окружении
+make run-prod        # Запуск в prod-окружении
+make generate        # Генерация кода (build_runner)
+make rebuild         # Полная пересборка (clean -> get -> generate)
+```
+
+### Настройка окружения
+Параметры окружения (Base URL и др.) настраиваются в `lib/core/environment_data/` и могут быть переопределены через `--dart-define`.
+
+---
+*Концепция конкретного приложения будет добавлена в этот раздел позже.*

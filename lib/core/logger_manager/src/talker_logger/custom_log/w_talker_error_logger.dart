@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:talker_flutter/talker_flutter.dart';
 
-/// A custom logger for error messages that supports detailed
-/// formatting of JSON or embedded data within error context.
+/// Кастомный логгер для ошибок.
+/// Форматирует контекст ошибки и встроенные JSON-данные для наглядности.
 class WTalkerErrorLogger extends TalkerLog {
-  /// Creates an error-level log with context about [runtimeType], [operation],
-  /// [msg] (which may be `null`, Map, List or String), and optional [exc] and [st].
+  /// Логирует ошибку с указанием места ([runtimeType]), операции и сообщения.
+  /// Поддерживает стек-трейс и дополнительные данные.
   WTalkerErrorLogger(dynamic msg, Type runtimeType, String operation, Object? exc, StackTrace? st)
     : super(
         _createMessage(msg, runtimeType, operation),
@@ -23,10 +23,10 @@ class WTalkerErrorLogger extends TalkerLog {
 
   static const _encoder = JsonEncoder.withIndent('  ');
 
-  /// Creates a formatted message by checking the type of [msg] and formatting it.
+  /// Создает отформатированное сообщение, проверяя тип [msg] и форматируя его.
   ///
-  /// If the message is a [Map] or [List], it's encoded and formatted as pretty JSON.
-  /// If it's a [String], the method detects and formats embedded JSON blocks.
+  /// Если сообщение — [Map] или [List], оно кодируется и форматируется как JSON.
+  /// Если это [String], метод обнаруживает и форматирует встроенные JSON-блоки.
   static String _createMessage(dynamic msg, Type runtimeType, String operation) {
     final result = StringBuffer('[$runtimeType] Failed to $operation.');
 
@@ -41,10 +41,10 @@ class WTalkerErrorLogger extends TalkerLog {
     return result.toString();
   }
 
-  /// Processes a [message] that may contain embedded JSON blocks mixed with text.
+  /// Обрабатывает [message], которое может содержать JSON-блоки, смешанные с текстом.
   ///
-  /// Extracts JSON blocks using [_splitByJsonBlocks], attempts to decode and pretty-print them.
-  /// If decoding fails, the block is left as-is.
+  /// Извлекает JSON-блоки через [_splitByJsonBlocks], пытается декодировать и отформатировать их.
+  /// Если декодирование не удается, блок остается как есть.
   static String _formatMixedMessage(String message) {
     final buffer = StringBuffer();
     final parts = _splitByJsonBlocks(message);
@@ -69,9 +69,9 @@ class WTalkerErrorLogger extends TalkerLog {
     return buffer.toString();
   }
 
-  /// Splits a string into separate segments of plain text and JSON blocks.
+  /// Разбивает строку на отдельные сегменты обычного текста и JSON-блоков.
   ///
-  /// Recognizes JSON-like structures delimited by `{}` or `[]`, supports nested structures.
+  /// Распознает JSON-подобные структуры, ограниченные `{}` или `[]`, поддерживает вложенность.
   static List<String> _splitByJsonBlocks(String input) {
     final result = <String>[];
     final buffer = StringBuffer();
@@ -107,9 +107,9 @@ class WTalkerErrorLogger extends TalkerLog {
     return result;
   }
 
-  /// Checks if a given [input] string looks like a JSON object or array.
+  /// Проверяет, выглядит ли [input] как JSON-объект или массив.
   ///
-  /// Returns `true` if it starts and ends with `{}` or `[]`.
+  /// Возвращает `true`, если строка начинается и заканчивается на `{}` или `[]`.
   static bool _looksLikeJson(String input) {
     final trimmed = input.trim();
     return (trimmed.startsWith('{') && trimmed.endsWith('}')) ||

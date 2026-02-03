@@ -23,23 +23,36 @@ class AppThemeManager {
   final _themeTypeController = ValueNotifier<AppThemeType>(AppThemeType.system);
   final _themeData = AppThemeData();
 
+  Brightness _platformBrightness =
+      WidgetsBinding.instance.platformDispatcher.platformBrightness;
+
   void init() {
     final themeName = _localStorage.getTheme();
-    if (themeName == null) {
-      _themeTypeController.value = AppThemeType.system;
-    } else {
-      _themeTypeController.value = AppThemeType.values.byName(themeName);
+    if (themeName != null) {
+      try {
+        _themeTypeController.value = AppThemeType.values.byName(themeName);
+      } on Object catch (_) {
+        _themeTypeController.value = AppThemeType.system;
+      }
     }
+
+    WidgetsBinding.instance.platformDispatcher.onPlatformBrightnessChanged = () {
+      _platformBrightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
+      if (_themeTypeController.value == AppThemeType.system) {
+        // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
+        _themeTypeController.notifyListeners();
+      }
+    };
   }
 
-  ThemeData theme(Brightness platformBrightness) => switch (_themeTypeController.value) {
-    AppThemeType.system => _getSystemTheme(platformBrightness),
-    AppThemeType.dark => _themeData.getTheme(ThemeDataType.dark),
-    AppThemeType.light => _themeData.getTheme(ThemeDataType.light),
-  };
+  ThemeData get currentThemeData => switch (_themeTypeController.value) {
+        AppThemeType.system => _getSystemTheme(),
+        AppThemeType.dark => _themeData.getTheme(ThemeDataType.dark),
+        AppThemeType.light => _themeData.getTheme(ThemeDataType.light),
+      };
 
-  ThemeData _getSystemTheme(Brightness platformBrightness) => switch (platformBrightness) {
-    Brightness.dark => _themeData.getTheme(ThemeDataType.dark),
-    Brightness.light => _themeData.getTheme(ThemeDataType.light),
-  };
+  ThemeData _getSystemTheme() => switch (_platformBrightness) {
+        Brightness.dark => _themeData.getTheme(ThemeDataType.dark),
+        Brightness.light => _themeData.getTheme(ThemeDataType.light),
+      };
 }

@@ -17,6 +17,7 @@ dependencies:
   # State Management
   flutter_bloc: 9.1.1
   equatable: 2.0.8
+  provider: 6.1.4
 
   # Dependency Injection
   get_it: 9.2.0

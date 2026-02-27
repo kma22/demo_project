@@ -8,8 +8,8 @@ part 'app_router.gr.dart';
 /// Подробнее: [NAVIGATION_ARCHITECTURE.md](demo_project/docs/NAVIGATION_ARCHITECTURE.md)
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends RootStackRouter {
-  final _loggerManagerRouter = LoggerManagerRouter();
-
   @override
-  List<AutoRoute> get routes => [..._loggerManagerRouter.routes];
+  List<AutoRoute> get routes => [
+    AutoRoute(page: TalkerLoggerRoute.page),
+  ];
 }

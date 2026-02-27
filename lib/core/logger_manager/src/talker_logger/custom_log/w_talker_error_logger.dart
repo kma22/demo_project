@@ -2,11 +2,8 @@ import 'dart:convert';
 
 import 'package:talker_flutter/talker_flutter.dart';
 
-/// Кастомный логгер для ошибок.
-/// Форматирует контекст ошибки и встроенные JSON-данные для наглядности.
+/// Логгер для ошибок с форматированием JSON.
 class WTalkerErrorLogger extends TalkerLog {
-  /// Логирует ошибку с указанием места ([runtimeType]), операции и сообщения.
-  /// Поддерживает стек-трейс и дополнительные данные.
   WTalkerErrorLogger(dynamic msg, Type runtimeType, String operation, Object? exc, StackTrace? st)
     : super(
         _createMessage(msg, runtimeType, operation),
@@ -23,10 +20,6 @@ class WTalkerErrorLogger extends TalkerLog {
 
   static const _encoder = JsonEncoder.withIndent('  ');
 
-  /// Создает отформатированное сообщение, проверяя тип [msg] и форматируя его.
-  ///
-  /// Если сообщение — [Map] или [List], оно кодируется и форматируется как JSON.
-  /// Если это [String], метод обнаруживает и форматирует встроенные JSON-блоки.
   static String _createMessage(dynamic msg, Type runtimeType, String operation) {
     final result = StringBuffer('[$runtimeType] Failed to $operation.');
 
@@ -41,10 +34,6 @@ class WTalkerErrorLogger extends TalkerLog {
     return result.toString();
   }
 
-  /// Обрабатывает [message], которое может содержать JSON-блоки, смешанные с текстом.
-  ///
-  /// Извлекает JSON-блоки через [_splitByJsonBlocks], пытается декодировать и отформатировать их.
-  /// Если декодирование не удается, блок остается как есть.
   static String _formatMixedMessage(String message) {
     final buffer = StringBuffer();
     final parts = _splitByJsonBlocks(message);
@@ -69,9 +58,6 @@ class WTalkerErrorLogger extends TalkerLog {
     return buffer.toString();
   }
 
-  /// Разбивает строку на отдельные сегменты обычного текста и JSON-блоков.
-  ///
-  /// Распознает JSON-подобные структуры, ограниченные `{}` или `[]`, поддерживает вложенность.
   static List<String> _splitByJsonBlocks(String input) {
     final result = <String>[];
     final buffer = StringBuffer();
@@ -107,9 +93,6 @@ class WTalkerErrorLogger extends TalkerLog {
     return result;
   }
 
-  /// Проверяет, выглядит ли [input] как JSON-объект или массив.
-  ///
-  /// Возвращает `true`, если строка начинается и заканчивается на `{}` или `[]`.
   static bool _looksLikeJson(String input) {
     final trimmed = input.trim();
     return (trimmed.startsWith('{') && trimmed.endsWith('}')) ||

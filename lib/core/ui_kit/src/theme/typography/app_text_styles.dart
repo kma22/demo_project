@@ -1,4 +1,4 @@
-import 'package:demo_project/core/ui-kit/src/theme/typography/base_text_styles.dart';
+import 'package:demo_project/core/ui_kit/src/theme/typography/base_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,6 +25,13 @@ class AppTextStyles extends BaseTextStyles {
       );
 
   @override
+  TextStyle get h3 => GoogleFonts.inter(
+        fontSize: 18,
+        height: 24 / 18,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
   TextStyle get bodyL => GoogleFonts.inter(
         fontSize: 16,
         height: 24 / 16,
@@ -42,7 +49,21 @@ class AppTextStyles extends BaseTextStyles {
   TextStyle get bodyS => GoogleFonts.inter(
         fontSize: 12,
         height: 16 / 12,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
+      );
+
+  @override
+  TextStyle get labelL => GoogleFonts.inter(
+        fontSize: 14,
+        height: 20 / 14,
+        fontWeight: FontWeight.w600,
+      );
+
+  @override
+  TextStyle get labelM => GoogleFonts.inter(
+        fontSize: 12,
+        height: 16 / 12,
+        fontWeight: FontWeight.w600,
       );
 
   @override

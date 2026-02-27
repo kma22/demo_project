@@ -5,19 +5,19 @@
 ## Структура слоев
 
 ### 1. Слой контрактов (Core Layer)
-**Путь:** `lib/core/ui-kit/src/theme/`
+**Путь:** `lib/core/ui_kit/src/theme/`
 **Компоненты:** `BaseColors`, `BaseLayout`, `BaseTextStyles`.
 *   **Роль**: Определяет интерфейсы дизайн-системы.
 *   **Назначение**: Позволяет UI-компонентам запрашивать семантические значения (например, `context.colors.primary`) без привязки к конкретной теме. Виджет не знает, светлая сейчас тема или темная — он просто просит «основной цвет».
 
 ### 2. Слой реализации (Implementation Layer)
-**Путь:** `lib/core/ui-kit/src/theme/[colors, layout, typography]/`
+**Путь:** `lib/core/ui_kit/src/theme/[colors, layout, typography]/`
 **Компоненты**: `AppLightColors`, `AppDarkColors`, `AppTextStyles`, `AppLayout`.
 *   **Роль**: Наполняет абстрактные контракты конкретными значениями.
 *   **Сборка**: Класс `AppThemeData` маппит эти значения в нативный `ThemeData` и регистрирует их через `ThemeExtension`.
 
 ### 3. Слой управления (Management Layer)
-**Путь:** `lib/core/ui-kit/src/theme/app_theme_manager.dart`
+**Путь:** `lib/core/ui_kit/src/theme/app_theme_manager.dart`
 **Компонент**: `AppThemeManager`.
 *   **Роль**: Оркестратор системы тем.
 *   **Функции**: Инициализация темы из локального хранилища, отслеживание системной яркости через `platformDispatcher` и реактивное переключение между `light`, `dark` и `system`.

@@ -4,13 +4,9 @@ import 'package:injectable/injectable.dart';
 
 part 'app_database.g.dart';
 
-/// Основной класс локальной базы данных приложения.
-///
-/// Использует [Drift] для реактивного управления данными и [drift_flutter]
-/// для кроссплатформенного подключения.
-///
-/// Подробнее: [DRIFT_ARCHITECTURE.md](demo_project/docs/docs/DRIFT_ARCHITECTURE.md)
-@DriftDatabase(tables: [])
+/// Локальная БД приложения.
+/// Подробнее: [DRIFT_ARCHITECTURE.md](demo_project/docs/DRIFT_ARCHITECTURE.md)
+@DriftDatabase()
 @singleton
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
@@ -21,13 +17,10 @@ class AppDatabase extends _$AppDatabase {
   static QueryExecutor _openConnection() {
     return driftDatabase(
       name: 'app_database',
-      native: const DriftNativeOptions(
-        // Конфигурация пути и параметров SQLite для мобильных платформ.
-      ),
+      native: const DriftNativeOptions(),
     );
   }
 
-  /// Конфигурация стратегии миграции и инициализации БД.
   @override
   MigrationStrategy get migration => MigrationStrategy(
         onCreate: (m) async {
@@ -37,7 +30,7 @@ class AppDatabase extends _$AppDatabase {
           // TODO: Реализовать миграции при изменении схемы таблиц.
         },
         beforeOpen: (details) async {
-          // Включение поддержки внешних ключей (Foreign Keys) для обеспечения целостности данных.
+          // FK enforcement
           await customStatement('PRAGMA foreign_keys = ON');
         },
       );

@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:demo_project/core/logger_manager/logger_manager.dart';
-import 'package:injectable/injectable.dart';
 
 part 'app_router.gr.dart';
 

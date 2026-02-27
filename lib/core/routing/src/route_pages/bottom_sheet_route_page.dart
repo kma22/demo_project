@@ -1,10 +1,11 @@
+import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetRoutePage extends StatelessWidget {
   const BottomSheetRoutePage({
     required this.child,
     required this.topPadding,
-    this.padding = const EdgeInsets.fromLTRB(24, 0, 24, 0),
+    this.padding,
     this.isShowCloseButton = false,
     this.enableDrag = true,
     this.addKeyboardHeightBottomPadding = false,
@@ -17,27 +18,32 @@ class BottomSheetRoutePage extends StatelessWidget {
   final bool addKeyboardHeightBottomPadding;
   final bool isShowCloseButton;
   final bool enableDrag;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
   final bool addBottomPadding;
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.colors;
+    final layout = context.layout;
     final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
     final bottomPadding = MediaQuery.of(context).padding.bottom;
+    final effectivePadding = padding ?? EdgeInsets.symmetric(horizontal: layout.s24);
 
     return Container(
       padding: EdgeInsets.fromLTRB(
-        padding.left,
-        padding.top,
-        padding.right,
-        addKeyboardHeightBottomPadding ? padding.bottom + keyboardHeight : padding.bottom,
+        effectivePadding.left,
+        effectivePadding.top,
+        effectivePadding.right,
+        addKeyboardHeightBottomPadding
+            ? effectivePadding.bottom + keyboardHeight
+            : effectivePadding.bottom,
       ),
       margin: EdgeInsets.only(top: topPadding),
-      decoration: const BoxDecoration(
-        color: Colors.white,
+      decoration: BoxDecoration(
+        color: colors.surface,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(32),
-          topRight: Radius.circular(32),
+          topLeft: Radius.circular(layout.r32),
+          topRight: Radius.circular(layout.r32),
         ),
       ),
       child: Stack(
@@ -45,16 +51,17 @@ class BottomSheetRoutePage extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              enableDrag ? const DragHandle() : SizedBox(height: layout.s24),
               Flexible(child: child),
               if (addBottomPadding) SizedBox(height: bottomPadding),
             ],
           ),
           if (isShowCloseButton)
             Positioned(
-              top: 16,
+              top: layout.s16,
               child: GestureDetector(
                 onTap: () => Navigator.pop(context),
-                child: const Icon(Icons.close, size: 24, color: Colors.black),
+                child: Icon(Icons.close, size: layout.s24, color: colors.onSurface),
               ),
             ),
         ],

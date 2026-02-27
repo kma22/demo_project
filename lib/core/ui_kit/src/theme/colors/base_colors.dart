@@ -1,20 +1,20 @@
-
 import 'package:flutter/material.dart';
 
 abstract class BaseColors {
   // --- Core Semantic Tokens ---
   Color get background;
   Color get surface;
+  Color get surfaceVariant;
+  Color get surfaceElevated;
+  Color get onBackground;
+  Color get onSurface;
   Color get primary;
   Color get onPrimary;
+  Color get primaryLight;
+  Color get divider;
+  Color get border;
+  Color get overlay;
 
-  // --- Secondary Semantic Tokens ---
-  Color get tapBarBg;
-  Color get iconBg;
-  Color get buttonBg;
-  Color get segmentBg;
-  Color get popUpBg;
-  
   // --- Constant Colors ---
   Color get staticWhite;
   Color get staticBlack;
@@ -23,16 +23,21 @@ abstract class BaseColors {
   Color get textPrimary;
   Color get textSecondary;
   Color get textTertiary;
+  Color get textDisabled;
   Color get textInverted;
   Color get iconPrimary;
+  Color get iconSecondary;
+
+  // --- Interactive State Tokens ---
+  Color get disabled;
 
   // --- Status Tokens ---
   Color get success;
   Color get error;
   Color get warning;
+  Color get info;
 
-  // --- Minimal Primitive Palettes ---
-  /// Grayscale
+  // --- Primitive Palette (Tailwind Slate) ---
   Color get gray100;
   Color get gray200;
   Color get gray300;
@@ -43,7 +48,7 @@ abstract class BaseColors {
   Color get gray800;
   Color get gray900;
 
-  /// Brand/Accent variants (if needed for states)
+  // --- Brand Variants ---
   Color get primaryVariant;
   Color get accentVariant;
 }

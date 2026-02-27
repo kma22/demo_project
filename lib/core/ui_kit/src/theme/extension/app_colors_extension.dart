@@ -1,27 +1,43 @@
 import 'package:flutter/material.dart';
 
 class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
+  // --- Core Semantic ---
   final Color background;
   final Color surface;
+  final Color surfaceVariant;
+  final Color surfaceElevated;
+  final Color onBackground;
+  final Color onSurface;
   final Color primary;
   final Color onPrimary;
-  final Color textPrimary;
-  final Color textSecondary;
-  final Color textTertiary;
-  final Color textInverted;
-  final Color iconPrimary;
-  final Color success;
-  final Color error;
-  final Color warning;
+  final Color primaryLight;
+  final Color divider;
+  final Color border;
+  final Color overlay;
 
-  final Color tapBarBg;
-  final Color iconBg;
-  final Color buttonBg;
-  final Color segmentBg;
-  final Color popUpBg;
+  // --- Constant Colors ---
   final Color staticWhite;
   final Color staticBlack;
 
+  // --- Content ---
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color textTertiary;
+  final Color textDisabled;
+  final Color textInverted;
+  final Color iconPrimary;
+  final Color iconSecondary;
+
+  // --- Interactive States ---
+  final Color disabled;
+
+  // --- Status ---
+  final Color success;
+  final Color error;
+  final Color warning;
+  final Color info;
+
+  // --- Primitive Palette ---
   final Color gray100;
   final Color gray200;
   final Color gray300;
@@ -31,29 +47,38 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color gray700;
   final Color gray800;
   final Color gray900;
+
+  // --- Brand Variants ---
   final Color primaryVariant;
   final Color accentVariant;
 
-   AppColorsExtension({
+  AppColorsExtension({
     required this.background,
     required this.surface,
+    required this.surfaceVariant,
+    required this.surfaceElevated,
+    required this.onBackground,
+    required this.onSurface,
     required this.primary,
     required this.onPrimary,
+    required this.primaryLight,
+    required this.divider,
+    required this.border,
+    required this.overlay,
+    required this.staticWhite,
+    required this.staticBlack,
     required this.textPrimary,
     required this.textSecondary,
     required this.textTertiary,
+    required this.textDisabled,
     required this.textInverted,
     required this.iconPrimary,
+    required this.iconSecondary,
+    required this.disabled,
     required this.success,
     required this.error,
     required this.warning,
-    required this.tapBarBg,
-    required this.iconBg,
-    required this.buttonBg,
-    required this.segmentBg,
-    required this.popUpBg,
-    required this.staticWhite,
-    required this.staticBlack,
+    required this.info,
     required this.gray100,
     required this.gray200,
     required this.gray300,
@@ -71,23 +96,30 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   AppColorsExtension copyWith({
     Color? background,
     Color? surface,
+    Color? surfaceVariant,
+    Color? surfaceElevated,
+    Color? onBackground,
+    Color? onSurface,
     Color? primary,
     Color? onPrimary,
+    Color? primaryLight,
+    Color? divider,
+    Color? border,
+    Color? overlay,
+    Color? staticWhite,
+    Color? staticBlack,
     Color? textPrimary,
     Color? textSecondary,
     Color? textTertiary,
+    Color? textDisabled,
     Color? textInverted,
     Color? iconPrimary,
+    Color? iconSecondary,
+    Color? disabled,
     Color? success,
     Color? error,
     Color? warning,
-    Color? tapBarBg,
-    Color? iconBg,
-    Color? buttonBg,
-    Color? segmentBg,
-    Color? popUpBg,
-    Color? staticWhite,
-    Color? staticBlack,
+    Color? info,
     Color? gray100,
     Color? gray200,
     Color? gray300,
@@ -103,23 +135,30 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     return AppColorsExtension(
       background: background ?? this.background,
       surface: surface ?? this.surface,
+      surfaceVariant: surfaceVariant ?? this.surfaceVariant,
+      surfaceElevated: surfaceElevated ?? this.surfaceElevated,
+      onBackground: onBackground ?? this.onBackground,
+      onSurface: onSurface ?? this.onSurface,
       primary: primary ?? this.primary,
       onPrimary: onPrimary ?? this.onPrimary,
+      primaryLight: primaryLight ?? this.primaryLight,
+      divider: divider ?? this.divider,
+      border: border ?? this.border,
+      overlay: overlay ?? this.overlay,
+      staticWhite: staticWhite ?? this.staticWhite,
+      staticBlack: staticBlack ?? this.staticBlack,
       textPrimary: textPrimary ?? this.textPrimary,
       textSecondary: textSecondary ?? this.textSecondary,
       textTertiary: textTertiary ?? this.textTertiary,
+      textDisabled: textDisabled ?? this.textDisabled,
       textInverted: textInverted ?? this.textInverted,
       iconPrimary: iconPrimary ?? this.iconPrimary,
+      iconSecondary: iconSecondary ?? this.iconSecondary,
+      disabled: disabled ?? this.disabled,
       success: success ?? this.success,
       error: error ?? this.error,
       warning: warning ?? this.warning,
-      tapBarBg: tapBarBg ?? this.tapBarBg,
-      iconBg: iconBg ?? this.iconBg,
-      buttonBg: buttonBg ?? this.buttonBg,
-      segmentBg: segmentBg ?? this.segmentBg,
-      popUpBg: popUpBg ?? this.popUpBg,
-      staticWhite: staticWhite ?? this.staticWhite,
-      staticBlack: staticBlack ?? this.staticBlack,
+      info: info ?? this.info,
       gray100: gray100 ?? this.gray100,
       gray200: gray200 ?? this.gray200,
       gray300: gray300 ?? this.gray300,
@@ -143,23 +182,30 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     return AppColorsExtension(
       background: Color.lerp(background, other.background, t)!,
       surface: Color.lerp(surface, other.surface, t)!,
+      surfaceVariant: Color.lerp(surfaceVariant, other.surfaceVariant, t)!,
+      surfaceElevated: Color.lerp(surfaceElevated, other.surfaceElevated, t)!,
+      onBackground: Color.lerp(onBackground, other.onBackground, t)!,
+      onSurface: Color.lerp(onSurface, other.onSurface, t)!,
       primary: Color.lerp(primary, other.primary, t)!,
       onPrimary: Color.lerp(onPrimary, other.onPrimary, t)!,
+      primaryLight: Color.lerp(primaryLight, other.primaryLight, t)!,
+      divider: Color.lerp(divider, other.divider, t)!,
+      border: Color.lerp(border, other.border, t)!,
+      overlay: Color.lerp(overlay, other.overlay, t)!,
+      staticWhite: Color.lerp(staticWhite, other.staticWhite, t)!,
+      staticBlack: Color.lerp(staticBlack, other.staticBlack, t)!,
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       textTertiary: Color.lerp(textTertiary, other.textTertiary, t)!,
+      textDisabled: Color.lerp(textDisabled, other.textDisabled, t)!,
       textInverted: Color.lerp(textInverted, other.textInverted, t)!,
       iconPrimary: Color.lerp(iconPrimary, other.iconPrimary, t)!,
+      iconSecondary: Color.lerp(iconSecondary, other.iconSecondary, t)!,
+      disabled: Color.lerp(disabled, other.disabled, t)!,
       success: Color.lerp(success, other.success, t)!,
       error: Color.lerp(error, other.error, t)!,
       warning: Color.lerp(warning, other.warning, t)!,
-      tapBarBg: Color.lerp(tapBarBg, other.tapBarBg, t)!,
-      iconBg: Color.lerp(iconBg, other.iconBg, t)!,
-      buttonBg: Color.lerp(buttonBg, other.buttonBg, t)!,
-      segmentBg: Color.lerp(segmentBg, other.segmentBg, t)!,
-      popUpBg: Color.lerp(popUpBg, other.popUpBg, t)!,
-      staticWhite: Color.lerp(staticWhite, other.staticWhite, t)!,
-      staticBlack: Color.lerp(staticBlack, other.staticBlack, t)!,
+      info: Color.lerp(info, other.info, t)!,
       gray100: Color.lerp(gray100, other.gray100, t)!,
       gray200: Color.lerp(gray200, other.gray200, t)!,
       gray300: Color.lerp(gray300, other.gray300, t)!,

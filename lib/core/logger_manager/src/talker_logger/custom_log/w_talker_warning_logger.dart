@@ -2,11 +2,8 @@ import 'dart:convert';
 
 import 'package:talker_flutter/talker_flutter.dart';
 
-/// Логгер для предупреждений.
-/// Поддерживает автоматическое форматирование JSON-структур для удобства чтения.
+/// Логгер для предупреждений с форматированием JSON.
 class WTalkerWarningLogger extends TalkerLog {
-  /// Создает лог с уровнем [warning].
-  /// Парсит и форматирует входящие данные [msg], если они являются JSON-совместимыми.
   WTalkerWarningLogger(dynamic msg, Type runtimeType)
     : super(_createMessage(msg, runtimeType), logLevel: LogLevel.warning);
 
@@ -18,10 +15,6 @@ class WTalkerWarningLogger extends TalkerLog {
 
   static const _encoder = JsonEncoder.withIndent('  ');
 
-  /// Создает отформатированное сообщение, проверяя тип [msg] и форматируя его.
-  ///
-  /// Если сообщение — [Map] или [List], оно кодируется и форматируется как JSON.
-  /// Если это [String], метод обнаруживает и форматирует встроенные JSON-блоки.
   static String _createMessage(dynamic msg, Type runtimeType) {
     final result = StringBuffer('[$runtimeType] ');
 
@@ -36,10 +29,6 @@ class WTalkerWarningLogger extends TalkerLog {
     return result.toString();
   }
 
-  /// Обрабатывает [message], которое может содержать JSON-блоки, смешанные с текстом.
-  ///
-  /// Извлекает JSON-блоки через [_splitByJsonBlocks], пытается декодировать и отформатировать их.
-  /// Если декодирование не удается, блок остается как есть.
   static String _formatMixedMessage(String message) {
     final buffer = StringBuffer();
     final parts = _splitByJsonBlocks(message);
@@ -65,9 +54,6 @@ class WTalkerWarningLogger extends TalkerLog {
     return buffer.toString();
   }
 
-  /// Разбивает строку на отдельные сегменты обычного текста и JSON-блоков.
-  ///
-  /// Распознает JSON-подобные структуры, ограниченные `{}` или `[]`, поддерживает вложенность.
   static List<String> _splitByJsonBlocks(String input) {
     final result = <String>[];
     final buffer = StringBuffer();
@@ -103,9 +89,6 @@ class WTalkerWarningLogger extends TalkerLog {
     return result;
   }
 
-  /// Проверяет, выглядит ли [input] как JSON-объект или массив.
-  ///
-  /// Возвращает `true`, если строка начинается и заканчивается на `{}` или `[]`.
   static bool _looksLikeJson(String input) {
     final trimmed = input.trim();
     return (trimmed.startsWith('{') && trimmed.endsWith('}')) ||

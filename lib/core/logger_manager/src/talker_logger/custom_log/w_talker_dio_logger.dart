@@ -71,9 +71,7 @@ class WTalkerDioLogger extends Interceptor {
 
       final httpLog = DioRequestLog(message, requestOptions: options, settings: _settings);
       _talker.logCustom(httpLog);
-    } on Object catch (_) {
-      //pass
-    }
+    } on Object catch (_) {}
   }
 
   @override
@@ -97,9 +95,7 @@ class WTalkerDioLogger extends Interceptor {
 
       final httpLog = DioResponseLog(message, settings: _settings, response: response);
       _talker.logCustom(httpLog);
-    } on Object catch (_) {
-      //pass
-    }
+    } on Object catch (_) {}
   }
 
   @override
@@ -115,9 +111,7 @@ class WTalkerDioLogger extends Interceptor {
 
       final httpErrorLog = DioErrorLog(message, dioException: err, settings: _settings);
       _talker.logCustom(httpErrorLog);
-    } on Object catch (_) {
-      //pass
-    }
+    } on Object catch (_) {}
   }
 
   TalkerLog _getShortLog(String msg) {

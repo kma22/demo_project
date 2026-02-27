@@ -1,7 +1,7 @@
 import 'package:demo_project/core/local_storage/local_storage.dart';
-import 'package:demo_project/core/ui-kit/src/theme/app_theme_data.dart';
-import 'package:demo_project/core/ui-kit/src/theme/enums/app_theme_type.dart';
-import 'package:demo_project/core/ui-kit/src/theme/enums/theme_data_type.dart';
+import 'package:demo_project/core/ui_kit/src/theme/app_theme_data.dart';
+import 'package:demo_project/core/ui_kit/src/theme/enums/app_theme_type.dart';
+import 'package:demo_project/core/ui_kit/src/theme/enums/theme_data_type.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 

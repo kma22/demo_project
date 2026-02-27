@@ -1,4 +1,4 @@
-.PHONY: run-dev run-prod build-dev build-prod get generate analyze format
+.PHONY: run-dev run-prod build-dev build-prod get l10n generate analyze format
 
 # Запуск в Dev режиме
 run-dev:
@@ -20,6 +20,10 @@ build-prod-apk:
 get:
 	flutter pub get
 
+# Генерация локализации
+l10n:
+	flutter gen-l10n
+
 # Генерация кода (injectable, auto_route и т.д.)
 generate:
 	dart run build_runner build --delete-conflicting-outputs
@@ -36,4 +40,5 @@ format:
 rebuild:
 	flutter clean
 	flutter pub get
+	flutter gen-l10n
 	dart run build_runner build --delete-conflicting-outputs

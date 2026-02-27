@@ -31,8 +31,8 @@ class AppBodyState {
 
   static Widget error({
     required String message,
+    required String retryLabel,
     required VoidCallback onRetry,
-    String retryLabel = 'Повторить',
     Key? key,
   }) {
     return AppBodyStateImpl(

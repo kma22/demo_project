@@ -1,0 +1,33 @@
+{
+  "@@locale": "ru",
+
+  "commonRetry": "Повторить",
+  "@commonRetry": { "description": "Кнопка повторной попытки" },
+
+  "commonError": "Произошла ошибка",
+  "@commonError": { "description": "Общее сообщение об ошибке" },
+
+  "commonLoading": "Загрузка…",
+  "@commonLoading": { "description": "Текст состояния загрузки" },
+
+  "commonCancel": "Отмена",
+  "@commonCancel": { "description": "Кнопка отмены" },
+
+  "commonSave": "Сохранить",
+  "@commonSave": { "description": "Кнопка сохранения" },
+
+  "commonDelete": "Удалить",
+  "@commonDelete": { "description": "Кнопка удаления" },
+
+  "commonEdit": "Редактировать",
+  "@commonEdit": { "description": "Кнопка редактирования" },
+
+  "commonClose": "Закрыть",
+  "@commonClose": { "description": "Кнопка закрытия" },
+
+  "commonSearch": "Поиск",
+  "@commonSearch": { "description": "Поле/кнопка поиска" },
+
+  "commonNoResults": "Ничего не найдено",
+  "@commonNoResults": { "description": "Пустой результат поиска" }
+}

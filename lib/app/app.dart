@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:demo_project/app/router/app_router.dart';
+import 'package:demo_project/core/l10n/l10n.dart';
 import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,9 @@ class _AppState extends State<App> {
           debugShowCheckedModeBanner: false,
           scrollBehavior: const _ScrollBehaviorModified(),
           theme: _themeManager.currentThemeData,
+          locale: const Locale('ru'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: const _ComponentShowcaseScreen(),
           builder: (context, widget) {
             return Provider<AppThemeManager>.value(value: _themeManager, child: widget);
@@ -50,6 +54,9 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       scrollBehavior: const _ScrollBehaviorModified(),
       theme: _themeManager.currentThemeData,
+      locale: const Locale('ru'),
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       routerConfig: _appRouter.config(
         navigatorObservers: () => [AutoRouteObserver(), _logger.routeLoggerObserver],
       ),
@@ -402,6 +409,7 @@ class _ComponentShowcaseScreenState extends State<_ComponentShowcaseScreen> {
                 height: 550,
                 child: AppBodyState.error(
                   message: 'Failed to load data',
+                  retryLabel: context.l10n.commonRetry,
                   onRetry: () => AppSnackBar.info(context, message: 'Retrying...'),
                 ),
               ),

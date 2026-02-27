@@ -15,6 +15,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/firebase_options.dart"
     - "**/gen/**"
+    - "lib/core/l10n/generated/**"
     - "**/*.module.dart"
     # Localization
     - "lib/generated/**"

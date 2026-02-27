@@ -3,4 +3,7 @@ abstract class StorageKeys {
   static const token = 'token';
   static const accessTokenMapKey = 'accessToken';
   static const refreshTokenMapKey = 'refreshToken';
+
+  /// shared preferences
+  static const themeKey = 'themeName';
 }

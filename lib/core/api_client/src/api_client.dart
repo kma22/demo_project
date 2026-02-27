@@ -14,8 +14,7 @@ import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-/// Основная реализация сетевого клиента на базе Dio.
-/// Отвечает за выполнение запросов и централизованную обработку ошибок.
+/// Реализация [BaseApiClient] на базе Dio.
 /// Подробнее: [API_CLIENT_ARCHITECTURE.md](demo_project/docs/API_CLIENT_ARCHITECTURE.md)
 @Injectable(as: BaseApiClient)
 class ApiClient implements BaseApiClient {

@@ -1,0 +1,1 @@
+enum ThemeDataType { light, dark }

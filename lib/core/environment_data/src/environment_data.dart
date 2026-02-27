@@ -5,7 +5,6 @@ class EnvironmentData {
   final String deeplinkBaseUrl;
   final EnvironmentName environmentName;
 
-
   EnvironmentData({
     required this.baseUrl,
     required this.deeplinkBaseUrl,

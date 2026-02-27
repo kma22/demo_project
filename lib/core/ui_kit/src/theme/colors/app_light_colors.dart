@@ -113,6 +113,13 @@ class AppLightColors extends BaseColors {
   @override
   Color get gray900 => const Color(0xFF0F172A); // Slate 900
 
+  // --- Shimmer ---
+  @override
+  Color get shimmerBase => const Color(0xFFCBD5E1); // Slate 300
+
+  @override
+  Color get shimmerHighlight => const Color(0xFFF8FAFC); // Slate 50
+
   // --- Brand Variants ---
   @override
   Color get primaryVariant => const Color(0xFF6366F1); // Indigo 500

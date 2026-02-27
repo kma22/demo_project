@@ -1,4 +1,3 @@
-import 'package:demo_project/core/ui_kit/src/theme/extension/app_layout_extension.dart';
 import 'package:demo_project/core/ui_kit/src/widgets/buttons/enums/app_button_type.dart';
 import 'package:demo_project/core/ui_kit/src/widgets/buttons/model/app_button_style.dart';
 import 'package:demo_project/core/ui_kit/src/widgets/buttons/model/app_button_style_factory.dart';
@@ -87,21 +86,10 @@ class _ButtonLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final layout = context.layout;
-
     return Row(
       mainAxisSize: expanded ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: layout.s20,
-          height: layout.s20,
-          child: CircularProgressIndicator(
-            strokeWidth: layout.s2,
-            color: style.foreground,
-          ),
-        ),
-      ],
+      children: [AppLoader.small(color: style.foreground)],
     );
   }
 }

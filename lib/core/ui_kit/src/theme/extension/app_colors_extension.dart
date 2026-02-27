@@ -48,6 +48,10 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color gray800;
   final Color gray900;
 
+  // --- Shimmer ---
+  final Color shimmerBase;
+  final Color shimmerHighlight;
+
   // --- Brand Variants ---
   final Color primaryVariant;
   final Color accentVariant;
@@ -88,6 +92,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.gray700,
     required this.gray800,
     required this.gray900,
+    required this.shimmerBase,
+    required this.shimmerHighlight,
     required this.primaryVariant,
     required this.accentVariant,
   });
@@ -129,6 +135,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? gray700,
     Color? gray800,
     Color? gray900,
+    Color? shimmerBase,
+    Color? shimmerHighlight,
     Color? primaryVariant,
     Color? accentVariant,
   }) {
@@ -168,16 +176,15 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       gray700: gray700 ?? this.gray700,
       gray800: gray800 ?? this.gray800,
       gray900: gray900 ?? this.gray900,
+      shimmerBase: shimmerBase ?? this.shimmerBase,
+      shimmerHighlight: shimmerHighlight ?? this.shimmerHighlight,
       primaryVariant: primaryVariant ?? this.primaryVariant,
       accentVariant: accentVariant ?? this.accentVariant,
     );
   }
 
   @override
-  AppColorsExtension lerp(
-    covariant ThemeExtension<AppColorsExtension>? other,
-    double t,
-  ) {
+  AppColorsExtension lerp(covariant ThemeExtension<AppColorsExtension>? other, double t) {
     if (other is! AppColorsExtension) return this;
     return AppColorsExtension(
       background: Color.lerp(background, other.background, t)!,
@@ -215,6 +222,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       gray700: Color.lerp(gray700, other.gray700, t)!,
       gray800: Color.lerp(gray800, other.gray800, t)!,
       gray900: Color.lerp(gray900, other.gray900, t)!,
+      shimmerBase: Color.lerp(shimmerBase, other.shimmerBase, t)!,
+      shimmerHighlight: Color.lerp(shimmerHighlight, other.shimmerHighlight, t)!,
       primaryVariant: Color.lerp(primaryVariant, other.primaryVariant, t)!,
       accentVariant: Color.lerp(accentVariant, other.accentVariant, t)!,
     );

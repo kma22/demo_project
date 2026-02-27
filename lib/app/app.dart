@@ -34,7 +34,7 @@ class _AppState extends State<App> {
           debugShowCheckedModeBanner: false,
           scrollBehavior: const _ScrollBehaviorModified(),
           theme: _themeManager.currentThemeData,
-          home: const _ButtonShowcaseScreen(),
+          home: const _ComponentShowcaseScreen(),
           builder: (context, widget) {
             return Provider<AppThemeManager>.value(value: _themeManager, child: widget);
           },
@@ -69,17 +69,18 @@ class _ScrollBehaviorModified extends ScrollBehavior {
   }
 }
 
-//TODO Временный экран для проверки кнопок. Удалить после ревью.
+//TODO Временный экран для демонстрации UI Kit. Удалить после ревью.
 
-class _ButtonShowcaseScreen extends StatefulWidget {
-  const _ButtonShowcaseScreen();
+class _ComponentShowcaseScreen extends StatefulWidget {
+  const _ComponentShowcaseScreen();
 
   @override
-  State<_ButtonShowcaseScreen> createState() => _ButtonShowcaseScreenState();
+  State<_ComponentShowcaseScreen> createState() => _ComponentShowcaseScreenState();
 }
 
-class _ButtonShowcaseScreenState extends State<_ButtonShowcaseScreen> {
+class _ComponentShowcaseScreenState extends State<_ComponentShowcaseScreen> {
   final _loadingButtons = <String>{};
+  final _shimmerEnabled = ValueNotifier(true);
 
   void _toggleLoading(String id) {
     setState(() {
@@ -92,6 +93,12 @@ class _ButtonShowcaseScreenState extends State<_ButtonShowcaseScreen> {
   }
 
   @override
+  void dispose() {
+    _shimmerEnabled.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final colors = context.colors;
     final textStyles = context.textStyles;
@@ -100,7 +107,7 @@ class _ButtonShowcaseScreenState extends State<_ButtonShowcaseScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Button Showcase'),
+        title: const Text('UI Kit Showcase'),
         actions: [
           IconButton(
             icon: Icon(
@@ -122,141 +129,322 @@ class _ButtonShowcaseScreenState extends State<_ButtonShowcaseScreen> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(layout.s24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // --- Primary ---
-            Text('Primary', style: textStyles.h2.copyWith(color: colors.textPrimary)),
-            SizedBox(height: layout.s12),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.primary(title: 'Large', size: AppButtonSize.large, onTap: () {}),
-                AppButton.primary(title: 'Medium', onTap: () {}),
-                AppButton.primary(title: 'Small', size: AppButtonSize.small, onTap: () {}),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.primary(title: 'Disabled', enabled: false),
-                AppButton.primary(
-                  title: 'Loading',
-                  loading: _loadingButtons.contains('p'),
-                  onTap: () => _toggleLoading('p'),
+      body: AppRefreshIndicator(
+        onRefresh: () async {
+          await Future<void>.delayed(const Duration(seconds: 1));
+        },
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: EdgeInsets.all(layout.s24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ==================== BUTTONS ====================
+              _sectionTitle('Buttons', textStyles, colors),
+
+              // Primary
+              _label('Primary', textStyles, colors),
+              SizedBox(height: layout.s8),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.primary(title: 'Large', size: AppButtonSize.large, onTap: () {}),
+                  AppButton.primary(title: 'Medium', onTap: () {}),
+                  AppButton.primary(title: 'Small', size: AppButtonSize.small, onTap: () {}),
+                ],
+              ),
+              SizedBox(height: layout.s8),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.primary(title: 'Disabled', enabled: false),
+                  AppButton.primary(
+                    title: 'Loading',
+                    loading: _loadingButtons.contains('p'),
+                    onTap: () => _toggleLoading('p'),
+                  ),
+                  AppButton.primary(
+                    title: 'With Icon',
+                    prefixIcon: Icon(Icons.add, size: 18, color: colors.onPrimary),
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: layout.s8),
+              AppButton.primary(title: 'Expanded', expanded: true, onTap: () {}),
+
+              SizedBox(height: layout.s24),
+
+              // Secondary
+              _label('Secondary', textStyles, colors),
+              SizedBox(height: layout.s8),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.secondary(title: 'Medium', onTap: () {}),
+                  AppButton.secondary(title: 'Disabled'),
+                  AppButton.secondary(
+                    title: 'Loading',
+                    loading: _loadingButtons.contains('s'),
+                    onTap: () => _toggleLoading('s'),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: layout.s24),
+
+              // Ghost
+              _label('Ghost', textStyles, colors),
+              SizedBox(height: layout.s8),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.ghost(title: 'Medium', onTap: () {}),
+                  AppButton.ghost(title: 'Disabled'),
+                ],
+              ),
+
+              SizedBox(height: layout.s24),
+
+              // Destructive
+              _label('Destructive', textStyles, colors),
+              SizedBox(height: layout.s8),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.destructive(title: 'Medium', onTap: () {}),
+                  AppButton.destructive(title: 'Disabled'),
+                ],
+              ),
+              SizedBox(height: layout.s8),
+              AppButton.destructive(title: 'Delete Account', expanded: true, onTap: () {}),
+
+              _divider(layout),
+
+              // ==================== LOADERS ====================
+              _sectionTitle('Loaders', textStyles, colors),
+              Row(
+                spacing: layout.s32,
+                children: [
+                  Column(
+                    children: [
+                      AppLoader.small(),
+                      SizedBox(height: layout.s8),
+                      Text('Small', style: textStyles.labelS.copyWith(color: colors.textTertiary)),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      AppLoader.medium(),
+                      SizedBox(height: layout.s8),
+                      Text('Medium', style: textStyles.labelS.copyWith(color: colors.textTertiary)),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      AppLoader.large(),
+                      SizedBox(height: layout.s8),
+                      Text('Large', style: textStyles.labelS.copyWith(color: colors.textTertiary)),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      AppLoader.medium(color: colors.error),
+                      SizedBox(height: layout.s8),
+                      Text('Custom', style: textStyles.labelS.copyWith(color: colors.textTertiary)),
+                    ],
+                  ),
+                ],
+              ),
+
+              _divider(layout),
+
+              // ==================== TEXT FIELD ====================
+              _sectionTitle('Text Field', textStyles, colors),
+              const AppTextField(
+                label: 'Email',
+                hintText: 'example@mail.com',
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(height: layout.s16),
+              const AppTextField(label: 'Password', hintText: 'Enter password', obscureText: true),
+              SizedBox(height: layout.s16),
+              const AppTextField(
+                label: 'With error',
+                hintText: 'Type something',
+                errorText: 'This field is required',
+              ),
+              SizedBox(height: layout.s16),
+              const AppTextField(label: 'Disabled', hintText: 'Cannot edit', enabled: false),
+
+              _divider(layout),
+
+              // ==================== SNACK BARS ====================
+              _sectionTitle('Snack Bars', textStyles, colors),
+              Wrap(
+                spacing: layout.s12,
+                runSpacing: layout.s12,
+                children: [
+                  AppButton.primary(
+                    title: 'Success',
+                    size: AppButtonSize.small,
+                    prefixIcon: Icon(Icons.check, size: 16, color: colors.onPrimary),
+                    onTap: () => AppSnackBar.success(context, message: 'Changes saved'),
+                  ),
+                  AppButton.destructive(
+                    title: 'Error',
+                    size: AppButtonSize.small,
+                    prefixIcon: Icon(Icons.close, size: 16, color: colors.staticWhite),
+                    onTap: () => AppSnackBar.error(context, message: 'Network error'),
+                  ),
+                  AppButton.secondary(
+                    title: 'Info',
+                    size: AppButtonSize.small,
+                    prefixIcon: Icon(Icons.info_outline, size: 16, color: colors.textPrimary),
+                    onTap: () => AppSnackBar.info(context, message: 'Copied to clipboard'),
+                  ),
+                ],
+              ),
+
+              _divider(layout),
+
+              // ==================== SHIMMER ====================
+              _sectionTitle('Shimmer', textStyles, colors),
+              ValueListenableBuilder(
+                valueListenable: _shimmerEnabled,
+                builder: (context, enabled, _) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppButton.ghost(
+                        title: enabled ? 'Stop shimmer' : 'Start shimmer',
+                        size: AppButtonSize.small,
+                        onTap: () => _shimmerEnabled.value = !enabled,
+                      ),
+                      SizedBox(height: layout.s12),
+                      AppShimmer(
+                        enabled: enabled,
+                        child: Column(
+                          children: List.generate(3, (_) {
+                            return Padding(
+                              padding: EdgeInsets.only(bottom: layout.s12),
+                              child: Row(
+                                children: [
+                                  Skeleton.leaf(
+                                    child: Container(
+                                      width: layout.s48,
+                                      height: layout.s48,
+                                      decoration: BoxDecoration(
+                                        color: colors.surfaceVariant,
+                                        borderRadius: BorderRadius.circular(layout.r8),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: layout.s12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Skeleton.leaf(
+                                          child: Container(
+                                            height: layout.s16,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              color: colors.surfaceVariant,
+                                              borderRadius: BorderRadius.circular(layout.r4),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(height: layout.s8),
+                                        Skeleton.leaf(
+                                          child: Container(
+                                            height: layout.s12,
+                                            width: 160,
+                                            decoration: BoxDecoration(
+                                              color: colors.surfaceVariant,
+                                              borderRadius: BorderRadius.circular(layout.r4),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+
+              _divider(layout),
+
+              // ==================== BODY STATES ====================
+              _sectionTitle('Body States', textStyles, colors),
+
+              _label('Empty', textStyles, colors),
+              SizedBox(height: layout.s8),
+              SizedBox(height: 550, child: AppBodyState.empty(message: 'No inspections yet')),
+
+              SizedBox(height: layout.s24),
+
+              _label('Error', textStyles, colors),
+              SizedBox(height: layout.s8),
+              SizedBox(
+                height: 550,
+                child: AppBodyState.error(
+                  message: 'Failed to load data',
+                  onRetry: () => AppSnackBar.info(context, message: 'Retrying...'),
                 ),
-                AppButton.primary(
-                  title: 'With Icon',
-                  prefixIcon: Icon(Icons.add, size: 18, color: colors.onPrimary),
-                  onTap: () {},
+              ),
+
+              SizedBox(height: layout.s24),
+
+              _label('Empty Search', textStyles, colors),
+              SizedBox(height: layout.s8),
+              SizedBox(height: 550, child: AppBodyState.emptySearch(message: 'No results found')),
+
+              SizedBox(height: layout.s48),
+
+              // ==================== REFRESH ====================
+              Center(
+                child: Text(
+                  'Pull down to test RefreshIndicator',
+                  style: textStyles.labelM.copyWith(color: colors.textTertiary),
                 ),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            AppButton.primary(title: 'Expanded', expanded: true, onTap: () {}),
+              ),
 
-            SizedBox(height: layout.s32),
-
-            // --- Secondary ---
-            Text('Secondary', style: textStyles.h2.copyWith(color: colors.textPrimary)),
-            SizedBox(height: layout.s12),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.secondary(title: 'Large', size: AppButtonSize.large, onTap: () {}),
-                AppButton.secondary(title: 'Medium', onTap: () {}),
-                AppButton.secondary(title: 'Small', size: AppButtonSize.small, onTap: () {}),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.secondary(title: 'Disabled'),
-                AppButton.secondary(
-                  title: 'Loading',
-                  loading: _loadingButtons.contains('s'),
-                  onTap: () => _toggleLoading('s'),
-                ),
-                AppButton.secondary(
-                  title: 'With Icon',
-                  prefixIcon: Icon(Icons.filter_list, size: 18, color: colors.textPrimary),
-                  onTap: () {},
-                ),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            AppButton.secondary(title: 'Expanded', expanded: true, onTap: () {}),
-
-            SizedBox(height: layout.s32),
-
-            // --- Ghost ---
-            Text('Ghost', style: textStyles.h2.copyWith(color: colors.textPrimary)),
-            SizedBox(height: layout.s12),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.ghost(title: 'Large', size: AppButtonSize.large, onTap: () {}),
-                AppButton.ghost(title: 'Medium', onTap: () {}),
-                AppButton.ghost(title: 'Small', size: AppButtonSize.small, onTap: () {}),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.ghost(title: 'Disabled'),
-                AppButton.ghost(
-                  title: 'Loading',
-                  loading: _loadingButtons.contains('g'),
-                  onTap: () => _toggleLoading('g'),
-                ),
-              ],
-            ),
-
-            SizedBox(height: layout.s32),
-
-            // --- Destructive ---
-            Text('Destructive', style: textStyles.h2.copyWith(color: colors.textPrimary)),
-            SizedBox(height: layout.s12),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.destructive(title: 'Large', size: AppButtonSize.large, onTap: () {}),
-                AppButton.destructive(title: 'Medium', onTap: () {}),
-                AppButton.destructive(title: 'Small', size: AppButtonSize.small, onTap: () {}),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            Wrap(
-              spacing: layout.s12,
-              runSpacing: layout.s12,
-              children: [
-                AppButton.destructive(title: 'Disabled'),
-                AppButton.destructive(
-                  title: 'Loading',
-                  loading: _loadingButtons.contains('d'),
-                  onTap: () => _toggleLoading('d'),
-                ),
-              ],
-            ),
-            SizedBox(height: layout.s8),
-            AppButton.destructive(title: 'Delete Account', expanded: true, onTap: () {}),
-
-            SizedBox(height: layout.s48),
-          ],
+              SizedBox(height: layout.s48),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _sectionTitle(String title, AppTextStyleExtension textStyles, AppColorsExtension colors) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: context.layout.s16),
+      child: Text(title, style: textStyles.h2.copyWith(color: colors.textPrimary)),
+    );
+  }
+
+  Widget _label(String title, AppTextStyleExtension textStyles, AppColorsExtension colors) {
+    return Text(title, style: textStyles.labelL.copyWith(color: colors.textSecondary));
+  }
+
+  Widget _divider(AppLayoutExtension layout) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: layout.s32),
+      child: const Divider(),
     );
   }
 }

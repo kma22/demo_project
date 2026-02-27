@@ -15,23 +15,20 @@ class AppDatabase extends _$AppDatabase {
   int get schemaVersion => 1;
 
   static QueryExecutor _openConnection() {
-    return driftDatabase(
-      name: 'app_database',
-      native: const DriftNativeOptions(),
-    );
+    return driftDatabase(name: 'app_database', native: const DriftNativeOptions());
   }
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) async {
-          await m.createAll();
-        },
-        onUpgrade: (m, from, to) async {
-          // TODO: Реализовать миграции при изменении схемы таблиц.
-        },
-        beforeOpen: (details) async {
-          // FK enforcement
-          await customStatement('PRAGMA foreign_keys = ON');
-        },
-      );
+    onCreate: (m) async {
+      await m.createAll();
+    },
+    onUpgrade: (m, from, to) async {
+      // TODO: Реализовать миграции при изменении схемы таблиц.
+    },
+    beforeOpen: (details) async {
+      // FK enforcement
+      await customStatement('PRAGMA foreign_keys = ON');
+    },
+  );
 }

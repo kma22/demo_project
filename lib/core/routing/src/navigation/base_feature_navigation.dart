@@ -1,5 +1,3 @@
-
-
 import 'package:auto_route/auto_route.dart';
 
 /// Контракт для кросс-модульной навигации.
@@ -7,5 +5,4 @@ import 'package:auto_route/auto_route.dart';
 /// Подробнее: [NAVIGATION_ARCHITECTURE.md](demo_project/docs/NAVIGATION_ARCHITECTURE.md)
 abstract interface class BaseFeatureNavigation {
   void openChangePasswordFeature(StackRouter router, String email);
-
 }

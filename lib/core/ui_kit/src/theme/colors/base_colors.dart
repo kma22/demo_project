@@ -48,6 +48,10 @@ abstract class BaseColors {
   Color get gray800;
   Color get gray900;
 
+  // --- Shimmer ---
+  Color get shimmerBase;
+  Color get shimmerHighlight;
+
   // --- Brand Variants ---
   Color get primaryVariant;
   Color get accentVariant;

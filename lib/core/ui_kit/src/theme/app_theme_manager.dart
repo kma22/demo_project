@@ -23,8 +23,7 @@ class AppThemeManager {
   final _themeTypeController = ValueNotifier<AppThemeType>(AppThemeType.system);
   final _themeData = AppThemeData();
 
-  Brightness _platformBrightness =
-      WidgetsBinding.instance.platformDispatcher.platformBrightness;
+  Brightness _platformBrightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
 
   void init() {
     final themeName = _localStorage.getTheme();
@@ -46,13 +45,13 @@ class AppThemeManager {
   }
 
   ThemeData get currentThemeData => switch (_themeTypeController.value) {
-        AppThemeType.system => _getSystemTheme(),
-        AppThemeType.dark => _themeData.getTheme(ThemeDataType.dark),
-        AppThemeType.light => _themeData.getTheme(ThemeDataType.light),
-      };
+    AppThemeType.system => _getSystemTheme(),
+    AppThemeType.dark => _themeData.getTheme(ThemeDataType.dark),
+    AppThemeType.light => _themeData.getTheme(ThemeDataType.light),
+  };
 
   ThemeData _getSystemTheme() => switch (_platformBrightness) {
-        Brightness.dark => _themeData.getTheme(ThemeDataType.dark),
-        Brightness.light => _themeData.getTheme(ThemeDataType.light),
-      };
+    Brightness.dark => _themeData.getTheme(ThemeDataType.dark),
+    Brightness.light => _themeData.getTheme(ThemeDataType.light),
+  };
 }

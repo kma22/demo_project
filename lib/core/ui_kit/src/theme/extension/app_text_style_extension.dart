@@ -53,10 +53,7 @@ class AppTextStyleExtension extends ThemeExtension<AppTextStyleExtension> {
   }
 
   @override
-  AppTextStyleExtension lerp(
-    covariant ThemeExtension<AppTextStyleExtension>? other,
-    double t,
-  ) {
+  AppTextStyleExtension lerp(covariant ThemeExtension<AppTextStyleExtension>? other, double t) {
     if (other is! AppTextStyleExtension) return this;
     return AppTextStyleExtension(
       display: TextStyle.lerp(display, other.display, t)!,

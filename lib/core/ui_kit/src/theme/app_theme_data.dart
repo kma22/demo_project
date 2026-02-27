@@ -87,19 +87,12 @@ class AppThemeData {
         ),
       ),
 
-      dividerTheme: DividerThemeData(
-        color: colors.divider,
-        thickness: 1,
-        space: 1,
-      ),
+      dividerTheme: DividerThemeData(color: colors.divider, thickness: 1, space: 1),
 
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: colors.surface,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: layout.s16,
-          vertical: layout.s12,
-        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: layout.s16, vertical: layout.s12),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(layout.r8),
           borderSide: BorderSide(color: colors.border),
@@ -135,13 +128,8 @@ class AppThemeData {
           disabledBackgroundColor: colors.disabled,
           disabledForegroundColor: colors.textDisabled,
           textStyle: textStyles.labelL,
-          padding: EdgeInsets.symmetric(
-            horizontal: layout.s24,
-            vertical: layout.s12,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(layout.r8),
-          ),
+          padding: EdgeInsets.symmetric(horizontal: layout.s24, vertical: layout.s12),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(layout.r8)),
           elevation: 0,
         ),
       ),
@@ -151,13 +139,8 @@ class AppThemeData {
           foregroundColor: colors.primary,
           disabledForegroundColor: colors.textDisabled,
           textStyle: textStyles.labelL,
-          padding: EdgeInsets.symmetric(
-            horizontal: layout.s24,
-            vertical: layout.s12,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(layout.r8),
-          ),
+          padding: EdgeInsets.symmetric(horizontal: layout.s24, vertical: layout.s12),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(layout.r8)),
           side: BorderSide(color: colors.border),
         ),
       ),
@@ -167,13 +150,8 @@ class AppThemeData {
           foregroundColor: colors.primary,
           disabledForegroundColor: colors.textDisabled,
           textStyle: textStyles.labelL,
-          padding: EdgeInsets.symmetric(
-            horizontal: layout.s16,
-            vertical: layout.s8,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(layout.r8),
-          ),
+          padding: EdgeInsets.symmetric(horizontal: layout.s16, vertical: layout.s8),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(layout.r8)),
         ),
       ),
 
@@ -183,29 +161,20 @@ class AppThemeData {
         disabledColor: colors.disabled,
         labelStyle: textStyles.labelM,
         side: BorderSide.none,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(layout.r8),
-        ),
-        padding: EdgeInsets.symmetric(
-          horizontal: layout.s12,
-          vertical: layout.s4,
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(layout.r8)),
+        padding: EdgeInsets.symmetric(horizontal: layout.s12, vertical: layout.s4),
       ),
 
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: colors.surfaceElevated,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(layout.r16),
-          ),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(layout.r16)),
         ),
       ),
 
       dialogTheme: DialogThemeData(
         backgroundColor: colors.surfaceElevated,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(layout.r16),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(layout.r16)),
         titleTextStyle: textStyles.h3.copyWith(color: colors.textPrimary),
         contentTextStyle: textStyles.bodyM.copyWith(color: colors.textSecondary),
       ),
@@ -294,6 +263,8 @@ class AppThemeData {
           gray700: colors.gray700,
           gray800: colors.gray800,
           gray900: colors.gray900,
+          shimmerBase: colors.shimmerBase,
+          shimmerHighlight: colors.shimmerHighlight,
           primaryVariant: colors.primaryVariant,
           accentVariant: colors.accentVariant,
         ),

@@ -1,49 +1,99 @@
 # Flutter Demo Project: Pure Modular Architecture
 
-Данный проект является демонстрацией современного подхода к разработке на Flutter с использованием **чистой модульной архитектуры**.
+Демо-проект, демонстрирующий production-ready подход к разработке на Flutter
+с чистой модульной архитектурой. Основная цель -- показать архитектурные решения,
+позволяющие масштабировать приложение на неограниченное количество независимых модулей.
 
-## Концепция и модульность
-Проект спроектирован с учетом строгой модульности. Основная цель — показать архитектурные подходы, позволяющие масштабировать приложение на неограниченное количество независимых модулей (фич).
-
-> **Важно:** На текущем этапе реализован фундамент и архитектурные контракты (Core-слой, навигация, API-клиент). Слой функциональных модулей (`features`) подготовлен к наполнению бизнес-логикой согласно описанным архитектурным правилам.
+> На текущем этапе реализован фундамент и архитектурные контракты (Core-слой, навигация,
+> API-клиент, UI Kit, локализация, session management). Слой функциональных модулей
+> (`features/`) подготовлен к наполнению бизнес-логикой.
 
 ## Стек технологий
-В проекте используются следующие инструменты:
 
-- **State Management:** `flutter_bloc` для предсказуемой бизнес-логики.
-- **Dependency Injection:** `get_it` в связке с `injectable` для автоматической регистрации зависимостей.
-- **Navigation:** `auto_route` с логикой «Оркестратора», разделяющей описание маршрутов и их реализацию.
-- **Networking:** `dio` с кастомной обработкой ошибок и интерцепторами.
-- **Local Storage:** `drift` (SQLite) для реактивного хранения данных и `flutter_secure_storage` для токенов.
-- **Logging:** `talker` для детального мониторинга логов, сетевых запросов и ошибок.
+| Категория            | Инструменты                                                                         |
+|----------------------|-------------------------------------------------------------------------------------|
+| State Management     | `flutter_bloc`, `provider`, `ValueNotifier`                                         |
+| Dependency Injection | `get_it` + `injectable`                                                             |
+| Navigation           | `auto_route` (паттерн "Оркестратор")                                                |
+| Networking           | `dio` с доменными исключениями и интерцепторами                                     |
+| Local Storage        | `drift` (SQLite), `flutter_secure_storage`, `shared_preferences`                    |
+| UI Kit               | Theme extensions, дизайн-токены, Google Fonts (Inter)                               |
+| Localization         | `flutter gen-l10n`, ARB-файлы (ru/en)                                               |
+| Logging              | `talker` + `talker_dio_logger` + `talker_flutter`                                   |
+| Code Generation      | `build_runner`, `flutter_gen_runner`, `auto_route_generator`, `injectable_generator` |
+| Linting              | `flutter_lints`                                                                     |
 
 ## Структура проекта
-Приложение разделено на три ключевых слоя:
 
-1. **App Layer (`lib/app/`)**: «Верхушка» приложения. Содержит точку входа, конфигурацию DI и главный роутер, который склеивает проект воедино.
-2. **Core Layer (`lib/core/`)**: Базис приложения. Здесь реализованы общие сервисы: API-клиент, база данных, логирование, работа с конфигурациями. Модули ядра не зависят от фич.
-3. **Features Layer (`lib/features/`)**: Функциональные модули. Каждый модуль автономен и взаимодействует с другими только через интерфейсы, определенные в Core.
+```
+lib/
+  main.dart                     # Единая точка входа (env через --dart-define)
+  app/
+    di/                         # Глобальный DI (injectable)
+    router/                     # AppRouter + FeatureNavigation
+    session/                    # Session management, декларативный роутинг
+  core/
+    api_client/                 # Dio-обертка, интерцепторы, доменные исключения
+    environment_data/           # Dev/Prod конфигурации
+    gen/                        # flutter_gen (типобезопасные ассеты)
+    l10n/                       # Локализация (ARB, generated, extensions)
+    local_storage/              # Drift DB, Secure Storage
+    logger_manager/             # Talker, кастомные log-типы
+    routing/                    # BaseFeatureNavigation (контракты)
+    ui_kit/                     # Тема, токены, виджеты
+  features/
+    auth/                       # Авторизация
+    home/                       # Главный экран
+```
 
-## Правила разработки
-Для поддержания качества кода соблюдаются следующие правила:
+Подробнее о каждом слое -- в [docs/LAYERS_ARCHITECTURE.md](docs/LAYERS_ARCHITECTURE.md).
 
-- **Dependency Inversion:** Модули зависят от абстракций (интерфейсов) из Core, а не от конкретных реализаций.
-- **Error Handling:** Ошибки сетевого и системного уровней маппятся в доменные исключения перед тем, как попасть в UI/BLoC.
-- **Strict Linting:** Применение строгих правил линтера для обеспечения единообразия кода.
-- **Code Generation:** Активное использование `build_runner` для генерации роутов, DI и сериализации (минимизирует риск человеческой ошибки).
+## Документация
 
-## Как запустить
+- [Архитектура слоев](docs/LAYERS_ARCHITECTURE.md) -- App / Core / Features, граф зависимостей, модульность
+- [Навигация](docs/NAVIGATION_ARCHITECTURE.md) -- паттерн "Оркестратор", BaseFeatureNavigation
+- [Сетевой слой](docs/API_CLIENT_ARCHITECTURE.md) -- ApiClient, SessionObserver, обработка ошибок
+- [Локальное хранилище](docs/DRIFT_ARCHITECTURE.md) -- Drift DB, миграции
+- [UI Kit и темы](docs/UI_THEME_ARCHITECTURE.md) -- ThemeExtension, дизайн-токены, ThemeManager
+- [Локализация](docs/L10N_ARCHITECTURE.md) -- ARB-конвенции, структура, миграция на multi-package
 
-### Использование Makefile (рекомендуется)
+## Setup
+
+**Requirements:** Flutter SDK ^3.9.2
+
+**Шаги:**
+
+1. `flutter pub get` -- установить зависимости
+2. `make generate` -- сгенерировать код (DI, роуты, drift, ассеты)
+3. `make l10n` -- сгенерировать локализацию
+4. `make run-dev` -- запустить в dev-окружении
+
+Или одной командой: `make rebuild && make run-dev`.
+
+## Make-команды
+
 ```bash
-make run-dev         # Запуск в dev-окружении
-make run-prod        # Запуск в prod-окружении
-make generate        # Генерация кода (build_runner)
-make rebuild         # Полная пересборка (clean -> get -> generate)
+make run-dev          # Запуск в dev-окружении
+make run-prod         # Запуск в prod-окружении
+make generate         # Генерация кода (build_runner)
+make l10n             # Генерация локализации (flutter gen-l10n)
+make analyze          # Статический анализ
+make format           # Форматирование (dart format --line-length=100)
+make test             # Запуск тестов
+make rebuild          # Полная пересборка (clean -> get -> l10n -> generate)
 ```
 
 ### Настройка окружения
-Параметры окружения (Base URL и др.) настраиваются в `lib/core/environment_data/` и могут быть переопределены через `--dart-define`.
 
----
-*Концепция конкретного приложения будет добавлена в этот раздел позже.*
+Параметры окружения (Base URL и др.) настраиваются в `lib/core/environment_data/`.
+Окружение задается через `--dart-define=ENV=dev|prod`.
+
+## Работа с Git
+
+Перед созданием merge request:
+
+1. `make format` -- убедиться, что код отформатирован
+2. `make analyze` -- убедиться, что нет ошибок и warnings
+3. `make generate` -- если менялись аннотации (DI, роуты, drift)
+4. `make l10n` -- если менялись ARB-файлы
+5. Проверить, что barrel-файлы актуальны -- новые публичные классы экспортированы

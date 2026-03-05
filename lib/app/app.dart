@@ -19,12 +19,14 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   final _appRouter = AppRouter();
   final _themeManager = GetIt.I<AppThemeManager>();
+  final _sessionCubit = GetIt.I<SessionCubit>();
   final _logger = GetIt.I<AppLogger>();
 
   @override
   void initState() {
     super.initState();
     _themeManager.init();
+    _sessionCubit.init();
   }
 
   @override
@@ -46,10 +48,7 @@ class _AppState extends State<App> {
           builder: (context, widget) {
             return Provider<AppThemeManager>.value(
               value: _themeManager,
-              child: BlocProvider<SessionCubit>.value(
-                value: GetIt.I<SessionCubit>(),
-                child: widget,
-              ),
+              child: BlocProvider<SessionCubit>.value(value: _sessionCubit, child: widget),
             );
           },
         );

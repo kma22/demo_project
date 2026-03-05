@@ -17,13 +17,11 @@ class SessionCubit extends Cubit<SessionState> {
   final BaseSessionRepository _sessionRepository;
   final AppLogger _logger;
 
-  SessionCubit(this._sessionRepository, this._logger) : super(const SessionLoadingState()) {
-    _init();
-  }
+  SessionCubit(this._sessionRepository, this._logger) : super(const SessionLoadingState());
 
   StreamSubscription<void>? _sessionSub;
 
-  Future<void> _init() async {
+  Future<void> init() async {
     _sessionSub = _sessionRepository.onSessionExpired.listen((_) => _handleSessionExpired());
 
     try {
@@ -36,7 +34,7 @@ class SessionCubit extends Cubit<SessionState> {
         _logger.info('No saved session', runtimeType: runtimeType);
       }
     } on Object catch (e, st) {
-      _logger.error(runtimeType: runtimeType, operation: '_init', exc: e, st: st);
+      _logger.error(runtimeType: runtimeType, operation: 'init', exc: e, st: st);
       emit(const UnauthenticatedState());
     }
   }

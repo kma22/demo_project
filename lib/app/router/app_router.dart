@@ -24,15 +24,11 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: SplashRoute.page),
         AutoRoute(
           page: UnauthenticatedContainerRoute.page,
-          children: [
-            AutoRoute(page: LoginRoute.page, initial: true),
-          ],
+          children: [AutoRoute(page: LoginRoute.page, initial: true)],
         ),
         AutoRoute(
           page: AuthenticatedContainerRoute.page,
-          children: [
-            AutoRoute(page: HomeRoute.page, initial: true),
-          ],
+          children: [AutoRoute(page: HomeRoute.page, initial: true)],
         ),
       ],
     ),

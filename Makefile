@@ -1,4 +1,4 @@
-.PHONY: run-dev run-prod build-dev build-prod get l10n generate analyze format
+.PHONY: run-dev run-prod build-dev build-prod get l10n generate analyze format test
 
 # Запуск в Dev режиме
 run-dev:
@@ -35,6 +35,10 @@ analyze:
 # Форматирование всех Dart-файлов
 format:
 	dart format --line-length=100 lib/
+
+# Запуск всех тестов
+test:
+	flutter test
 
 # Полная очистка и пересборка
 rebuild:

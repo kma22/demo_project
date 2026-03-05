@@ -1,20 +1,20 @@
-.PHONY: run-dev run-prod build-dev build-prod get l10n generate analyze format
+.PHONY: run-dev run-prod build-dev build-prod get l10n generate analyze format test
 
 # Запуск в Dev режиме
 run-dev:
-	flutter run -t lib/main_dev.dart --dart-define=ENV=dev
+	flutter run --dart-define=ENV=dev
 
 # Запуск в Prod режиме
 run-prod:
-	flutter run -t lib/main_prod.dart --dart-define=ENV=prod
+	flutter run --dart-define=ENV=prod
 
 # Сборка Dev APK
 build-dev-apk:
-	flutter build apk -t lib/main_dev.dart --dart-define=ENV=dev
+	flutter build apk --dart-define=ENV=dev
 
 # Сборка Prod APK
 build-prod-apk:
-	flutter build apk -t lib/main_prod.dart --dart-define=ENV=prod
+	flutter build apk --dart-define=ENV=prod
 
 # Получение зависимостей
 get:
@@ -35,6 +35,10 @@ analyze:
 # Форматирование всех Dart-файлов
 format:
 	dart format --line-length=100 lib/
+
+# Запуск всех тестов
+test:
+	flutter test
 
 # Полная очистка и пересборка
 rebuild:

@@ -10,6 +10,12 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:demo_project/app/router/feature_navigation.dart' as _i614;
+import 'package:demo_project/app/session/data/session_repository.dart' as _i209;
+import 'package:demo_project/app/session/domain/base_session_repository.dart'
+    as _i899;
+import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart'
+    as _i184;
+import 'package:demo_project/core/api_client/api_client.dart' as _i112;
 import 'package:demo_project/core/api_client/src/api_client.dart' as _i799;
 import 'package:demo_project/core/api_client/src/base_api_client.dart' as _i517;
 import 'package:demo_project/core/api_client/src/di/dio_module.dart' as _i622;
@@ -110,8 +116,20 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i834.SessionObserver>(),
       ),
     );
+    gh.lazySingleton<_i899.BaseSessionRepository>(
+      () => _i209.SessionRepository(
+        gh<_i915.BaseTokenStorage>(),
+        gh<_i112.SessionObserver>(),
+      ),
+    );
     gh.factory<_i517.BaseApiClient>(
       () => _i799.ApiClient(gh<_i361.Dio>(), gh<_i701.AppLogger>()),
+    );
+    gh.lazySingleton<_i184.SessionCubit>(
+      () => _i184.SessionCubit(
+        gh<_i899.BaseSessionRepository>(),
+        gh<_i701.AppLogger>(),
+      ),
     );
     return this;
   }

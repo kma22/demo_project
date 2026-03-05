@@ -16,7 +16,7 @@ barrel-файлы, интерфейсы навигации -- все это ст
 
 Точка сборки. Знает обо всех модулях, никто не знает о нем.
 
-- Инициализация приложения, точки входа (`main_dev.dart`, `main_prod.dart`)
+- Инициализация приложения, единая точка входа (`main.dart`, env через `--dart-define`)
 - Глобальный DI (`injection.dart`)
 - `AppRouter` -- единственный `@AutoRouterConfig`, собирает route tree
 - `FeatureNavigation` -- реализация `BaseFeatureNavigation`, маппит абстрактные вызовы на конкретные маршруты

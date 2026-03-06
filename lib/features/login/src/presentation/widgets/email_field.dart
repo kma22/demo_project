@@ -20,8 +20,8 @@ class EmailField extends StatelessWidget {
     final l10n = context.l10n;
 
     return AppTextField(
-      label: l10n.authEmailLabel,
-      hintText: l10n.authEmailHint,
+      label: l10n.loginEmailLabel,
+      hintText: l10n.loginEmailHint,
       controller: controller,
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
@@ -32,9 +32,9 @@ class EmailField extends StatelessWidget {
       validator: (value) {
         final email = value?.trim() ?? '';
 
-        if (email.isEmpty) return l10n.authEmailEmpty;
+        if (email.isEmpty) return l10n.loginEmailEmpty;
 
-        if (!_emailRegex.hasMatch(email)) return l10n.authEmailInvalid;
+        if (!_emailRegex.hasMatch(email)) return l10n.loginEmailInvalid;
 
         return null;
       },

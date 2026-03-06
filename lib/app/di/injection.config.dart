@@ -52,16 +52,16 @@ import 'package:demo_project/core/routing/src/navigation/base_feature_navigation
     as _i763;
 import 'package:demo_project/core/ui_kit/src/theme/app_theme_manager.dart'
     as _i492;
-import 'package:demo_project/features/auth/src/data/api/base_auth_api_service.dart'
-    as _i691;
-import 'package:demo_project/features/auth/src/data/api/mock_auth_api_service.dart'
-    as _i789;
-import 'package:demo_project/features/auth/src/data/repository/auth_repository.dart'
-    as _i14;
-import 'package:demo_project/features/auth/src/domain/repository/base_auth_repository.dart'
-    as _i555;
-import 'package:demo_project/features/auth/src/presentation/cubit/login_cubit.dart'
-    as _i878;
+import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart'
+    as _i173;
+import 'package:demo_project/features/login/src/data/api/mock_login_api_service.dart'
+    as _i40;
+import 'package:demo_project/features/login/src/data/repository/login_repository.dart'
+    as _i162;
+import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart'
+    as _i133;
+import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart'
+    as _i267;
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
@@ -98,10 +98,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i701.AppLogger>(
       () => _i37.TalkerLogger(gh<_i207.Talker>()),
     );
-    gh.factory<_i691.BaseAuthApiService>(() => _i789.MockAuthApiService());
-    gh.factory<_i555.BaseAuthRepository>(
-      () => _i14.AuthRepository(gh<_i691.BaseAuthApiService>()),
-    );
     gh.factory<_i478.EnvironmentData>(
       () => _i786.DevEnvironmentData(),
       registerFor: {_dev},
@@ -109,6 +105,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i763.BaseFeatureNavigation>(
       () => _i614.FeatureNavigation(),
     );
+    gh.factory<_i173.BaseLoginApiService>(() => _i40.MockLoginApiService());
     gh.factory<_i1035.BaseThemeStorage>(
       () => _i411.ThemeStorage(gh<_i460.SharedPreferences>()),
     );
@@ -119,14 +116,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i88.ProdEnvironmentData(),
       registerFor: {_prod},
     );
-    gh.factory<_i878.LoginCubit>(
-      () => _i878.LoginCubit(
-        gh<_i555.BaseAuthRepository>(),
-        gh<_i701.AppLogger>(),
-      ),
-    );
     gh.factory<_i492.AppThemeManager>(
       () => _i492.AppThemeManager(gh<_i915.BaseThemeStorage>()),
+    );
+    gh.factory<_i133.BaseLoginRepository>(
+      () => _i162.LoginRepository(gh<_i173.BaseLoginApiService>()),
     );
     gh.lazySingleton<_i899.BaseSessionRepository>(
       () => _i209.SessionRepository(
@@ -140,6 +134,12 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i701.AppLogger>(),
         gh<_i281.EnvironmentData>(),
         gh<_i834.SessionObserver>(),
+      ),
+    );
+    gh.factory<_i267.LoginCubit>(
+      () => _i267.LoginCubit(
+        gh<_i133.BaseLoginRepository>(),
+        gh<_i701.AppLogger>(),
       ),
     );
     gh.factory<_i517.BaseApiClient>(

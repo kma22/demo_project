@@ -1,21 +1,21 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:demo_project/core/api_client/api_client.dart';
 import 'package:demo_project/core/logger_manager/logger_manager.dart';
-import 'package:demo_project/features/auth/src/domain/repository/base_auth_repository.dart';
-import 'package:demo_project/features/auth/src/presentation/cubit/login_cubit.dart';
+import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart';
+import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-@GenerateNiceMocks([MockSpec<BaseAuthRepository>(), MockSpec<AppLogger>()])
+@GenerateNiceMocks([MockSpec<BaseLoginRepository>(), MockSpec<AppLogger>()])
 import 'login_cubit_test.mocks.dart';
 
 void main() {
-  late MockBaseAuthRepository mockRepo;
+  late MockBaseLoginRepository mockRepo;
   late MockAppLogger mockLogger;
 
   setUp(() {
-    mockRepo = MockBaseAuthRepository();
+    mockRepo = MockBaseLoginRepository();
     mockLogger = MockAppLogger();
   });
 

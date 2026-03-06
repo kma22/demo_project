@@ -12,18 +12,17 @@
   "commonSearch": "Search",
   "commonNoResults": "No results found",
 
-  "authLoginTitle": "Sign In",
-  "authLoginSubtitle": "Enter your credentials",
-  "authEmailLabel": "Email",
-  "authEmailHint": "example@mail.com",
-  "authPasswordLabel": "Password",
-  "authPasswordHint": "At least 6 characters",
-  "authLoginButton": "Sign In",
-  "authEmailEmpty": "Enter email",
-  "authEmailInvalid": "Invalid email",
-  "authPasswordEmpty": "Enter password",
-  "authPasswordTooShort": "Password less than 6 characters",
-
-  "authNoAccount": "Don't have an account?",
-  "authSignUp": "Sign Up"
+  "loginLoginTitle": "Sign In",
+  "loginLoginSubtitle": "Enter your credentials",
+  "loginEmailLabel": "Email",
+  "loginEmailHint": "example@mail.com",
+  "loginPasswordLabel": "Password",
+  "loginPasswordHint": "At least 6 characters",
+  "loginLoginButton": "Sign In",
+  "loginEmailEmpty": "Enter email",
+  "loginEmailInvalid": "Invalid email",
+  "loginPasswordEmpty": "Enter password",
+  "loginPasswordTooShort": "Password less than 6 characters",
+  "loginNoAccount": "Don't have an account?",
+  "loginSignUp": "Sign Up"
 }

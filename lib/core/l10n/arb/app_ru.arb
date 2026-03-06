@@ -31,42 +31,42 @@
   "commonNoResults": "Ничего не найдено",
   "@commonNoResults": { "description": "Пустой результат поиска" },
 
-  "authLoginTitle": "Вход в аккаунт",
-  "@authLoginTitle": { "description": "Заголовок экрана логина" },
+  "loginLoginTitle": "Вход в аккаунт",
+  "@loginLoginTitle": { "description": "Заголовок экрана логина" },
 
-  "authLoginSubtitle": "Введите данные для входа",
-  "@authLoginSubtitle": { "description": "Подзаголовок экрана логина" },
+  "loginLoginSubtitle": "Введите данные для входа",
+  "@loginLoginSubtitle": { "description": "Подзаголовок экрана логина" },
 
-  "authEmailLabel": "Email",
-  "@authEmailLabel": { "description": "Лейбл поля email" },
+  "loginEmailLabel": "Email",
+  "@loginEmailLabel": { "description": "Лейбл поля email" },
 
-  "authEmailHint": "example@mail.com",
-  "@authEmailHint": { "description": "Подсказка поля email" },
+  "loginEmailHint": "example@mail.com",
+  "@loginEmailHint": { "description": "Подсказка поля email" },
 
-  "authPasswordLabel": "Пароль",
-  "@authPasswordLabel": { "description": "Лейбл поля пароля" },
+  "loginPasswordLabel": "Пароль",
+  "@loginPasswordLabel": { "description": "Лейбл поля пароля" },
 
-  "authPasswordHint": "Минимум 6 символов",
-  "@authPasswordHint": { "description": "Подсказка поля пароля" },
+  "loginPasswordHint": "Минимум 6 символов",
+  "@loginPasswordHint": { "description": "Подсказка поля пароля" },
 
-  "authLoginButton": "Войти",
-  "@authLoginButton": { "description": "Кнопка входа" },
+  "loginLoginButton": "Войти",
+  "@loginLoginButton": { "description": "Кнопка входа" },
 
-  "authEmailEmpty": "Введите email",
-  "@authEmailEmpty": { "description": "Ошибка: пустой email" },
+  "loginEmailEmpty": "Введите email",
+  "@loginEmailEmpty": { "description": "Ошибка: пустой email" },
 
-  "authEmailInvalid": "Некорректный email",
-  "@authEmailInvalid": { "description": "Ошибка: невалидный формат email" },
+  "loginEmailInvalid": "Некорректный email",
+  "@loginEmailInvalid": { "description": "Ошибка: невалидный формат email" },
 
-  "authPasswordEmpty": "Введите пароль",
-  "@authPasswordEmpty": { "description": "Ошибка: пустой пароль" },
+  "loginPasswordEmpty": "Введите пароль",
+  "@loginPasswordEmpty": { "description": "Ошибка: пустой пароль" },
 
-  "authPasswordTooShort": "Пароль менее 6 символов",
-  "@authPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+  "loginPasswordTooShort": "Пароль менее 6 символов",
+  "@loginPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
 
-  "authNoAccount": "Нет аккаунта?",
-  "@authNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
+  "loginNoAccount": "Нет аккаунта?",
+  "@loginNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
 
-  "authSignUp": "Зарегистрироваться",
-  "@authSignUp": { "description": "Ссылка на экран регистрации" }
+  "loginSignUp": "Зарегистрироваться",
+  "@loginSignUp": { "description": "Ссылка на экран регистрации" }
 }

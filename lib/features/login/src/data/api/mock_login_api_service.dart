@@ -1,15 +1,15 @@
 import 'package:demo_project/core/api_client/api_client.dart';
-import 'package:demo_project/features/auth/src/data/api/base_auth_api_service.dart';
-import 'package:demo_project/features/auth/src/data/model/login_request_dto.dart';
-import 'package:demo_project/features/auth/src/data/model/login_response_dto.dart';
+import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart';
+import 'package:demo_project/features/login/src/data/model/login_request_dto.dart';
+import 'package:demo_project/features/login/src/data/model/login_response_dto.dart';
 import 'package:injectable/injectable.dart';
 
 /// Мок-реализация API авторизации.
 ///
 /// Имитирует сетевой запрос с задержкой 1 секунда.
 /// Email `error@test.com` вызывает ошибку для демонстрации.
-@Injectable(as: BaseAuthApiService)
-class MockAuthApiService implements BaseAuthApiService {
+@Injectable(as: BaseLoginApiService)
+class MockLoginApiService implements BaseLoginApiService {
   @override
   Future<LoginResponseDto> login(LoginRequestDto request) async {
     await Future<void>.delayed(const Duration(seconds: 1));

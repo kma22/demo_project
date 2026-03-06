@@ -1,7 +1,7 @@
 import 'package:demo_project/core/l10n/generated/app_localizations.dart';
 import 'package:demo_project/core/ui_kit/src/theme/app_theme_data.dart';
 import 'package:demo_project/core/ui_kit/src/theme/enums/theme_data_type.dart';
-import 'package:demo_project/features/auth/src/presentation/widgets/password_field.dart';
+import 'package:demo_project/features/login/src/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -40,7 +40,7 @@ void main() {
       await pumpPasswordField(tester);
       await tester.pump();
 
-      expect(find.text(l10n.authPasswordEmpty), findsOneWidget);
+      expect(find.text(l10n.loginPasswordEmpty), findsOneWidget);
     });
 
     testWidgets('shows too short error for less than 6 characters', (tester) async {
@@ -49,7 +49,7 @@ void main() {
       await tester.enterText(find.byType(TextFormField), '12345');
       await tester.pump();
 
-      expect(find.text(l10n.authPasswordTooShort), findsOneWidget);
+      expect(find.text(l10n.loginPasswordTooShort), findsOneWidget);
     });
 
     testWidgets('passes validation for 6+ characters', (tester) async {

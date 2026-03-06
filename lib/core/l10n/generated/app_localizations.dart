@@ -157,79 +157,79 @@ abstract class AppLocalizations {
   ///
   /// In ru, this message translates to:
   /// **'Вход в аккаунт'**
-  String get authLoginTitle;
+  String get loginLoginTitle;
 
   /// Подзаголовок экрана логина
   ///
   /// In ru, this message translates to:
   /// **'Введите данные для входа'**
-  String get authLoginSubtitle;
+  String get loginLoginSubtitle;
 
   /// Лейбл поля email
   ///
   /// In ru, this message translates to:
   /// **'Email'**
-  String get authEmailLabel;
+  String get loginEmailLabel;
 
   /// Подсказка поля email
   ///
   /// In ru, this message translates to:
   /// **'example@mail.com'**
-  String get authEmailHint;
+  String get loginEmailHint;
 
   /// Лейбл поля пароля
   ///
   /// In ru, this message translates to:
   /// **'Пароль'**
-  String get authPasswordLabel;
+  String get loginPasswordLabel;
 
   /// Подсказка поля пароля
   ///
   /// In ru, this message translates to:
   /// **'Минимум 6 символов'**
-  String get authPasswordHint;
+  String get loginPasswordHint;
 
   /// Кнопка входа
   ///
   /// In ru, this message translates to:
   /// **'Войти'**
-  String get authLoginButton;
+  String get loginLoginButton;
 
   /// Ошибка: пустой email
   ///
   /// In ru, this message translates to:
   /// **'Введите email'**
-  String get authEmailEmpty;
+  String get loginEmailEmpty;
 
   /// Ошибка: невалидный формат email
   ///
   /// In ru, this message translates to:
   /// **'Некорректный email'**
-  String get authEmailInvalid;
+  String get loginEmailInvalid;
 
   /// Ошибка: пустой пароль
   ///
   /// In ru, this message translates to:
   /// **'Введите пароль'**
-  String get authPasswordEmpty;
+  String get loginPasswordEmpty;
 
   /// Ошибка: слишком короткий пароль
   ///
   /// In ru, this message translates to:
   /// **'Пароль менее 6 символов'**
-  String get authPasswordTooShort;
+  String get loginPasswordTooShort;
 
   /// Текст перед ссылкой на регистрацию
   ///
   /// In ru, this message translates to:
   /// **'Нет аккаунта?'**
-  String get authNoAccount;
+  String get loginNoAccount;
 
   /// Ссылка на экран регистрации
   ///
   /// In ru, this message translates to:
   /// **'Зарегистрироваться'**
-  String get authSignUp;
+  String get loginSignUp;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

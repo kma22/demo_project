@@ -1,5 +1,5 @@
 /// Контракт репозитория авторизации.
-abstract interface class BaseAuthRepository {
+abstract interface class BaseLoginRepository {
   Future<({String accessToken, String refreshToken})> login({
     required String email,
     required String password,

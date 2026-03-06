@@ -1,9 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:demo_project/core/l10n/l10n.dart';
+import 'package:demo_project/core/routing/routing.dart';
 import 'package:demo_project/core/ui_kit/ui_kit.dart';
-import 'package:demo_project/features/auth/src/presentation/cubit/login_cubit.dart';
-import 'package:demo_project/features/auth/src/presentation/widgets/email_field.dart';
-import 'package:demo_project/features/auth/src/presentation/widgets/password_field.dart';
+import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart';
+import 'package:demo_project/features/login/src/presentation/widgets/email_field.dart';
+import 'package:demo_project/features/login/src/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -71,10 +71,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(l10n.authLoginTitle, style: textStyles.h1),
+                          Text(l10n.loginLoginTitle, style: textStyles.h1),
                           SizedBox(height: layout.s8),
                           Text(
-                            l10n.authLoginSubtitle,
+                            l10n.loginLoginSubtitle,
                             style: textStyles.bodyM.copyWith(color: colors.textSecondary),
                           ),
                           SizedBox(height: layout.s32),
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           SizedBox(height: layout.s24),
                           AppButton.primary(
-                            title: l10n.authLoginButton,
+                            title: l10n.loginLoginButton,
                             onTap: _submit,
                             expanded: true,
                             loading: isLoading,
@@ -103,17 +103,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                l10n.authNoAccount,
+                                l10n.loginNoAccount,
                                 style: textStyles.bodyM.copyWith(color: colors.textSecondary),
                               ),
                               TextButton(
                                 onPressed: isLoading
                                     ? null
                                     : () {
-                                        //TODO(auth): navigate to registration screen
+                                        //TODO(registration): navigate to registration screen
                                       },
                                 child: Text(
-                                  l10n.authSignUp,
+                                  l10n.loginSignUp,
                                   style: textStyles.labelL.copyWith(color: colors.primary),
                                 ),
                               ),

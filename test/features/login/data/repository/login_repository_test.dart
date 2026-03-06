@@ -1,21 +1,21 @@
-import 'package:demo_project/features/auth/src/data/api/base_auth_api_service.dart';
-import 'package:demo_project/features/auth/src/data/model/login_request_dto.dart';
-import 'package:demo_project/features/auth/src/data/model/login_response_dto.dart';
-import 'package:demo_project/features/auth/src/data/repository/auth_repository.dart';
+import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart';
+import 'package:demo_project/features/login/src/data/model/login_request_dto.dart';
+import 'package:demo_project/features/login/src/data/model/login_response_dto.dart';
+import 'package:demo_project/features/login/src/data/repository/login_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-@GenerateNiceMocks([MockSpec<BaseAuthApiService>()])
-import 'auth_repository_test.mocks.dart';
+@GenerateNiceMocks([MockSpec<BaseLoginApiService>()])
+import 'login_repository_test.mocks.dart';
 
 void main() {
-  late MockBaseAuthApiService mockApiService;
-  late AuthRepository repository;
+  late MockBaseLoginApiService mockApiService;
+  late LoginRepository repository;
 
   setUp(() {
-    mockApiService = MockBaseAuthApiService();
-    repository = AuthRepository(mockApiService);
+    mockApiService = MockBaseLoginApiService();
+    repository = LoginRepository(mockApiService);
   });
 
   group('AuthRepository', () {

@@ -30,8 +30,8 @@ class _PasswordFieldState extends State<PasswordField> {
     final colors = context.colors;
 
     return AppTextField(
-      label: l10n.authPasswordLabel,
-      hintText: l10n.authPasswordHint,
+      label: l10n.loginPasswordLabel,
+      hintText: l10n.loginPasswordHint,
       controller: widget.controller,
       focusNode: widget.focusNode,
       obscureText: _obscure,
@@ -51,9 +51,9 @@ class _PasswordFieldState extends State<PasswordField> {
       validator: (value) {
         final password = value ?? '';
 
-        if (password.isEmpty) return l10n.authPasswordEmpty;
+        if (password.isEmpty) return l10n.loginPasswordEmpty;
 
-        if (password.length < _minLength) return l10n.authPasswordTooShort;
+        if (password.length < _minLength) return l10n.loginPasswordTooShort;
 
         return null;
       },

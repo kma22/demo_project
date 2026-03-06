@@ -1,7 +1,7 @@
 import 'package:demo_project/core/l10n/generated/app_localizations.dart';
 import 'package:demo_project/core/ui_kit/src/theme/app_theme_data.dart';
 import 'package:demo_project/core/ui_kit/src/theme/enums/theme_data_type.dart';
-import 'package:demo_project/features/auth/src/presentation/widgets/email_field.dart';
+import 'package:demo_project/features/login/src/presentation/widgets/email_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -40,7 +40,7 @@ void main() {
       await pumpEmailField(tester);
       await tester.pump();
 
-      expect(find.text(l10n.authEmailEmpty), findsOneWidget);
+      expect(find.text(l10n.loginEmailEmpty), findsOneWidget);
     });
 
     testWidgets('shows invalid error for email without @', (tester) async {
@@ -49,7 +49,7 @@ void main() {
       await tester.enterText(find.byType(TextFormField), 'userexample.com');
       await tester.pump();
 
-      expect(find.text(l10n.authEmailInvalid), findsOneWidget);
+      expect(find.text(l10n.loginEmailInvalid), findsOneWidget);
     });
 
     testWidgets('shows invalid error for email without domain', (tester) async {
@@ -58,7 +58,7 @@ void main() {
       await tester.enterText(find.byType(TextFormField), 'user@');
       await tester.pump();
 
-      expect(find.text(l10n.authEmailInvalid), findsOneWidget);
+      expect(find.text(l10n.loginEmailInvalid), findsOneWidget);
     });
 
     testWidgets('passes validation for valid email', (tester) async {

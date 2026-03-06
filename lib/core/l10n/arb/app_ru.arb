@@ -1,0 +1,147 @@
+{
+  "@@locale": "ru",
+
+  "commonRetry": "Повторить",
+  "@commonRetry": { "description": "Кнопка повторной попытки" },
+
+  "commonError": "Произошла ошибка",
+  "@commonError": { "description": "Общее сообщение об ошибке" },
+
+  "commonLoading": "Загрузка…",
+  "@commonLoading": { "description": "Текст состояния загрузки" },
+
+  "commonCancel": "Отмена",
+  "@commonCancel": { "description": "Кнопка отмены" },
+
+  "commonSave": "Сохранить",
+  "@commonSave": { "description": "Кнопка сохранения" },
+
+  "commonDelete": "Удалить",
+  "@commonDelete": { "description": "Кнопка удаления" },
+
+  "commonEdit": "Редактировать",
+  "@commonEdit": { "description": "Кнопка редактирования" },
+
+  "commonClose": "Закрыть",
+  "@commonClose": { "description": "Кнопка закрытия" },
+
+  "commonSearch": "Поиск",
+  "@commonSearch": { "description": "Поле/кнопка поиска" },
+
+  "commonNoResults": "Ничего не найдено",
+  "@commonNoResults": { "description": "Пустой результат поиска" },
+
+  "loginLoginTitle": "Вход в аккаунт",
+  "@loginLoginTitle": { "description": "Заголовок экрана логина" },
+
+  "loginLoginSubtitle": "Введите данные для входа",
+  "@loginLoginSubtitle": { "description": "Подзаголовок экрана логина" },
+
+  "loginEmailLabel": "Email",
+  "@loginEmailLabel": { "description": "Лейбл поля email" },
+
+  "loginEmailHint": "example@mail.com",
+  "@loginEmailHint": { "description": "Подсказка поля email" },
+
+  "loginPasswordLabel": "Пароль",
+  "@loginPasswordLabel": { "description": "Лейбл поля пароля" },
+
+  "loginPasswordHint": "Минимум 6 символов",
+  "@loginPasswordHint": { "description": "Подсказка поля пароля" },
+
+  "loginLoginButton": "Войти",
+  "@loginLoginButton": { "description": "Кнопка входа" },
+
+  "loginEmailEmpty": "Введите email",
+  "@loginEmailEmpty": { "description": "Ошибка: пустой email" },
+
+  "loginEmailInvalid": "Некорректный email",
+  "@loginEmailInvalid": { "description": "Ошибка: невалидный формат email" },
+
+  "loginPasswordEmpty": "Введите пароль",
+  "@loginPasswordEmpty": { "description": "Ошибка: пустой пароль" },
+
+  "loginPasswordTooShort": "Пароль менее 6 символов",
+  "@loginPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+
+  "loginNoAccount": "Нет аккаунта?",
+  "@loginNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
+
+  "loginSignUp": "Зарегистрироваться",
+  "@loginSignUp": { "description": "Ссылка на экран регистрации" },
+
+  "registrationTitle": "Регистрация",
+  "@registrationTitle": { "description": "Заголовок экрана регистрации" },
+
+  "registrationSubtitle": "Создайте аккаунт",
+  "@registrationSubtitle": { "description": "Подзаголовок экрана регистрации" },
+
+  "registrationEmailLabel": "Email",
+  "@registrationEmailLabel": { "description": "Лейбл поля email" },
+
+  "registrationEmailHint": "example@mail.com",
+  "@registrationEmailHint": { "description": "Подсказка поля email" },
+
+  "registrationPasswordLabel": "Пароль",
+  "@registrationPasswordLabel": { "description": "Лейбл поля пароля" },
+
+  "registrationPasswordHint": "Минимум 6 символов",
+  "@registrationPasswordHint": { "description": "Подсказка поля пароля" },
+
+  "registrationConfirmPasswordLabel": "Подтвердите пароль",
+  "@registrationConfirmPasswordLabel": { "description": "Лейбл поля подтверждения пароля" },
+
+  "registrationConfirmPasswordHint": "Повторите пароль",
+  "@registrationConfirmPasswordHint": { "description": "Подсказка поля подтверждения пароля" },
+
+  "registrationButton": "Зарегистрироваться",
+  "@registrationButton": { "description": "Кнопка регистрации" },
+
+  "registrationEmailEmpty": "Введите email",
+  "@registrationEmailEmpty": { "description": "Ошибка: пустой email" },
+
+  "registrationEmailInvalid": "Некорректный email",
+  "@registrationEmailInvalid": { "description": "Ошибка: невалидный формат email" },
+
+  "registrationPasswordEmpty": "Введите пароль",
+  "@registrationPasswordEmpty": { "description": "Ошибка: пустой пароль" },
+
+  "registrationPasswordTooShort": "Пароль менее 6 символов",
+  "@registrationPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+
+  "registrationPasswordNoUppercase": "Нужна хотя бы одна заглавная буква",
+  "@registrationPasswordNoUppercase": { "description": "Ошибка: нет заглавной буквы" },
+
+  "registrationPasswordNoLowercase": "Нужна хотя бы одна строчная буква",
+  "@registrationPasswordNoLowercase": { "description": "Ошибка: нет строчной буквы" },
+
+  "registrationPasswordNoDigit": "Нужна хотя бы одна цифра",
+  "@registrationPasswordNoDigit": { "description": "Ошибка: нет цифры" },
+
+  "registrationConfirmPasswordEmpty": "Подтвердите пароль",
+  "@registrationConfirmPasswordEmpty": { "description": "Ошибка: пустое подтверждение пароля" },
+
+  "registrationPasswordsDoNotMatch": "Пароли не совпадают",
+  "@registrationPasswordsDoNotMatch": { "description": "Ошибка: пароли не совпадают" },
+
+  "registrationHaveAccount": "Уже есть аккаунт?",
+  "@registrationHaveAccount": { "description": "Текст перед ссылкой на вход" },
+
+  "registrationSignIn": "Войти",
+  "@registrationSignIn": { "description": "Ссылка на экран входа" },
+
+  "homeTitle": "Главная",
+  "@homeTitle": { "description": "Заголовок главного экрана" },
+
+  "profileTitle": "Профиль",
+  "@profileTitle": { "description": "Заголовок экрана профиля" },
+
+  "profileLogout": "Выйти из аккаунта",
+  "@profileLogout": { "description": "Кнопка выхода из аккаунта" },
+
+  "bottomNavHome": "Главная",
+  "@bottomNavHome": { "description": "Таб главного экрана" },
+
+  "bottomNavProfile": "Профиль",
+  "@bottomNavProfile": { "description": "Таб профиля" }
+}

@@ -168,9 +168,14 @@ class SettingsContainerScreen extends StatelessWidget {
   линейно и контролируемо.
 - **Читаемость.** `openRegistrationFeature(router)` понятнее, чем
   `navigate(router, RegistrationDestination(), Push())`.
+- **ISP (Interface Segregation Principle).** Один жирный сервис с десятками методов --
+  тоже не выход. При росте проекта `BaseFeatureNavigation` можно разделить на несколько
+  узких интерфейсов по смыслу: `AuthNavigation`, `SettingsNavigation`,
+  `InspectionsNavigation`. Каждый модуль зависит только от нужного контракта,
+  а реализация в `FeatureNavigation` имплементирует их все.
 
 Если количество фич вырастет до уровня, когда список методов станет неуправляемым --
-пересмотреть решение.
+пересмотреть решение в пользу ISP-декомпозиции.
 
 ---
 

@@ -7,8 +7,7 @@ import 'package:injectable/injectable.dart';
 /// Мок-реализация API авторизации.
 ///
 /// Имитирует сетевой запрос с задержкой 1 секунда.
-/// Для демонстрации обработки ошибок: email `error@test.com` вызывает ошибку.
-/// Любые другие валидные данные -- успешный логин.
+/// Email `error@test.com` вызывает ошибку для демонстрации.
 @Injectable(as: BaseAuthApiService)
 class MockAuthApiService implements BaseAuthApiService {
   @override

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
+/// Экран авторизации с формой email/пароль.
 @RoutePage()
 class LoginScreen extends StatefulWidget implements AutoRouteWrapper {
   final void Function(String, String) onSuccess;

@@ -25,8 +25,7 @@ class SessionContainerScreen extends StatelessWidget {
               UnauthenticatedContainerRoute(
                 children: [LoginRoute(onSuccess: sessionCubit.onLoginSuccess)],
               ),
-            if (state is AuthenticatedState)
-              AuthenticatedContainerRoute(children: [HomeRoute(onLogout: sessionCubit.logout)]),
+            if (state is AuthenticatedState) const AuthenticatedContainerRoute(),
           ],
         );
       },

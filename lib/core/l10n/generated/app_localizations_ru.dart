@@ -136,4 +136,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get registrationSignIn => 'Войти';
+
+  @override
+  String get homeTitle => 'Главная';
+
+  @override
+  String get profileTitle => 'Профиль';
+
+  @override
+  String get profileLogout => 'Выйти из аккаунта';
+
+  @override
+  String get bottomNavHome => 'Главная';
+
+  @override
+  String get bottomNavProfile => 'Профиль';
 }

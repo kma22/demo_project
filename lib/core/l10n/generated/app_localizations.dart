@@ -350,6 +350,36 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Войти'**
   String get registrationSignIn;
+
+  /// Заголовок главного экрана
+  ///
+  /// In ru, this message translates to:
+  /// **'Главная'**
+  String get homeTitle;
+
+  /// Заголовок экрана профиля
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get profileTitle;
+
+  /// Кнопка выхода из аккаунта
+  ///
+  /// In ru, this message translates to:
+  /// **'Выйти из аккаунта'**
+  String get profileLogout;
+
+  /// Таб главного экрана
+  ///
+  /// In ru, this message translates to:
+  /// **'Главная'**
+  String get bottomNavHome;
+
+  /// Таб профиля
+  ///
+  /// In ru, this message translates to:
+  /// **'Профиль'**
+  String get bottomNavProfile;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

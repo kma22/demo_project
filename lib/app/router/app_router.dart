@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:demo_project/app/navigation/bottom_navigation_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/authenticated_container_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/session_container_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/splash_screen.dart';
@@ -6,6 +7,7 @@ import 'package:demo_project/app/session/presentation/screens/unauthenticated_co
 import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:demo_project/features/home/home.dart';
 import 'package:demo_project/features/login/login.dart';
+import 'package:demo_project/features/profile/profile.dart';
 import 'package:demo_project/features/registration/registration.dart';
 import 'package:flutter/foundation.dart';
 
@@ -32,7 +34,16 @@ class AppRouter extends RootStackRouter {
         ),
         AutoRoute(
           page: AuthenticatedContainerRoute.page,
-          children: [AutoRoute(page: HomeRoute.page, initial: true)],
+          children: [
+            AutoRoute(
+              page: BottomNavigationRoute.page,
+              initial: true,
+              children: [
+                AutoRoute(page: HomeRoute.page, initial: true),
+                AutoRoute(page: ProfileRoute.page),
+              ],
+            ),
+          ],
         ),
       ],
     ),

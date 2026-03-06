@@ -1,5 +1,3 @@
-import 'dart:async';
-
 /// Контракт сетевого клиента.
 abstract interface class BaseApiClient {
   Future<T> get<T>({required String path, Map<String, dynamic>? queryParameters});

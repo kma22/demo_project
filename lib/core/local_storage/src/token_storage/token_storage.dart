@@ -67,6 +67,6 @@ class TokenStorage implements BaseTokenStorage {
   @override
   Future<void> clear() async {
     _cachedTokens = null;
-    await Future.wait([_secureStorage.delete(key: StorageKeys.token)]);
+    await _secureStorage.delete(key: StorageKeys.token);
   }
 }

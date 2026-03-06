@@ -106,10 +106,9 @@ class ApiClient implements BaseApiClient {
       );
       rethrow;
     }
-    throw Exception('Unexpected Exception');
   }
 
-  void _handleDioException(DioException e) {
+  Never _handleDioException(DioException e) {
     final errorMessage = _processErrorMessage(e);
     final errorCode = _processErrorCode(e);
     const timeoutErrorMessage = 'Request timed out. Please check your connection and try again.';

@@ -18,14 +18,14 @@ class AppThemeData {
     ThemeDataType.light => AppLightColors(),
   };
 
-  BaseTextStyles get _getTextStyles => AppTextStyles();
+  BaseTextStyles get _textStyles => AppTextStyles();
 
-  BaseLayout get _getLayout => AppLayout();
+  BaseLayout get _layout => AppLayout();
 
   ThemeData getTheme(ThemeDataType type) {
     final colors = _getColors(type);
-    final textStyles = _getTextStyles;
-    final layout = _getLayout;
+    final textStyles = _textStyles;
+    final layout = _layout;
     final isDark = type == ThemeDataType.dark;
 
     final colorScheme = ColorScheme(

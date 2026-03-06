@@ -28,6 +28,7 @@ class _PasswordFieldState extends State<PasswordField> {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final colors = context.colors;
+    final layout = context.layout;
 
     return AppTextField(
       label: l10n.loginPasswordLabel,
@@ -45,7 +46,7 @@ class _PasswordFieldState extends State<PasswordField> {
         icon: Icon(
           _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
           color: colors.textTertiary,
-          size: 20,
+          size: layout.s20,
         ),
       ),
       validator: (value) {

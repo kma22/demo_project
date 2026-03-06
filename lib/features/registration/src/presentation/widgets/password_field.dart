@@ -40,6 +40,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
+    final layout = context.layout;
 
     return AppTextField(
       label: widget.label,
@@ -59,7 +60,7 @@ class _PasswordFieldState extends State<PasswordField> {
         icon: Icon(
           _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
           color: colors.textTertiary,
-          size: 20,
+          size: layout.s20,
         ),
       ),
     );

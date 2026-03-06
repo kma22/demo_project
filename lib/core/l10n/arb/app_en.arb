@@ -22,5 +22,8 @@
   "authEmailEmpty": "Enter email",
   "authEmailInvalid": "Invalid email",
   "authPasswordEmpty": "Enter password",
-  "authPasswordTooShort": "At least 6 characters"
+  "authPasswordTooShort": "At least 6 characters",
+
+  "authNoAccount": "Don't have an account?",
+  "authSignUp": "Sign Up"
 }

@@ -62,5 +62,11 @@
   "@authPasswordEmpty": { "description": "Ошибка: пустой пароль" },
 
   "authPasswordTooShort": "Минимум 6 символов",
-  "@authPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" }
+  "@authPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+
+  "authNoAccount": "Нет аккаунта?",
+  "@authNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
+
+  "authSignUp": "Зарегистрироваться",
+  "@authSignUp": { "description": "Ссылка на экран регистрации" }
 }

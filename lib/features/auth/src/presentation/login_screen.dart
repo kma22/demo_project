@@ -97,6 +97,27 @@ class _LoginScreenState extends State<LoginScreen> {
                             loading: isLoading,
                             enabled: !isLoading,
                           ),
+                          SizedBox(height: layout.s16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                l10n.authNoAccount,
+                                style: textStyles.bodyM.copyWith(color: colors.textSecondary),
+                              ),
+                              TextButton(
+                                onPressed: isLoading
+                                    ? null
+                                    : () {
+                                        //TODO(auth): navigate to registration screen
+                                      },
+                                child: Text(
+                                  l10n.authSignUp,
+                                  style: textStyles.labelL.copyWith(color: colors.primary),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -111,8 +132,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _submit() {
-    FocusManager.instance.primaryFocus?.unfocus();
     if (_formKey.currentState?.validate() ?? false) {
+      FocusManager.instance.primaryFocus?.unfocus();
       context.read<LoginCubit>().login(
         email: _emailController.text.trim(),
         password: _passwordController.text,

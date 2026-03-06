@@ -48,8 +48,7 @@ import 'package:demo_project/core/logger_manager/src/di/logger_module.dart'
     as _i922;
 import 'package:demo_project/core/logger_manager/src/talker_logger/talker_logger.dart'
     as _i37;
-import 'package:demo_project/core/routing/src/navigation/base_feature_navigation.dart'
-    as _i763;
+import 'package:demo_project/core/routing/routing.dart' as _i1011;
 import 'package:demo_project/core/ui_kit/src/theme/app_theme_manager.dart'
     as _i492;
 import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart'
@@ -115,15 +114,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i701.AppLogger>(
       () => _i37.TalkerLogger(gh<_i207.Talker>()),
     );
+    gh.lazySingleton<_i1011.BaseFeatureNavigation>(
+      () => _i614.FeatureNavigation(),
+    );
     gh.factory<_i40.BaseRegistrationApiService>(
       () => _i270.MockRegistrationApiService(),
     );
     gh.factory<_i478.EnvironmentData>(
       () => _i786.DevEnvironmentData(),
       registerFor: {_dev},
-    );
-    gh.lazySingleton<_i763.BaseFeatureNavigation>(
-      () => _i614.FeatureNavigation(),
     );
     gh.factory<_i173.BaseLoginApiService>(() => _i40.MockLoginApiService());
     gh.factory<_i1035.BaseThemeStorage>(
@@ -139,7 +138,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i824.BaseRegistrationRepository>(
       () => _i500.RegistrationRepository(gh<_i40.BaseRegistrationApiService>()),
     );
-    gh.factory<_i492.AppThemeManager>(
+    gh.lazySingleton<_i492.AppThemeManager>(
       () => _i492.AppThemeManager(gh<_i915.BaseThemeStorage>()),
     );
     gh.factory<_i92.RegisterUseCase>(

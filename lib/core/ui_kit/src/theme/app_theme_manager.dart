@@ -5,7 +5,7 @@ import 'package:demo_project/core/ui_kit/src/theme/enums/theme_data_type.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+@lazySingleton
 class AppThemeManager {
   final BaseThemeStorage _localStorage;
 

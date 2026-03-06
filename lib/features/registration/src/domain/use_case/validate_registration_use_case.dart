@@ -6,6 +6,9 @@ import 'package:injectable/injectable.dart';
 class ValidateRegistrationUseCase {
   static const _minPasswordLength = 6;
   static final _emailRegExp = RegExp(r'^[\w\-.]+@([\w-]+\.)+[\w-]{2,}$');
+  static final _uppercaseRegExp = RegExp('[A-Z]');
+  static final _lowercaseRegExp = RegExp('[a-z]');
+  static final _digitRegExp = RegExp(r'\d');
 
   Map<RegistrationField, RegistrationValidationError> call({
     required String email,
@@ -37,11 +40,11 @@ class ValidateRegistrationUseCase {
       errors[RegistrationField.password] = RegistrationValidationError.empty;
     } else if (password.length < _minPasswordLength) {
       errors[RegistrationField.password] = RegistrationValidationError.passwordTooShort;
-    } else if (!RegExp('[A-Z]').hasMatch(password)) {
+    } else if (!_uppercaseRegExp.hasMatch(password)) {
       errors[RegistrationField.password] = RegistrationValidationError.passwordNoUppercase;
-    } else if (!RegExp('[a-z]').hasMatch(password)) {
+    } else if (!_lowercaseRegExp.hasMatch(password)) {
       errors[RegistrationField.password] = RegistrationValidationError.passwordNoLowercase;
-    } else if (!RegExp(r'\d').hasMatch(password)) {
+    } else if (!_digitRegExp.hasMatch(password)) {
       errors[RegistrationField.password] = RegistrationValidationError.passwordNoDigit;
     }
   }

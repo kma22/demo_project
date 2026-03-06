@@ -1,6 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:demo_project/app/router/app_router.dart';
-import 'package:demo_project/core/routing/src/navigation/base_feature_navigation.dart';
+import 'package:demo_project/core/routing/routing.dart';
 import 'package:injectable/injectable.dart';
 
 /// Реализация кросс-модульной навигации.

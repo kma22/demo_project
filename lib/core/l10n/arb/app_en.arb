@@ -24,5 +24,7 @@
   "loginPasswordEmpty": "Enter password",
   "loginPasswordTooShort": "Password less than 6 characters",
   "loginNoAccount": "Don't have an account?",
-  "loginSignUp": "Sign Up"
+  "loginSignUp": "Sign Up",
+
+  "registrationTitle": "Sign Up"
 }

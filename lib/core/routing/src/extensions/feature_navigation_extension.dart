@@ -8,6 +8,5 @@ import 'package:get_it/get_it.dart';
 extension FeatureNavigationExtension on StackRouter {
   static BaseFeatureNavigation get _featureNavigation => GetIt.I<BaseFeatureNavigation>();
 
-  void openChangePasswordFeature({required String email}) =>
-      _featureNavigation.openChangePasswordFeature(this, email);
+  void openRegistrationFeature() => _featureNavigation.openRegistrationFeature(this);
 }

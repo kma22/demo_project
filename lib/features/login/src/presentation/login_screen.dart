@@ -109,9 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               TextButton(
                                 onPressed: isLoading
                                     ? null
-                                    : () {
-                                        //TODO(registration): navigate to registration screen
-                                      },
+                                    : () => context.router.openRegistrationFeature(),
                                 child: Text(
                                   l10n.loginSignUp,
                                   style: textStyles.labelL.copyWith(color: colors.primary),

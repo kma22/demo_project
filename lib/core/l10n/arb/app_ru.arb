@@ -68,5 +68,8 @@
   "@loginNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
 
   "loginSignUp": "Зарегистрироваться",
-  "@loginSignUp": { "description": "Ссылка на экран регистрации" }
+  "@loginSignUp": { "description": "Ссылка на экран регистрации" },
+
+  "registrationTitle": "Регистрация",
+  "@registrationTitle": { "description": "Заголовок экрана регистрации" }
 }

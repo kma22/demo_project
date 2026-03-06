@@ -123,6 +123,22 @@ class LoginRouteArgs {
 }
 
 /// generated route for
+/// [RegistrationScreen]
+class RegistrationRoute extends PageRouteInfo<void> {
+  const RegistrationRoute({List<PageRouteInfo>? children})
+    : super(RegistrationRoute.name, initialChildren: children);
+
+  static const String name = 'RegistrationRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RegistrationScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [SessionContainerScreen]
 class SessionContainerRoute extends PageRouteInfo<void> {
   const SessionContainerRoute({List<PageRouteInfo>? children})

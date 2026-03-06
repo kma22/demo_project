@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:demo_project/app/router/app_router.dart';
 import 'package:demo_project/core/routing/src/navigation/base_feature_navigation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,7 +9,5 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: BaseFeatureNavigation)
 class FeatureNavigation implements BaseFeatureNavigation {
   @override
-  void openChangePasswordFeature(StackRouter router, String email) {
-    // router.push(ChangePasswordContainerRoute(children: [EnterEmailRoute(email: email)]));
-  }
+  void openRegistrationFeature(StackRouter router) => router.push(const RegistrationRoute());
 }

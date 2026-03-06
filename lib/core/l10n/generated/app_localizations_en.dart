@@ -76,4 +76,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginSignUp => 'Sign Up';
+
+  @override
+  String get registrationTitle => 'Sign Up';
 }

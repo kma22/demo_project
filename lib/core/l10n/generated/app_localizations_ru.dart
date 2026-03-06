@@ -76,4 +76,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get loginSignUp => 'Зарегистрироваться';
+
+  @override
+  String get registrationTitle => 'Регистрация';
 }

@@ -18,7 +18,7 @@ void main() {
     repository = LoginRepository(mockApiService);
   });
 
-  group('AuthRepository', () {
+  group('LoginRepository', () {
     group('login', () {
       const email = 'user@test.com';
       const password = 'password123';

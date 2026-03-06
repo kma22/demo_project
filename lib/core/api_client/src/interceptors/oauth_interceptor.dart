@@ -104,7 +104,7 @@ class OauthInterceptor extends Interceptor {
           return newTokens;
         }
       } on DioException catch (e, st) {
-        _errorLog('Get exception while refreshing token, tying new', e, st);
+        _errorLog('Get exception while refreshing token, trying new', e, st);
 
         if (e.response?.statusCode == _notAuthorizedStatusCode) {
           _errorLog('Refresh token is expired, logout', e, st);
@@ -113,7 +113,7 @@ class OauthInterceptor extends Interceptor {
 
         await Future.delayed(const Duration(milliseconds: 500));
       } on Exception catch (e, st) {
-        _errorLog('Get exception while refreshing token, tying new', e, st);
+        _errorLog('Get exception while refreshing token, trying new', e, st);
         await Future.delayed(const Duration(milliseconds: 500));
       }
     }

@@ -39,7 +39,7 @@ class SessionCubit extends Cubit<SessionState> {
     }
   }
 
-  Future<void> onLoginSuccess(String accessToken, String refreshToken) async {
+  Future<void> onLoginSuccess({required String accessToken, required String refreshToken}) async {
     try {
       await _sessionRepository.saveSession(accessToken, refreshToken);
       emit(const AuthenticatedState());

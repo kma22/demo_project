@@ -157,79 +157,199 @@ abstract class AppLocalizations {
   ///
   /// In ru, this message translates to:
   /// **'Вход в аккаунт'**
-  String get authLoginTitle;
+  String get loginLoginTitle;
 
   /// Подзаголовок экрана логина
   ///
   /// In ru, this message translates to:
   /// **'Введите данные для входа'**
-  String get authLoginSubtitle;
+  String get loginLoginSubtitle;
 
   /// Лейбл поля email
   ///
   /// In ru, this message translates to:
   /// **'Email'**
-  String get authEmailLabel;
+  String get loginEmailLabel;
 
   /// Подсказка поля email
   ///
   /// In ru, this message translates to:
   /// **'example@mail.com'**
-  String get authEmailHint;
+  String get loginEmailHint;
 
   /// Лейбл поля пароля
   ///
   /// In ru, this message translates to:
   /// **'Пароль'**
-  String get authPasswordLabel;
+  String get loginPasswordLabel;
 
   /// Подсказка поля пароля
   ///
   /// In ru, this message translates to:
   /// **'Минимум 6 символов'**
-  String get authPasswordHint;
+  String get loginPasswordHint;
 
   /// Кнопка входа
   ///
   /// In ru, this message translates to:
   /// **'Войти'**
-  String get authLoginButton;
+  String get loginLoginButton;
 
   /// Ошибка: пустой email
   ///
   /// In ru, this message translates to:
   /// **'Введите email'**
-  String get authEmailEmpty;
+  String get loginEmailEmpty;
 
   /// Ошибка: невалидный формат email
   ///
   /// In ru, this message translates to:
   /// **'Некорректный email'**
-  String get authEmailInvalid;
+  String get loginEmailInvalid;
 
   /// Ошибка: пустой пароль
   ///
   /// In ru, this message translates to:
   /// **'Введите пароль'**
-  String get authPasswordEmpty;
+  String get loginPasswordEmpty;
 
   /// Ошибка: слишком короткий пароль
   ///
   /// In ru, this message translates to:
   /// **'Пароль менее 6 символов'**
-  String get authPasswordTooShort;
+  String get loginPasswordTooShort;
 
   /// Текст перед ссылкой на регистрацию
   ///
   /// In ru, this message translates to:
   /// **'Нет аккаунта?'**
-  String get authNoAccount;
+  String get loginNoAccount;
 
   /// Ссылка на экран регистрации
   ///
   /// In ru, this message translates to:
   /// **'Зарегистрироваться'**
-  String get authSignUp;
+  String get loginSignUp;
+
+  /// Заголовок экрана регистрации
+  ///
+  /// In ru, this message translates to:
+  /// **'Регистрация'**
+  String get registrationTitle;
+
+  /// Подзаголовок экрана регистрации
+  ///
+  /// In ru, this message translates to:
+  /// **'Создайте аккаунт'**
+  String get registrationSubtitle;
+
+  /// Лейбл поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'Email'**
+  String get registrationEmailLabel;
+
+  /// Подсказка поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'example@mail.com'**
+  String get registrationEmailHint;
+
+  /// Лейбл поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get registrationPasswordLabel;
+
+  /// Подсказка поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Минимум 6 символов'**
+  String get registrationPasswordHint;
+
+  /// Лейбл поля подтверждения пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Подтвердите пароль'**
+  String get registrationConfirmPasswordLabel;
+
+  /// Подсказка поля подтверждения пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторите пароль'**
+  String get registrationConfirmPasswordHint;
+
+  /// Кнопка регистрации
+  ///
+  /// In ru, this message translates to:
+  /// **'Зарегистрироваться'**
+  String get registrationButton;
+
+  /// Ошибка: пустой email
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите email'**
+  String get registrationEmailEmpty;
+
+  /// Ошибка: невалидный формат email
+  ///
+  /// In ru, this message translates to:
+  /// **'Некорректный email'**
+  String get registrationEmailInvalid;
+
+  /// Ошибка: пустой пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите пароль'**
+  String get registrationPasswordEmpty;
+
+  /// Ошибка: слишком короткий пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль менее 6 символов'**
+  String get registrationPasswordTooShort;
+
+  /// Ошибка: нет заглавной буквы
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна заглавная буква'**
+  String get registrationPasswordNoUppercase;
+
+  /// Ошибка: нет строчной буквы
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна строчная буква'**
+  String get registrationPasswordNoLowercase;
+
+  /// Ошибка: нет цифры
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна цифра'**
+  String get registrationPasswordNoDigit;
+
+  /// Ошибка: пустое подтверждение пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Подтвердите пароль'**
+  String get registrationConfirmPasswordEmpty;
+
+  /// Ошибка: пароли не совпадают
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароли не совпадают'**
+  String get registrationPasswordsDoNotMatch;
+
+  /// Текст перед ссылкой на вход
+  ///
+  /// In ru, this message translates to:
+  /// **'Уже есть аккаунт?'**
+  String get registrationHaveAccount;
+
+  /// Ссылка на экран входа
+  ///
+  /// In ru, this message translates to:
+  /// **'Войти'**
+  String get registrationSignIn;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

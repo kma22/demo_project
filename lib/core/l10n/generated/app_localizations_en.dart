@@ -39,41 +39,101 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonNoResults => 'No results found';
 
   @override
-  String get authLoginTitle => 'Sign In';
+  String get loginLoginTitle => 'Sign In';
 
   @override
-  String get authLoginSubtitle => 'Enter your credentials';
+  String get loginLoginSubtitle => 'Enter your credentials';
 
   @override
-  String get authEmailLabel => 'Email';
+  String get loginEmailLabel => 'Email';
 
   @override
-  String get authEmailHint => 'example@mail.com';
+  String get loginEmailHint => 'example@mail.com';
 
   @override
-  String get authPasswordLabel => 'Password';
+  String get loginPasswordLabel => 'Password';
 
   @override
-  String get authPasswordHint => 'At least 6 characters';
+  String get loginPasswordHint => 'At least 6 characters';
 
   @override
-  String get authLoginButton => 'Sign In';
+  String get loginLoginButton => 'Sign In';
 
   @override
-  String get authEmailEmpty => 'Enter email';
+  String get loginEmailEmpty => 'Enter email';
 
   @override
-  String get authEmailInvalid => 'Invalid email';
+  String get loginEmailInvalid => 'Invalid email';
 
   @override
-  String get authPasswordEmpty => 'Enter password';
+  String get loginPasswordEmpty => 'Enter password';
 
   @override
-  String get authPasswordTooShort => 'Password less than 6 characters';
+  String get loginPasswordTooShort => 'Password less than 6 characters';
 
   @override
-  String get authNoAccount => 'Don\'t have an account?';
+  String get loginNoAccount => 'Don\'t have an account?';
 
   @override
-  String get authSignUp => 'Sign Up';
+  String get loginSignUp => 'Sign Up';
+
+  @override
+  String get registrationTitle => 'Sign Up';
+
+  @override
+  String get registrationSubtitle => 'Create an account';
+
+  @override
+  String get registrationEmailLabel => 'Email';
+
+  @override
+  String get registrationEmailHint => 'example@mail.com';
+
+  @override
+  String get registrationPasswordLabel => 'Password';
+
+  @override
+  String get registrationPasswordHint => 'At least 6 characters';
+
+  @override
+  String get registrationConfirmPasswordLabel => 'Confirm password';
+
+  @override
+  String get registrationConfirmPasswordHint => 'Repeat password';
+
+  @override
+  String get registrationButton => 'Sign Up';
+
+  @override
+  String get registrationEmailEmpty => 'Enter email';
+
+  @override
+  String get registrationEmailInvalid => 'Invalid email';
+
+  @override
+  String get registrationPasswordEmpty => 'Enter password';
+
+  @override
+  String get registrationPasswordTooShort => 'Password less than 6 characters';
+
+  @override
+  String get registrationPasswordNoUppercase => 'At least one uppercase letter required';
+
+  @override
+  String get registrationPasswordNoLowercase => 'At least one lowercase letter required';
+
+  @override
+  String get registrationPasswordNoDigit => 'At least one digit required';
+
+  @override
+  String get registrationConfirmPasswordEmpty => 'Confirm password';
+
+  @override
+  String get registrationPasswordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get registrationHaveAccount => 'Already have an account?';
+
+  @override
+  String get registrationSignIn => 'Sign In';
 }

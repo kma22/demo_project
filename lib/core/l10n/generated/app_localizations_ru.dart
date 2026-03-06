@@ -39,41 +39,101 @@ class AppLocalizationsRu extends AppLocalizations {
   String get commonNoResults => 'Ничего не найдено';
 
   @override
-  String get authLoginTitle => 'Вход в аккаунт';
+  String get loginLoginTitle => 'Вход в аккаунт';
 
   @override
-  String get authLoginSubtitle => 'Введите данные для входа';
+  String get loginLoginSubtitle => 'Введите данные для входа';
 
   @override
-  String get authEmailLabel => 'Email';
+  String get loginEmailLabel => 'Email';
 
   @override
-  String get authEmailHint => 'example@mail.com';
+  String get loginEmailHint => 'example@mail.com';
 
   @override
-  String get authPasswordLabel => 'Пароль';
+  String get loginPasswordLabel => 'Пароль';
 
   @override
-  String get authPasswordHint => 'Минимум 6 символов';
+  String get loginPasswordHint => 'Минимум 6 символов';
 
   @override
-  String get authLoginButton => 'Войти';
+  String get loginLoginButton => 'Войти';
 
   @override
-  String get authEmailEmpty => 'Введите email';
+  String get loginEmailEmpty => 'Введите email';
 
   @override
-  String get authEmailInvalid => 'Некорректный email';
+  String get loginEmailInvalid => 'Некорректный email';
 
   @override
-  String get authPasswordEmpty => 'Введите пароль';
+  String get loginPasswordEmpty => 'Введите пароль';
 
   @override
-  String get authPasswordTooShort => 'Пароль менее 6 символов';
+  String get loginPasswordTooShort => 'Пароль менее 6 символов';
 
   @override
-  String get authNoAccount => 'Нет аккаунта?';
+  String get loginNoAccount => 'Нет аккаунта?';
 
   @override
-  String get authSignUp => 'Зарегистрироваться';
+  String get loginSignUp => 'Зарегистрироваться';
+
+  @override
+  String get registrationTitle => 'Регистрация';
+
+  @override
+  String get registrationSubtitle => 'Создайте аккаунт';
+
+  @override
+  String get registrationEmailLabel => 'Email';
+
+  @override
+  String get registrationEmailHint => 'example@mail.com';
+
+  @override
+  String get registrationPasswordLabel => 'Пароль';
+
+  @override
+  String get registrationPasswordHint => 'Минимум 6 символов';
+
+  @override
+  String get registrationConfirmPasswordLabel => 'Подтвердите пароль';
+
+  @override
+  String get registrationConfirmPasswordHint => 'Повторите пароль';
+
+  @override
+  String get registrationButton => 'Зарегистрироваться';
+
+  @override
+  String get registrationEmailEmpty => 'Введите email';
+
+  @override
+  String get registrationEmailInvalid => 'Некорректный email';
+
+  @override
+  String get registrationPasswordEmpty => 'Введите пароль';
+
+  @override
+  String get registrationPasswordTooShort => 'Пароль менее 6 символов';
+
+  @override
+  String get registrationPasswordNoUppercase => 'Нужна хотя бы одна заглавная буква';
+
+  @override
+  String get registrationPasswordNoLowercase => 'Нужна хотя бы одна строчная буква';
+
+  @override
+  String get registrationPasswordNoDigit => 'Нужна хотя бы одна цифра';
+
+  @override
+  String get registrationConfirmPasswordEmpty => 'Подтвердите пароль';
+
+  @override
+  String get registrationPasswordsDoNotMatch => 'Пароли не совпадают';
+
+  @override
+  String get registrationHaveAccount => 'Уже есть аккаунт?';
+
+  @override
+  String get registrationSignIn => 'Войти';
 }

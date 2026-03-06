@@ -117,10 +117,8 @@ class SettingsContainerScreen extends StatelessWidget {
     return Localizations.override(
       delegates: const [SettingsLocalizations.delegate],
       context: context,
-      child: BlocProvider(
-        create: (_) => // shared state, доступный всем экранам flow
-        child: const AutoRouter(),
-      ),
+      // + BlocProvider / RepositoryProvider для shared state всего flow
+      child: const AutoRouter(),
     );
   }
 }
@@ -165,14 +163,19 @@ class SettingsContainerScreen extends StatelessWidget {
 Рассматривался паттерн «мост»: единый метод `navigate(router, destination, strategy)`
 вместо N методов `open<Name>Feature`. Отклонён по причинам:
 
-- **Читаемость.** `openRegistrationFeature(router)` понятнее, чем
-  `navigate(router, RegistrationDestination(), Push())`.
 - **Избыточность.** Мост добавляет два уровня абстракции (Destination + Strategy),
   которые на текущем масштабе не окупаются. Каждая фича -- один метод, список растёт
   линейно и контролируемо.
+- **Читаемость.** `openRegistrationFeature(router)` понятнее, чем
+  `navigate(router, RegistrationDestination(), Push())`.
+- **ISP (Interface Segregation Principle).** Один жирный сервис с десятками методов --
+  тоже не выход. При росте проекта `BaseFeatureNavigation` можно разделить на несколько
+  узких интерфейсов по смыслу: `AuthNavigation`, `SettingsNavigation`,
+  `InspectionsNavigation`. Каждый модуль зависит только от нужного контракта,
+  а реализация в `FeatureNavigation` имплементирует их все.
 
 Если количество фич вырастет до уровня, когда список методов станет неуправляемым --
-пересмотреть решение.
+пересмотреть решение в пользу ISP-декомпозиции.
 
 ---
 

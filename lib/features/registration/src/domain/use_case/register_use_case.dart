@@ -10,5 +10,5 @@ class RegisterUseCase {
   Future<({String accessToken, String refreshToken})> call({
     required String email,
     required String password,
-  }) => _repository.register(email: email, password: password);
+  }) => _repository.register(email: email.trim(), password: password);
 }

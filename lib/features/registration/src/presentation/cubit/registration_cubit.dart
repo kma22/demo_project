@@ -29,7 +29,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
     if (!_submitted) return;
 
     final errors = _validateUseCase(
-      email: email.trim(),
+      email: email,
       password: password,
       confirmPassword: confirmPassword,
     );
@@ -45,7 +45,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
     _submitted = true;
 
     final errors = _validateUseCase(
-      email: email.trim(),
+      email: email,
       password: password,
       confirmPassword: confirmPassword,
     );
@@ -58,7 +58,7 @@ class RegistrationCubit extends Cubit<RegistrationState> {
     emit(const RegistrationLoadingState());
 
     try {
-      final result = await _registerUseCase(email: email.trim(), password: password);
+      final result = await _registerUseCase(email: email, password: password);
 
       emit(
         RegistrationSuccessState(

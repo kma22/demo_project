@@ -17,7 +17,7 @@ class ValidateRegistrationUseCase {
   }) {
     final errors = <RegistrationField, RegistrationValidationError>{};
 
-    _validateEmail(email, errors);
+    _validateEmail(email.trim(), errors);
     _validatePassword(password, errors);
     _validateConfirmPassword(password, confirmPassword, errors);
 

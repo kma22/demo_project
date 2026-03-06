@@ -221,7 +221,7 @@ abstract class AppLocalizations {
   /// Ошибка: слишком короткий пароль
   ///
   /// In ru, this message translates to:
-  /// **'Минимум 6 символов'**
+  /// **'Пароль менее 6 символов'**
   String get authPasswordTooShort;
 
   /// Текст перед ссылкой на регистрацию

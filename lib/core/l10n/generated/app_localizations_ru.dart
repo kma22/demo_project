@@ -69,7 +69,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get authPasswordEmpty => 'Введите пароль';
 
   @override
-  String get authPasswordTooShort => 'Минимум 6 символов';
+  String get authPasswordTooShort => 'Пароль менее 6 символов';
 
   @override
   String get authNoAccount => 'Нет аккаунта?';

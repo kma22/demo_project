@@ -69,7 +69,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authPasswordEmpty => 'Enter password';
 
   @override
-  String get authPasswordTooShort => 'At least 6 characters';
+  String get authPasswordTooShort => 'Password less than 6 characters';
 
   @override
   String get authNoAccount => 'Don\'t have an account?';

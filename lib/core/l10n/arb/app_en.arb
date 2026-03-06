@@ -45,5 +45,13 @@
   "registrationConfirmPasswordEmpty": "Confirm password",
   "registrationPasswordsDoNotMatch": "Passwords do not match",
   "registrationHaveAccount": "Already have an account?",
-  "registrationSignIn": "Sign In"
+  "registrationSignIn": "Sign In",
+
+  "homeTitle": "Home",
+
+  "profileTitle": "Profile",
+  "profileLogout": "Log out",
+
+  "bottomNavHome": "Home",
+  "bottomNavProfile": "Profile"
 }

@@ -136,4 +136,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get registrationSignIn => 'Sign In';
+
+  @override
+  String get homeTitle => 'Home';
+
+  @override
+  String get profileTitle => 'Profile';
+
+  @override
+  String get profileLogout => 'Log out';
+
+  @override
+  String get bottomNavHome => 'Home';
+
+  @override
+  String get bottomNavProfile => 'Profile';
 }

@@ -128,5 +128,20 @@
   "@registrationHaveAccount": { "description": "Текст перед ссылкой на вход" },
 
   "registrationSignIn": "Войти",
-  "@registrationSignIn": { "description": "Ссылка на экран входа" }
+  "@registrationSignIn": { "description": "Ссылка на экран входа" },
+
+  "homeTitle": "Главная",
+  "@homeTitle": { "description": "Заголовок главного экрана" },
+
+  "profileTitle": "Профиль",
+  "@profileTitle": { "description": "Заголовок экрана профиля" },
+
+  "profileLogout": "Выйти из аккаунта",
+  "@profileLogout": { "description": "Кнопка выхода из аккаунта" },
+
+  "bottomNavHome": "Главная",
+  "@bottomNavHome": { "description": "Таб главного экрана" },
+
+  "bottomNavProfile": "Профиль",
+  "@bottomNavProfile": { "description": "Таб профиля" }
 }

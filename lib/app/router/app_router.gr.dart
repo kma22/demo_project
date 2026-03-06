@@ -27,6 +27,22 @@ class AuthenticatedContainerRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [BottomNavigationScreen]
+class BottomNavigationRoute extends PageRouteInfo<void> {
+  const BottomNavigationRoute({List<PageRouteInfo>? children})
+    : super(BottomNavigationRoute.name, initialChildren: children);
+
+  static const String name = 'BottomNavigationRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const BottomNavigationScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [HomeScreen]
 class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
   HomeRoute({
@@ -128,6 +144,53 @@ class LoginRouteArgs {
 
   @override
   int get hashCode => key.hashCode;
+}
+
+/// generated route for
+/// [ProfileScreen]
+class ProfileRoute extends PageRouteInfo<ProfileRouteArgs> {
+  ProfileRoute({
+    required VoidCallback onLogout,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ProfileRoute.name,
+         args: ProfileRouteArgs(onLogout: onLogout, key: key),
+         initialChildren: children,
+       );
+
+  static const String name = 'ProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<ProfileRouteArgs>();
+      return ProfileScreen(onLogout: args.onLogout, key: args.key);
+    },
+  );
+}
+
+class ProfileRouteArgs {
+  const ProfileRouteArgs({required this.onLogout, this.key});
+
+  final VoidCallback onLogout;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ProfileRouteArgs{onLogout: $onLogout, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProfileRouteArgs) return false;
+    return onLogout == other.onLogout && key == other.key;
+  }
+
+  @override
+  int get hashCode => onLogout.hashCode ^ key.hashCode;
 }
 
 /// generated route for

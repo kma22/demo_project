@@ -11,7 +11,7 @@ import 'package:get_it/get_it.dart';
 /// Экран авторизации с формой email/пароль.
 @RoutePage()
 class LoginScreen extends StatefulWidget implements AutoRouteWrapper {
-  final void Function(String, String) onSuccess;
+  final void Function({required String accessToken, required String refreshToken}) onSuccess;
 
   const LoginScreen({required this.onSuccess, super.key});
 
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: BlocConsumer<LoginCubit, LoginState>(
             listener: (context, state) {
               if (state is LoginSuccessState) {
-                widget.onSuccess(state.accessToken, state.refreshToken);
+                widget.onSuccess(accessToken: state.accessToken, refreshToken: state.refreshToken);
               } else if (state is LoginErrorState) {
                 AppSnackBar.error(context, message: state.message ?? l10n.commonError);
               }
@@ -96,7 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             onTap: _submit,
                             expanded: true,
                             loading: isLoading,
-                            enabled: !isLoading,
                           ),
                           SizedBox(height: layout.s16),
                           Row(
@@ -109,7 +108,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               TextButton(
                                 onPressed: isLoading
                                     ? null
-                                    : () => context.router.openRegistrationFeature(),
+                                    : () {
+                                        context.router.openRegistrationFeature(
+                                          onSuccess: widget.onSuccess,
+                                        );
+                                      },
                                 child: Text(
                                   l10n.loginSignUp,
                                   style: textStyles.labelL.copyWith(color: colors.primary),

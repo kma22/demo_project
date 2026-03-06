@@ -79,4 +79,61 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get registrationTitle => 'Регистрация';
+
+  @override
+  String get registrationSubtitle => 'Создайте аккаунт';
+
+  @override
+  String get registrationEmailLabel => 'Email';
+
+  @override
+  String get registrationEmailHint => 'example@mail.com';
+
+  @override
+  String get registrationPasswordLabel => 'Пароль';
+
+  @override
+  String get registrationPasswordHint => 'Минимум 6 символов';
+
+  @override
+  String get registrationConfirmPasswordLabel => 'Подтвердите пароль';
+
+  @override
+  String get registrationConfirmPasswordHint => 'Повторите пароль';
+
+  @override
+  String get registrationButton => 'Зарегистрироваться';
+
+  @override
+  String get registrationEmailEmpty => 'Введите email';
+
+  @override
+  String get registrationEmailInvalid => 'Некорректный email';
+
+  @override
+  String get registrationPasswordEmpty => 'Введите пароль';
+
+  @override
+  String get registrationPasswordTooShort => 'Пароль менее 6 символов';
+
+  @override
+  String get registrationPasswordNoUppercase => 'Нужна хотя бы одна заглавная буква';
+
+  @override
+  String get registrationPasswordNoLowercase => 'Нужна хотя бы одна строчная буква';
+
+  @override
+  String get registrationPasswordNoDigit => 'Нужна хотя бы одна цифра';
+
+  @override
+  String get registrationConfirmPasswordEmpty => 'Подтвердите пароль';
+
+  @override
+  String get registrationPasswordsDoNotMatch => 'Пароли не совпадают';
+
+  @override
+  String get registrationHaveAccount => 'Уже есть аккаунт?';
+
+  @override
+  String get registrationSignIn => 'Войти';
 }

@@ -77,7 +77,11 @@ class HomeRouteArgs {
 /// [LoginScreen]
 class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
   LoginRoute({
-    required void Function(String, String) onSuccess,
+    required void Function({
+      required String accessToken,
+      required String refreshToken,
+    })
+    onSuccess,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
@@ -102,7 +106,11 @@ class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
 class LoginRouteArgs {
   const LoginRouteArgs({required this.onSuccess, this.key});
 
-  final void Function(String, String) onSuccess;
+  final void Function({
+    required String accessToken,
+    required String refreshToken,
+  })
+  onSuccess;
 
   final Key? key;
 
@@ -124,18 +132,59 @@ class LoginRouteArgs {
 
 /// generated route for
 /// [RegistrationScreen]
-class RegistrationRoute extends PageRouteInfo<void> {
-  const RegistrationRoute({List<PageRouteInfo>? children})
-    : super(RegistrationRoute.name, initialChildren: children);
+class RegistrationRoute extends PageRouteInfo<RegistrationRouteArgs> {
+  RegistrationRoute({
+    required void Function({
+      required String accessToken,
+      required String refreshToken,
+    })
+    onSuccess,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         RegistrationRoute.name,
+         args: RegistrationRouteArgs(onSuccess: onSuccess, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'RegistrationRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const RegistrationScreen();
+      final args = data.argsAs<RegistrationRouteArgs>();
+      return WrappedRoute(
+        child: RegistrationScreen(onSuccess: args.onSuccess, key: args.key),
+      );
     },
   );
+}
+
+class RegistrationRouteArgs {
+  const RegistrationRouteArgs({required this.onSuccess, this.key});
+
+  final void Function({
+    required String accessToken,
+    required String refreshToken,
+  })
+  onSuccess;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'RegistrationRouteArgs{onSuccess: $onSuccess, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! RegistrationRouteArgs) return false;
+    return key == other.key;
+  }
+
+  @override
+  int get hashCode => key.hashCode;
 }
 
 /// generated route for

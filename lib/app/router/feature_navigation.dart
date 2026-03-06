@@ -9,5 +9,8 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: BaseFeatureNavigation)
 class FeatureNavigation implements BaseFeatureNavigation {
   @override
-  void openRegistrationFeature(StackRouter router) => router.push(const RegistrationRoute());
+  void openRegistrationFeature(
+    StackRouter router,
+    void Function({required String accessToken, required String refreshToken}) onSuccess,
+  ) => router.push(RegistrationRoute(onSuccess: onSuccess));
 }

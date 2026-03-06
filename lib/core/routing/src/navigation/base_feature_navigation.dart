@@ -4,5 +4,8 @@ import 'package:auto_route/auto_route.dart';
 /// Позволяет фичам инициировать переходы вовне без прямой зависимости от других модулей.
 /// Подробнее: [NAVIGATION_ARCHITECTURE.md](demo_project/docs/NAVIGATION_ARCHITECTURE.md)
 abstract interface class BaseFeatureNavigation {
-  void openRegistrationFeature(StackRouter router);
+  void openRegistrationFeature(
+    StackRouter router,
+    void Function({required String accessToken, required String refreshToken}) onSuccess,
+  );
 }

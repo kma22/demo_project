@@ -26,5 +26,24 @@
   "loginNoAccount": "Don't have an account?",
   "loginSignUp": "Sign Up",
 
-  "registrationTitle": "Sign Up"
+  "registrationTitle": "Sign Up",
+  "registrationSubtitle": "Create an account",
+  "registrationEmailLabel": "Email",
+  "registrationEmailHint": "example@mail.com",
+  "registrationPasswordLabel": "Password",
+  "registrationPasswordHint": "At least 6 characters",
+  "registrationConfirmPasswordLabel": "Confirm password",
+  "registrationConfirmPasswordHint": "Repeat password",
+  "registrationButton": "Sign Up",
+  "registrationEmailEmpty": "Enter email",
+  "registrationEmailInvalid": "Invalid email",
+  "registrationPasswordEmpty": "Enter password",
+  "registrationPasswordTooShort": "Password less than 6 characters",
+  "registrationPasswordNoUppercase": "At least one uppercase letter required",
+  "registrationPasswordNoLowercase": "At least one lowercase letter required",
+  "registrationPasswordNoDigit": "At least one digit required",
+  "registrationConfirmPasswordEmpty": "Confirm password",
+  "registrationPasswordsDoNotMatch": "Passwords do not match",
+  "registrationHaveAccount": "Already have an account?",
+  "registrationSignIn": "Sign In"
 }

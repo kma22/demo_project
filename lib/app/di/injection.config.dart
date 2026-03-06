@@ -62,6 +62,20 @@ import 'package:demo_project/features/login/src/domain/repository/base_login_rep
     as _i133;
 import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart'
     as _i267;
+import 'package:demo_project/features/registration/src/data/api/base_registration_api_service.dart'
+    as _i40;
+import 'package:demo_project/features/registration/src/data/api/mock_registration_api_service.dart'
+    as _i270;
+import 'package:demo_project/features/registration/src/data/repository/registration_repository.dart'
+    as _i500;
+import 'package:demo_project/features/registration/src/domain/repository/base_registration_repository.dart'
+    as _i824;
+import 'package:demo_project/features/registration/src/domain/use_case/register_use_case.dart'
+    as _i92;
+import 'package:demo_project/features/registration/src/domain/use_case/validate_registration_use_case.dart'
+    as _i696;
+import 'package:demo_project/features/registration/src/presentation/cubit/registration_cubit.dart'
+    as _i588;
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
@@ -82,6 +96,9 @@ extension GetItInjectableX on _i174.GetIt {
     final localStorageModule = _$LocalStorageModule();
     final loggerModule = _$LoggerModule();
     final dioModule = _$DioModule();
+    gh.factory<_i696.ValidateRegistrationUseCase>(
+      () => _i696.ValidateRegistrationUseCase(),
+    );
     gh.singleton<_i1040.AppDatabase>(() => _i1040.AppDatabase());
     gh.lazySingleton<_i834.SessionObserver>(
       () => _i834.SessionObserver(),
@@ -97,6 +114,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i207.Talker>(() => loggerModule.talker);
     gh.lazySingleton<_i701.AppLogger>(
       () => _i37.TalkerLogger(gh<_i207.Talker>()),
+    );
+    gh.factory<_i40.BaseRegistrationApiService>(
+      () => _i270.MockRegistrationApiService(),
     );
     gh.factory<_i478.EnvironmentData>(
       () => _i786.DevEnvironmentData(),
@@ -116,11 +136,24 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i88.ProdEnvironmentData(),
       registerFor: {_prod},
     );
+    gh.factory<_i824.BaseRegistrationRepository>(
+      () => _i500.RegistrationRepository(gh<_i40.BaseRegistrationApiService>()),
+    );
     gh.factory<_i492.AppThemeManager>(
       () => _i492.AppThemeManager(gh<_i915.BaseThemeStorage>()),
     );
+    gh.factory<_i92.RegisterUseCase>(
+      () => _i92.RegisterUseCase(gh<_i824.BaseRegistrationRepository>()),
+    );
     gh.factory<_i133.BaseLoginRepository>(
       () => _i162.LoginRepository(gh<_i173.BaseLoginApiService>()),
+    );
+    gh.factory<_i588.RegistrationCubit>(
+      () => _i588.RegistrationCubit(
+        gh<_i696.ValidateRegistrationUseCase>(),
+        gh<_i92.RegisterUseCase>(),
+        gh<_i701.AppLogger>(),
+      ),
     );
     gh.lazySingleton<_i899.BaseSessionRepository>(
       () => _i209.SessionRepository(

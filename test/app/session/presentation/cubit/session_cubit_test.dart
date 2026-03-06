@@ -48,7 +48,8 @@ void main() {
 
       blocTest<SessionCubit, SessionState>(
         'emits [UnauthenticatedState] on init error',
-        setUp: () => when(mockRepo.hasActiveSession()).thenAnswer((_) async => throw Exception('fail')),
+        setUp: () =>
+            when(mockRepo.hasActiveSession()).thenAnswer((_) async => throw Exception('fail')),
         build: () => SessionCubit(mockRepo, mockLogger),
         act: (cubit) => cubit.init(),
         expect: () => [const UnauthenticatedState()],
@@ -76,7 +77,7 @@ void main() {
         build: () => SessionCubit(mockRepo, mockLogger),
         act: (cubit) async {
           await cubit.init();
-          await cubit.onLoginSuccess('access', 'refresh');
+          await cubit.onLoginSuccess(accessToken: 'access', refreshToken: 'refresh');
         },
         expect: () => [const UnauthenticatedState(), const AuthenticatedState()],
         verify: (_) => verify(mockRepo.saveSession('access', 'refresh')).called(1),
@@ -93,7 +94,7 @@ void main() {
         build: () => SessionCubit(mockRepo, mockLogger),
         act: (cubit) async {
           await cubit.init();
-          await cubit.onLoginSuccess('access', 'refresh');
+          await cubit.onLoginSuccess(accessToken: 'access', refreshToken: 'refresh');
         },
         expect: () => [const UnauthenticatedState()],
       );

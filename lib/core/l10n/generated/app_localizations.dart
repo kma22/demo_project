@@ -62,8 +62,7 @@ import 'app_localizations_ru.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -93,10 +91,7 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('ru'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('ru')];
 
   /// Кнопка повторной попытки
   ///
@@ -241,10 +236,123 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Регистрация'**
   String get registrationTitle;
+
+  /// Подзаголовок экрана регистрации
+  ///
+  /// In ru, this message translates to:
+  /// **'Создайте аккаунт'**
+  String get registrationSubtitle;
+
+  /// Лейбл поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'Email'**
+  String get registrationEmailLabel;
+
+  /// Подсказка поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'example@mail.com'**
+  String get registrationEmailHint;
+
+  /// Лейбл поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get registrationPasswordLabel;
+
+  /// Подсказка поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Минимум 6 символов'**
+  String get registrationPasswordHint;
+
+  /// Лейбл поля подтверждения пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Подтвердите пароль'**
+  String get registrationConfirmPasswordLabel;
+
+  /// Подсказка поля подтверждения пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторите пароль'**
+  String get registrationConfirmPasswordHint;
+
+  /// Кнопка регистрации
+  ///
+  /// In ru, this message translates to:
+  /// **'Зарегистрироваться'**
+  String get registrationButton;
+
+  /// Ошибка: пустой email
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите email'**
+  String get registrationEmailEmpty;
+
+  /// Ошибка: невалидный формат email
+  ///
+  /// In ru, this message translates to:
+  /// **'Некорректный email'**
+  String get registrationEmailInvalid;
+
+  /// Ошибка: пустой пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите пароль'**
+  String get registrationPasswordEmpty;
+
+  /// Ошибка: слишком короткий пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль менее 6 символов'**
+  String get registrationPasswordTooShort;
+
+  /// Ошибка: нет заглавной буквы
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна заглавная буква'**
+  String get registrationPasswordNoUppercase;
+
+  /// Ошибка: нет строчной буквы
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна строчная буква'**
+  String get registrationPasswordNoLowercase;
+
+  /// Ошибка: нет цифры
+  ///
+  /// In ru, this message translates to:
+  /// **'Нужна хотя бы одна цифра'**
+  String get registrationPasswordNoDigit;
+
+  /// Ошибка: пустое подтверждение пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Подтвердите пароль'**
+  String get registrationConfirmPasswordEmpty;
+
+  /// Ошибка: пароли не совпадают
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароли не совпадают'**
+  String get registrationPasswordsDoNotMatch;
+
+  /// Текст перед ссылкой на вход
+  ///
+  /// In ru, this message translates to:
+  /// **'Уже есть аккаунт?'**
+  String get registrationHaveAccount;
+
+  /// Ссылка на экран входа
+  ///
+  /// In ru, this message translates to:
+  /// **'Войти'**
+  String get registrationSignIn;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -253,8 +361,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

@@ -37,4 +37,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commonNoResults => 'No results found';
+
+  @override
+  String get authLoginTitle => 'Sign In';
+
+  @override
+  String get authLoginSubtitle => 'Enter your credentials';
+
+  @override
+  String get authEmailLabel => 'Email';
+
+  @override
+  String get authEmailHint => 'example@mail.com';
+
+  @override
+  String get authPasswordLabel => 'Password';
+
+  @override
+  String get authPasswordHint => 'At least 6 characters';
+
+  @override
+  String get authLoginButton => 'Sign In';
+
+  @override
+  String get authEmailEmpty => 'Enter email';
+
+  @override
+  String get authEmailInvalid => 'Invalid email';
+
+  @override
+  String get authPasswordEmpty => 'Enter password';
+
+  @override
+  String get authPasswordTooShort => 'Password less than 6 characters';
+
+  @override
+  String get authNoAccount => 'Don\'t have an account?';
+
+  @override
+  String get authSignUp => 'Sign Up';
 }

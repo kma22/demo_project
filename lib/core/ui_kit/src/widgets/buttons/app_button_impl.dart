@@ -34,7 +34,7 @@ class AppButtonImpl extends StatelessWidget {
     final layout = context.layout;
 
     final style = AppButtonStyleFactory.resolve(type, enabled, colors);
-    final borderRadius = BorderRadius.circular(layout.r100);
+    final borderRadius = BorderRadius.circular(layout.r12);
     final border = style.border;
 
     return Semantics(

@@ -37,6 +37,8 @@ class AppTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final Iterable<String>? autofillHints;
   final TextCapitalization textCapitalization;
+  final TextInputAction? textInputAction;
+  final ValueChanged<String>? onSubmitted;
 
   const AppTextField({
     this.label,
@@ -47,6 +49,7 @@ class AppTextField extends StatelessWidget {
     this.focusNode,
     this.validator,
     this.onChanged,
+    this.onSubmitted,
     this.keyboardType,
     this.inputFormatters,
     this.maxLength,
@@ -59,6 +62,7 @@ class AppTextField extends StatelessWidget {
     this.prefixIcon,
     this.autofillHints,
     this.textCapitalization = TextCapitalization.none,
+    this.textInputAction,
     super.key,
   });
 
@@ -93,6 +97,8 @@ class AppTextField extends StatelessWidget {
           obscureText: obscureText,
           autofillHints: autofillHints,
           textCapitalization: textCapitalization,
+          textInputAction: textInputAction,
+          onFieldSubmitted: onSubmitted,
           style: textStyles.bodyM.copyWith(
             color: enabled ? colors.textPrimary : colors.textDisabled,
           ),

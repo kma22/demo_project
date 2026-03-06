@@ -29,5 +29,38 @@
   "@commonSearch": { "description": "Поле/кнопка поиска" },
 
   "commonNoResults": "Ничего не найдено",
-  "@commonNoResults": { "description": "Пустой результат поиска" }
+  "@commonNoResults": { "description": "Пустой результат поиска" },
+
+  "authLoginTitle": "Вход в аккаунт",
+  "@authLoginTitle": { "description": "Заголовок экрана логина" },
+
+  "authLoginSubtitle": "Введите данные для входа",
+  "@authLoginSubtitle": { "description": "Подзаголовок экрана логина" },
+
+  "authEmailLabel": "Email",
+  "@authEmailLabel": { "description": "Лейбл поля email" },
+
+  "authEmailHint": "example@mail.com",
+  "@authEmailHint": { "description": "Подсказка поля email" },
+
+  "authPasswordLabel": "Пароль",
+  "@authPasswordLabel": { "description": "Лейбл поля пароля" },
+
+  "authPasswordHint": "Минимум 6 символов",
+  "@authPasswordHint": { "description": "Подсказка поля пароля" },
+
+  "authLoginButton": "Войти",
+  "@authLoginButton": { "description": "Кнопка входа" },
+
+  "authEmailEmpty": "Введите email",
+  "@authEmailEmpty": { "description": "Ошибка: пустой email" },
+
+  "authEmailInvalid": "Некорректный email",
+  "@authEmailInvalid": { "description": "Ошибка: невалидный формат email" },
+
+  "authPasswordEmpty": "Введите пароль",
+  "@authPasswordEmpty": { "description": "Ошибка: пустой пароль" },
+
+  "authPasswordTooShort": "Минимум 6 символов",
+  "@authPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" }
 }

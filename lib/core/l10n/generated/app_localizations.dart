@@ -152,6 +152,72 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Ничего не найдено'**
   String get commonNoResults;
+
+  /// Заголовок экрана логина
+  ///
+  /// In ru, this message translates to:
+  /// **'Вход в аккаунт'**
+  String get authLoginTitle;
+
+  /// Подзаголовок экрана логина
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите данные для входа'**
+  String get authLoginSubtitle;
+
+  /// Лейбл поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'Email'**
+  String get authEmailLabel;
+
+  /// Подсказка поля email
+  ///
+  /// In ru, this message translates to:
+  /// **'example@mail.com'**
+  String get authEmailHint;
+
+  /// Лейбл поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Пароль'**
+  String get authPasswordLabel;
+
+  /// Подсказка поля пароля
+  ///
+  /// In ru, this message translates to:
+  /// **'Минимум 6 символов'**
+  String get authPasswordHint;
+
+  /// Кнопка входа
+  ///
+  /// In ru, this message translates to:
+  /// **'Войти'**
+  String get authLoginButton;
+
+  /// Ошибка: пустой email
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите email'**
+  String get authEmailEmpty;
+
+  /// Ошибка: невалидный формат email
+  ///
+  /// In ru, this message translates to:
+  /// **'Некорректный email'**
+  String get authEmailInvalid;
+
+  /// Ошибка: пустой пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Введите пароль'**
+  String get authPasswordEmpty;
+
+  /// Ошибка: слишком короткий пароль
+  ///
+  /// In ru, this message translates to:
+  /// **'Минимум 6 символов'**
+  String get authPasswordTooShort;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -37,4 +37,37 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get commonNoResults => 'Ничего не найдено';
+
+  @override
+  String get authLoginTitle => 'Вход в аккаунт';
+
+  @override
+  String get authLoginSubtitle => 'Введите данные для входа';
+
+  @override
+  String get authEmailLabel => 'Email';
+
+  @override
+  String get authEmailHint => 'example@mail.com';
+
+  @override
+  String get authPasswordLabel => 'Пароль';
+
+  @override
+  String get authPasswordHint => 'Минимум 6 символов';
+
+  @override
+  String get authLoginButton => 'Войти';
+
+  @override
+  String get authEmailEmpty => 'Введите email';
+
+  @override
+  String get authEmailInvalid => 'Некорректный email';
+
+  @override
+  String get authPasswordEmpty => 'Введите пароль';
+
+  @override
+  String get authPasswordTooShort => 'Минимум 6 символов';
 }

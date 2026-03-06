@@ -92,7 +92,9 @@ class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<LoginRouteArgs>();
-      return LoginScreen(onSuccess: args.onSuccess, key: args.key);
+      return WrappedRoute(
+        child: LoginScreen(onSuccess: args.onSuccess, key: args.key),
+      );
     },
   );
 }

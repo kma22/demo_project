@@ -43,6 +43,7 @@ lib/
   main.dart                     # Единая точка входа (env через --dart-define)
   app/
     di/                         # Глобальный DI (injectable)
+    navigation/                 # Bottom navigation bar
     router/                     # AppRouter + FeatureNavigation
     session/                    # Session management, декларативный роутинг
   core/
@@ -58,6 +59,7 @@ lib/
     login/                      # Авторизация (валидация через Form)
     registration/               # Регистрация (валидация через UseCase)
     home/                       # Главный экран
+    profile/                    # Профиль пользователя
 ```
 
 Подробнее о каждом слое -- в [docs/LAYERS_ARCHITECTURE.md](docs/LAYERS_ARCHITECTURE.md).

@@ -123,3 +123,40 @@ lib/features/some_feature/
     presentation/
   some_feature.dart             -- barrel-файл
 ```
+
+---
+
+## Тестирование
+
+### Структура тестов
+
+Тесты зеркалят структуру `lib/`:
+
+```
+test/
+  app/session/
+    data/session_repository_test.dart
+    presentation/cubit/session_cubit_test.dart
+  features/auth/
+    data/repository/auth_repository_test.dart
+    presentation/cubit/login_cubit_test.dart
+```
+
+### Компромисс псевдомодульности
+
+В multi-package каждый пакет имеет свой `test/`. Тесты внутри пакета могут свободно
+импортировать его `src/` — это штатное поведение Dart. А вот чужой `src/` Dart
+физически не даст импортировать — ошибка компиляции.
+
+В single-package всё лежит в одном пакете `demo_project`. Тесты импортируют `src/`
+напрямую (`features/auth/src/data/repository/auth_repository.dart`), потому что
+файл экспортов `auth.dart` отдаёт только `LoginScreen` — и это правильно, репозитории
+и кубиты не должны быть публичным API модуля.
+
+Формально тут нет нарушения — тест и код в одном пакете, Dart это разрешает.
+Но правило «не импортируй чужой `src/`» у нас держится на дисциплине, а не на
+компиляторе. Тесты — единственное место, где мы это правило осознанно обходим,
+потому что им нужен доступ к внутренней реализации.
+
+При миграции на multi-package тесты переедут внутрь своих пакетов и всё встанет
+на свои места — доступ к `src/` будет легитимным, а чужой `src/` закроет компилятор.

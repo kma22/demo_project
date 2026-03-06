@@ -42,7 +42,7 @@ lib/
     routing/                    # BaseFeatureNavigation (контракты)
     ui_kit/                     # Тема, токены, виджеты
   features/
-    auth/                       # Авторизация
+    login/                      # Авторизация
     home/                       # Главный экран
 ```
 
@@ -51,7 +51,7 @@ lib/
 ## Документация
 
 - [Архитектура слоев](docs/LAYERS_ARCHITECTURE.md) -- App / Core / Features, граф зависимостей, модульность
-- [Навигация](docs/NAVIGATION_ARCHITECTURE.md) -- паттерн "Оркестратор", BaseFeatureNavigation
+- [Навигация](docs/NAVIGATION_ARCHITECTURE.md) -- паттерн "Оркестратор", кросс-модульные правила, миграция на multi-package
 - [Сетевой слой](docs/API_CLIENT_ARCHITECTURE.md) -- ApiClient, SessionObserver, обработка ошибок
 - [Локальное хранилище](docs/DRIFT_ARCHITECTURE.md) -- Drift DB, миграции
 - [UI Kit и темы](docs/UI_THEME_ARCHITECTURE.md) -- ThemeExtension, дизайн-токены, ThemeManager

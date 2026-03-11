@@ -3,8 +3,8 @@ import 'package:demo_project/app/di/injection.dart';
 import 'package:demo_project/app/router/app_router.dart';
 import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart';
 import 'package:demo_project/core/l10n/l10n.dart';
-import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 /// Экран с bottom navigation bar.
 ///

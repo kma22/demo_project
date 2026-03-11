@@ -1,6 +1,4 @@
 import 'package:demo_project/core/l10n/l10n.dart';
-import 'package:demo_project/core/routing/routing.dart';
-import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_field.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_validation_error.dart';
 import 'package:demo_project/features/registration/src/presentation/cubit/registration_cubit.dart';
@@ -9,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:routing/routing.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 /// Экран регистрации с валидацией в domain-слое.
 @RoutePage()

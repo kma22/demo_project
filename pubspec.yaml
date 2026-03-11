@@ -15,7 +15,7 @@ workspace:
 #   - packages/core/l10n
   - packages/core/local_storage
 #   - packages/core/api_client
-#   - packages/core/ui_kit
+  - packages/core/ui_kit
 #   - packages/features/login
 #   - packages/features/registration
 #   - packages/features/home
@@ -72,6 +72,8 @@ dependencies:
     path: packages/core/routing
   local_storage:
     path: packages/core/local_storage
+  ui_kit:
+    path: packages/core/ui_kit
 
 dev_dependencies:
   flutter_test:
@@ -216,19 +218,7 @@ melos:
         && flutter build ipa --release --dart-define=ENV=prod
         && flutter build appbundle --release --dart-define=ENV=prod
 
-flutter_gen:
-  output: lib/core/gen/
-  line_length: 100
-
-  integrations:
-    flutter_svg: true
-    rive: false
-    lottie: false
-
 flutter:
   generate: true
 
   uses-material-design: true
-
-  assets:
-    - assets/ui_kit/images/body_states/

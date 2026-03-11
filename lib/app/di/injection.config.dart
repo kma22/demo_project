@@ -21,9 +21,6 @@ import 'package:demo_project/core/api_client/src/base_api_client.dart' as _i517;
 import 'package:demo_project/core/api_client/src/di/dio_module.dart' as _i622;
 import 'package:demo_project/core/api_client/src/session_observer.dart'
     as _i834;
-import 'package:demo_project/core/routing/routing.dart' as _i1011;
-import 'package:demo_project/core/ui_kit/src/theme/app_theme_manager.dart'
-    as _i492;
 import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart'
     as _i173;
 import 'package:demo_project/features/login/src/data/api/mock_login_api_service.dart'
@@ -54,6 +51,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:local_storage/local_storage.dart' as _i486;
 import 'package:logger_manager/logger_manager.dart' as _i127;
+import 'package:routing/routing.dart' as _i297;
+import 'package:ui_kit/ui_kit.dart' as _i66;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -65,6 +64,7 @@ extension GetItInjectableX on _i174.GetIt {
     await _i72.EnvironmentDataPackageModule().init(gh);
     await _i127.LoggerManagerPackageModule().init(gh);
     await _i486.LocalStoragePackageModule().init(gh);
+    await _i66.UiKitPackageModule().init(gh);
     final dioModule = _$DioModule();
     gh.factory<_i696.ValidateRegistrationUseCase>(
       () => _i696.ValidateRegistrationUseCase(),
@@ -73,7 +73,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i834.SessionObserver(),
       dispose: (i) => i.dispose(),
     );
-    gh.lazySingleton<_i1011.BaseFeatureNavigation>(
+    gh.lazySingleton<_i297.BaseFeatureNavigation>(
       () => _i614.FeatureNavigation(),
     );
     gh.factory<_i40.BaseRegistrationApiService>(
@@ -86,9 +86,6 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i72.EnvironmentData>(),
         gh<_i834.SessionObserver>(),
       ),
-    );
-    gh.lazySingleton<_i492.AppThemeManager>(
-      () => _i492.AppThemeManager(gh<_i486.BaseThemeStorage>()),
     );
     gh.factory<_i173.BaseLoginApiService>(() => _i40.MockLoginApiService());
     gh.lazySingleton<_i899.BaseSessionRepository>(

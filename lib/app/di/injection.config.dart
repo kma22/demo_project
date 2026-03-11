@@ -42,9 +42,11 @@ import 'package:demo_project/features/registration/src/presentation/cubit/regist
     as _i588;
 import 'package:environment_data/environment_data.dart' as _i72;
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:home/home.dart' as _i1024;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:local_storage/local_storage.dart' as _i486;
 import 'package:logger_manager/logger_manager.dart' as _i127;
+import 'package:profile/profile.dart' as _i16;
 import 'package:routing/routing.dart' as _i297;
 import 'package:ui_kit/ui_kit.dart' as _i66;
 
@@ -60,6 +62,8 @@ extension GetItInjectableX on _i174.GetIt {
     await _i486.LocalStoragePackageModule().init(gh);
     await _i66.UiKitPackageModule().init(gh);
     await _i633.ApiClientPackageModule().init(gh);
+    await _i1024.HomePackageModule().init(gh);
+    await _i16.ProfilePackageModule().init(gh);
     gh.factory<_i696.ValidateRegistrationUseCase>(
       () => _i696.ValidateRegistrationUseCase(),
     );

@@ -12,14 +12,13 @@ workspace:
   - packages/core/environment_data
   - packages/core/logger_manager
   - packages/core/routing
-#   - packages/core/l10n
   - packages/core/local_storage
   - packages/core/api_client
   - packages/core/ui_kit
 #   - packages/features/login
 #   - packages/features/registration
-#   - packages/features/home
-#   - packages/features/profile
+  - packages/features/home
+  - packages/features/profile
 
 dependencies:
   flutter:
@@ -77,6 +76,12 @@ dependencies:
   api_client:
     path: packages/core/api_client
 
+  # Feature Packages
+  home:
+    path: packages/features/home
+  profile:
+    path: packages/features/profile
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -106,7 +111,7 @@ melos:
         post: melos exec -c 6 -- "flutter clean" && melos exec -c 6 --file-exists="pubspec.lock" -- rm pubspec.lock
 
   scripts:
-    # -- Setup --
+    # Setup
 
     init:
       description: Clean install — clean, bootstrap, generate everything.
@@ -116,7 +121,7 @@ melos:
       description: Re-generate everything without clean.
       run: melos bs && melos run l10n:all && melos run build:all
 
-    # -- Code Generation --
+    # Code Generation
 
     build:
       description: Run build_runner for a specific package.
@@ -146,7 +151,7 @@ melos:
       description: Run flutter gen-l10n for all packages.
       run: melos run l10n --no-select
 
-    # -- Quality --
+    # Quality
 
     analyze:
       description: Analyze a specific package.
@@ -189,7 +194,7 @@ melos:
         -not -path '*/build/*'
         | xargs dart format -l 100 --set-exit-if-changed
 
-    # -- Testing --
+    # Testing
 
     test:
       description: Run tests for a specific package.
@@ -204,7 +209,7 @@ melos:
       description: Run tests for all packages.
       run: melos run test --no-select
 
-    # -- Build --
+    # Build
 
     build:dev:
       description: Create dev builds (ipa + appbundle).

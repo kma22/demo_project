@@ -43,53 +43,6 @@ class BottomNavigationRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    required VoidCallback onLogout,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-         HomeRoute.name,
-         args: HomeRouteArgs(onLogout: onLogout, key: key),
-         initialChildren: children,
-       );
-
-  static const String name = 'HomeRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<HomeRouteArgs>();
-      return HomeScreen(onLogout: args.onLogout, key: args.key);
-    },
-  );
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({required this.onLogout, this.key});
-
-  final VoidCallback onLogout;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{onLogout: $onLogout, key: $key}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! HomeRouteArgs) return false;
-    return onLogout == other.onLogout && key == other.key;
-  }
-
-  @override
-  int get hashCode => onLogout.hashCode ^ key.hashCode;
-}
-
-/// generated route for
 /// [LoginScreen]
 class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
   LoginRoute({
@@ -144,53 +97,6 @@ class LoginRouteArgs {
 
   @override
   int get hashCode => key.hashCode;
-}
-
-/// generated route for
-/// [ProfileScreen]
-class ProfileRoute extends PageRouteInfo<ProfileRouteArgs> {
-  ProfileRoute({
-    required VoidCallback onLogout,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-         ProfileRoute.name,
-         args: ProfileRouteArgs(onLogout: onLogout, key: key),
-         initialChildren: children,
-       );
-
-  static const String name = 'ProfileRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<ProfileRouteArgs>();
-      return ProfileScreen(onLogout: args.onLogout, key: args.key);
-    },
-  );
-}
-
-class ProfileRouteArgs {
-  const ProfileRouteArgs({required this.onLogout, this.key});
-
-  final VoidCallback onLogout;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'ProfileRouteArgs{onLogout: $onLogout, key: $key}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! ProfileRouteArgs) return false;
-    return onLogout == other.onLogout && key == other.key;
-  }
-
-  @override
-  int get hashCode => onLogout.hashCode ^ key.hashCode;
 }
 
 /// generated route for

@@ -1,0 +1,58 @@
+name: home
+description: "Home feature module."
+version: 0.0.1
+
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # DI
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+
+  # State Management
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.8
+
+  # Data
+  json_annotation: ^4.10.0
+  intl: any
+
+  # Core
+  api_client:
+    path: ../../core/api_client
+  logger_manager:
+    path: ../../core/logger_manager
+  routing:
+    path: ../../core/routing
+  ui_kit:
+    path: ../../core/ui_kit
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.12.2
+  injectable_generator: ^2.11.1
+  auto_route_generator: ^10.4.0
+  json_serializable: ^6.12.0
+
+  # Testing
+  bloc_test: ^10.0.0
+  mockito: ^5.6.3
+
+  # Linter
+  flutter_lints: ^6.0.0
+
+flutter:
+  generate: true

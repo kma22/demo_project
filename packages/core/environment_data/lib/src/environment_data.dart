@@ -1,4 +1,4 @@
-import 'package:demo_project/core/environment_data/src/enums/environment_name.dart';
+import 'package:environment_data/src/enums/environment_name.dart';
 
 class EnvironmentData {
   final String baseUrl;

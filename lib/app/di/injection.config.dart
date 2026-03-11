@@ -21,14 +21,6 @@ import 'package:demo_project/core/api_client/src/base_api_client.dart' as _i517;
 import 'package:demo_project/core/api_client/src/di/dio_module.dart' as _i622;
 import 'package:demo_project/core/api_client/src/session_observer.dart'
     as _i834;
-import 'package:demo_project/core/environment_data/environment_data.dart'
-    as _i281;
-import 'package:demo_project/core/environment_data/src/dev_environment_data.dart'
-    as _i786;
-import 'package:demo_project/core/environment_data/src/environment_data.dart'
-    as _i478;
-import 'package:demo_project/core/environment_data/src/prod_environment_data.dart'
-    as _i88;
 import 'package:demo_project/core/local_storage/local_storage.dart' as _i915;
 import 'package:demo_project/core/local_storage/src/database/app_database.dart'
     as _i1040;
@@ -76,14 +68,12 @@ import 'package:demo_project/features/registration/src/domain/use_case/validate_
 import 'package:demo_project/features/registration/src/presentation/cubit/registration_cubit.dart'
     as _i588;
 import 'package:dio/dio.dart' as _i361;
+import 'package:environment_data/environment_data.dart' as _i72;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i558;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import 'package:talker_flutter/talker_flutter.dart' as _i207;
-
-const String _dev = 'dev';
-const String _prod = 'prod';
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -92,6 +82,7 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) async {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    await _i72.EnvironmentDataPackageModule().init(gh);
     final localStorageModule = _$LocalStorageModule();
     final loggerModule = _$LoggerModule();
     final dioModule = _$DioModule();
@@ -120,20 +111,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i40.BaseRegistrationApiService>(
       () => _i270.MockRegistrationApiService(),
     );
-    gh.factory<_i478.EnvironmentData>(
-      () => _i786.DevEnvironmentData(),
-      registerFor: {_dev},
-    );
     gh.factory<_i173.BaseLoginApiService>(() => _i40.MockLoginApiService());
     gh.factory<_i1035.BaseThemeStorage>(
       () => _i411.ThemeStorage(gh<_i460.SharedPreferences>()),
     );
     gh.lazySingleton<_i386.BaseTokenStorage>(
       () => _i559.TokenStorage(gh<_i558.FlutterSecureStorage>()),
-    );
-    gh.factory<_i478.EnvironmentData>(
-      () => _i88.ProdEnvironmentData(),
-      registerFor: {_prod},
     );
     gh.factory<_i824.BaseRegistrationRepository>(
       () => _i500.RegistrationRepository(gh<_i40.BaseRegistrationApiService>()),
@@ -143,6 +126,17 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i92.RegisterUseCase>(
       () => _i92.RegisterUseCase(gh<_i824.BaseRegistrationRepository>()),
+    );
+    gh.lazySingleton<_i361.Dio>(
+      () => dioModule.dio(
+        gh<_i386.BaseTokenStorage>(),
+        gh<_i701.AppLogger>(),
+        gh<_i72.EnvironmentData>(),
+        gh<_i834.SessionObserver>(),
+      ),
+    );
+    gh.factory<_i517.BaseApiClient>(
+      () => _i799.ApiClient(gh<_i361.Dio>(), gh<_i701.AppLogger>()),
     );
     gh.factory<_i133.BaseLoginRepository>(
       () => _i162.LoginRepository(gh<_i173.BaseLoginApiService>()),
@@ -160,22 +154,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i112.SessionObserver>(),
       ),
     );
-    gh.lazySingleton<_i361.Dio>(
-      () => dioModule.dio(
-        gh<_i386.BaseTokenStorage>(),
-        gh<_i701.AppLogger>(),
-        gh<_i281.EnvironmentData>(),
-        gh<_i834.SessionObserver>(),
-      ),
-    );
     gh.factory<_i267.LoginCubit>(
       () => _i267.LoginCubit(
         gh<_i133.BaseLoginRepository>(),
         gh<_i701.AppLogger>(),
       ),
-    );
-    gh.factory<_i517.BaseApiClient>(
-      () => _i799.ApiClient(gh<_i361.Dio>(), gh<_i701.AppLogger>()),
     );
     gh.lazySingleton<_i184.SessionCubit>(
       () => _i184.SessionCubit(

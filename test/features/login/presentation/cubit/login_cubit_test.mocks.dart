@@ -5,11 +5,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
 
-import 'package:demo_project/core/logger_manager/src/app_logger.dart' as _i7;
 import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart'
     as _i4;
 import 'package:dio/dio.dart' as _i2;
 import 'package:flutter/cupertino.dart' as _i3;
+import 'package:logger_manager/src/app_logger.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
 

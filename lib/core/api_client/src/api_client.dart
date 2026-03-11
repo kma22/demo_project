@@ -10,9 +10,9 @@ import 'package:demo_project/core/api_client/src/exceptions/server_error_excepti
 import 'package:demo_project/core/api_client/src/exceptions/timeout_exception.dart';
 import 'package:demo_project/core/api_client/src/exceptions/unauthorized_exception.dart';
 import 'package:demo_project/core/api_client/src/exceptions/unknown_api_exception.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 /// Реализация [BaseApiClient] на базе Dio.
 /// Подробнее: [API_CLIENT_ARCHITECTURE.md](demo_project/docs/API_CLIENT_ARCHITECTURE.md)

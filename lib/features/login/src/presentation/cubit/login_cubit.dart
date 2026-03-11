@@ -1,9 +1,9 @@
 import 'package:demo_project/core/api_client/api_client.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 part 'login_state.dart';
 

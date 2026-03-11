@@ -1,10 +1,10 @@
 import 'package:demo_project/core/api_client/src/interceptors/oauth_interceptor.dart';
 import 'package:demo_project/core/api_client/src/session_observer.dart';
 import 'package:demo_project/core/local_storage/src/token_storage/base_token_storage.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:environment_data/environment_data.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 /// Модуль инициализации Dio для DI-контейнера.
 /// Настраивает базовые опции и цепочку интерцепторов.

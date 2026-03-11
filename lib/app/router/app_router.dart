@@ -4,7 +4,6 @@ import 'package:demo_project/app/session/presentation/screens/authenticated_cont
 import 'package:demo_project/app/session/presentation/screens/session_container_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/splash_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/unauthenticated_container_screen.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:demo_project/features/home/home.dart';
 import 'package:demo_project/features/login/login.dart';
 import 'package:demo_project/features/profile/profile.dart';

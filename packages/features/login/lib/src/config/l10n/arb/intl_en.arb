@@ -1,0 +1,18 @@
+{
+  "@@locale": "en",
+
+  "loginTitle": "Sign In",
+  "loginSubtitle": "Enter your credentials",
+  "emailLabel": "Email",
+  "emailHint": "example@mail.com",
+  "passwordLabel": "Password",
+  "passwordHint": "At least 6 characters",
+  "loginButton": "Sign In",
+  "emailEmpty": "Enter email",
+  "emailInvalid": "Invalid email",
+  "passwordEmpty": "Enter password",
+  "passwordTooShort": "Password less than 6 characters",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign Up",
+  "error": "An error occurred"
+}

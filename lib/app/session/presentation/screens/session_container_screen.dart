@@ -3,6 +3,7 @@ import 'package:demo_project/app/router/app_router.dart';
 import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login/login.dart';
 
 /// Корневой контейнер приложения.
 ///
@@ -21,11 +22,15 @@ class SessionContainerScreen extends StatelessWidget {
         return AutoRouter.declarative(
           routes: (_) => [
             if (state is SessionLoadingState) const SplashRoute(),
+            if (state is AuthenticatedState) const AuthenticatedContainerRoute(),
             if (state is UnauthenticatedState)
               UnauthenticatedContainerRoute(
-                children: [LoginRoute(onSuccess: sessionCubit.onLoginSuccess)],
+                children: [
+                  LoginContainerRoute(
+                    children: [LoginRoute(onSuccess: sessionCubit.onLoginSuccess)],
+                  ),
+                ],
               ),
-            if (state is AuthenticatedState) const AuthenticatedContainerRoute(),
           ],
         );
       },

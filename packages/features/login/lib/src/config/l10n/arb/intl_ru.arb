@@ -1,0 +1,45 @@
+{
+  "@@locale": "ru",
+
+  "loginTitle": "Вход в аккаунт",
+  "@loginTitle": { "description": "Заголовок экрана логина" },
+
+  "loginSubtitle": "Введите данные для входа",
+  "@loginSubtitle": { "description": "Подзаголовок экрана логина" },
+
+  "emailLabel": "Email",
+  "@emailLabel": { "description": "Лейбл поля email" },
+
+  "emailHint": "example@mail.com",
+  "@emailHint": { "description": "Подсказка поля email" },
+
+  "passwordLabel": "Пароль",
+  "@passwordLabel": { "description": "Лейбл поля пароля" },
+
+  "passwordHint": "Минимум 6 символов",
+  "@passwordHint": { "description": "Подсказка поля пароля" },
+
+  "loginButton": "Войти",
+  "@loginButton": { "description": "Кнопка входа" },
+
+  "emailEmpty": "Введите email",
+  "@emailEmpty": { "description": "Ошибка: пустой email" },
+
+  "emailInvalid": "Некорректный email",
+  "@emailInvalid": { "description": "Ошибка: невалидный формат email" },
+
+  "passwordEmpty": "Введите пароль",
+  "@passwordEmpty": { "description": "Ошибка: пустой пароль" },
+
+  "passwordTooShort": "Пароль менее 6 символов",
+  "@passwordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+
+  "noAccount": "Нет аккаунта?",
+  "@noAccount": { "description": "Текст перед ссылкой на регистрацию" },
+
+  "signUp": "Зарегистрироваться",
+  "@signUp": { "description": "Ссылка на экран регистрации" },
+
+  "error": "Произошла ошибка",
+  "@error": { "description": "Общее сообщение об ошибке" }
+}

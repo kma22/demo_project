@@ -62,8 +62,7 @@ import 'app_localizations_ru.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -93,10 +91,7 @@ abstract class AppLocalizations {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('ru'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('ru')];
 
   /// Кнопка повторной попытки
   ///
@@ -157,84 +152,6 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Ничего не найдено'**
   String get commonNoResults;
-
-  /// Заголовок экрана логина
-  ///
-  /// In ru, this message translates to:
-  /// **'Вход в аккаунт'**
-  String get loginLoginTitle;
-
-  /// Подзаголовок экрана логина
-  ///
-  /// In ru, this message translates to:
-  /// **'Введите данные для входа'**
-  String get loginLoginSubtitle;
-
-  /// Лейбл поля email
-  ///
-  /// In ru, this message translates to:
-  /// **'Email'**
-  String get loginEmailLabel;
-
-  /// Подсказка поля email
-  ///
-  /// In ru, this message translates to:
-  /// **'example@mail.com'**
-  String get loginEmailHint;
-
-  /// Лейбл поля пароля
-  ///
-  /// In ru, this message translates to:
-  /// **'Пароль'**
-  String get loginPasswordLabel;
-
-  /// Подсказка поля пароля
-  ///
-  /// In ru, this message translates to:
-  /// **'Минимум 6 символов'**
-  String get loginPasswordHint;
-
-  /// Кнопка входа
-  ///
-  /// In ru, this message translates to:
-  /// **'Войти'**
-  String get loginLoginButton;
-
-  /// Ошибка: пустой email
-  ///
-  /// In ru, this message translates to:
-  /// **'Введите email'**
-  String get loginEmailEmpty;
-
-  /// Ошибка: невалидный формат email
-  ///
-  /// In ru, this message translates to:
-  /// **'Некорректный email'**
-  String get loginEmailInvalid;
-
-  /// Ошибка: пустой пароль
-  ///
-  /// In ru, this message translates to:
-  /// **'Введите пароль'**
-  String get loginPasswordEmpty;
-
-  /// Ошибка: слишком короткий пароль
-  ///
-  /// In ru, this message translates to:
-  /// **'Пароль менее 6 символов'**
-  String get loginPasswordTooShort;
-
-  /// Текст перед ссылкой на регистрацию
-  ///
-  /// In ru, this message translates to:
-  /// **'Нет аккаунта?'**
-  String get loginNoAccount;
-
-  /// Ссылка на экран регистрации
-  ///
-  /// In ru, this message translates to:
-  /// **'Зарегистрироваться'**
-  String get loginSignUp;
 
   /// Заголовок экрана регистрации
   ///
@@ -369,8 +286,7 @@ abstract class AppLocalizations {
   String get bottomNavProfile;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -379,8 +295,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

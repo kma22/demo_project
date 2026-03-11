@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:demo_project/core/local_storage/src/storage_keys.dart';
-import 'package:demo_project/core/local_storage/src/token_storage/base_token_storage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:local_storage/src/storage_keys.dart';
+import 'package:local_storage/src/token_storage/base_token_storage.dart';
 
 @LazySingleton(as: BaseTokenStorage)
 class TokenStorage implements BaseTokenStorage {

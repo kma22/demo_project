@@ -1,0 +1,38 @@
+name: local_storage
+description: "Local storage — Drift database, secure token storage, theme persistence."
+version: 0.0.1
+
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # DI
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+
+  # Local Storage
+  drift: ^2.30.1
+  drift_flutter: ^0.2.8
+  flutter_secure_storage: ^10.0.0
+  shared_preferences: ^2.5.4
+  path_provider: ^2.1.5
+  path: ^1.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.12.2
+  injectable_generator: ^2.11.1
+  drift_dev: ^2.30.1
+
+  # Linter
+  flutter_lints: ^6.0.0

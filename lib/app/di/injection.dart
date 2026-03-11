@@ -2,6 +2,7 @@ import 'package:demo_project/app/di/injection.config.dart';
 import 'package:environment_data/environment_data.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:local_storage/local_storage.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 final getIt = GetIt.instance;
@@ -11,6 +12,7 @@ final getIt = GetIt.instance;
   externalPackageModulesBefore: [
     ExternalModule(EnvironmentDataPackageModule),
     ExternalModule(LoggerManagerPackageModule),
+    ExternalModule(LocalStoragePackageModule),
   ],
 )
 Future<void> configureDependencies(String environmentName) {

@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:demo_project/app/session/data/session_repository.dart';
 import 'package:demo_project/core/api_client/api_client.dart';
-import 'package:demo_project/core/local_storage/local_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:local_storage/local_storage.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

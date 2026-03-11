@@ -117,10 +117,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registrationPasswordTooShort => 'Password less than 6 characters';
 
   @override
-  String get registrationPasswordNoUppercase => 'At least one uppercase letter required';
+  String get registrationPasswordNoUppercase =>
+      'At least one uppercase letter required';
 
   @override
-  String get registrationPasswordNoLowercase => 'At least one lowercase letter required';
+  String get registrationPasswordNoLowercase =>
+      'At least one lowercase letter required';
 
   @override
   String get registrationPasswordNoDigit => 'At least one digit required';

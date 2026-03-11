@@ -283,22 +283,6 @@ class SplashRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [TalkerLoggerScreen]
-class TalkerLoggerRoute extends PageRouteInfo<void> {
-  const TalkerLoggerRoute({List<PageRouteInfo>? children})
-    : super(TalkerLoggerRoute.name, initialChildren: children);
-
-  static const String name = 'TalkerLoggerRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const TalkerLoggerScreen();
-    },
-  );
-}
-
-/// generated route for
 /// [UnauthenticatedContainerScreen]
 class UnauthenticatedContainerRoute extends PageRouteInfo<void> {
   const UnauthenticatedContainerRoute({List<PageRouteInfo>? children})

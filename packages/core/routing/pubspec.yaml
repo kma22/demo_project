@@ -1,0 +1,27 @@
+name: routing
+description: "Routing contracts — BaseFeatureNavigation, extensions, auto_route re-export."
+version: 0.0.1
+
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Navigation
+  auto_route: ^11.1.0
+
+  # DI
+  get_it: ^9.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linter
+  flutter_lints: ^6.0.0

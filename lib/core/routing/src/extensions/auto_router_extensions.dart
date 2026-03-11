@@ -1,6 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:demo_project/core/routing/src/route_pages/bottom_sheet_route_page.dart';
 import 'package:flutter/material.dart';
+import 'package:routing/routing.dart';
 
 extension AutoRouterExtensions on StackRouter {
   Future<T?> pushBottomSheet<T>({
@@ -86,10 +86,4 @@ extension AutoRouterExtensions on StackRouter {
       currentRouter.pop(result);
     }
   }
-}
-
-extension AutoRouterX on BuildContext {
-  StackRouter get router => AutoRouter.of(this);
-
-  TabsRouter get tabsRouter => AutoTabsRouter.of(this);
 }

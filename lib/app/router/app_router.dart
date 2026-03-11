@@ -9,6 +9,7 @@ import 'package:demo_project/features/login/login.dart';
 import 'package:demo_project/features/profile/profile.dart';
 import 'package:demo_project/features/registration/registration.dart';
 import 'package:flutter/foundation.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 part 'app_router.gr.dart';
 
@@ -17,6 +18,8 @@ part 'app_router.gr.dart';
 /// Подробнее: [NAVIGATION_ARCHITECTURE.md](demo_project/docs/NAVIGATION_ARCHITECTURE.md)
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends RootStackRouter {
+  final _loggerManagerRouter = LoggerManagerRouter();
+
   @override
   List<AutoRoute> get routes => [
     AutoRoute(
@@ -46,6 +49,6 @@ class AppRouter extends RootStackRouter {
         ),
       ],
     ),
-    AutoRoute(page: TalkerLoggerRoute.page),
+    ..._loggerManagerRouter.routes,
   ];
 }

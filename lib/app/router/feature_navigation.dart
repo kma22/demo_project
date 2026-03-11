@@ -1,6 +1,6 @@
 import 'package:demo_project/app/router/app_router.dart';
-import 'package:demo_project/core/routing/routing.dart';
 import 'package:injectable/injectable.dart';
+import 'package:routing/routing.dart';
 
 /// Реализация кросс-модульной навигации.
 /// Находится в слое приложения, так как имеет доступ к конкретным роутам всех фич.

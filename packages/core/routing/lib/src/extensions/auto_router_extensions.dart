@@ -1,6 +1,6 @@
-import 'package:demo_project/core/routing/src/route_pages/bottom_sheet_route_page.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:routing/routing.dart';
+import 'package:routing/src/route_pages/bottom_sheet_route_page.dart';
 
 extension AutoRouterExtensions on StackRouter {
   Future<T?> pushBottomSheet<T>({

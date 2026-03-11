@@ -19,6 +19,10 @@ dependencies:
   # DI
   get_it: ^9.2.0
 
+  # Core
+  ui_kit:
+    path: ../ui_kit
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

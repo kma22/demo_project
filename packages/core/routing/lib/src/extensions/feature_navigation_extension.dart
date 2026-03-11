@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/core/routing/src/navigation/base_feature_navigation.dart';
 import 'package:get_it/get_it.dart';
+import 'package:routing/src/navigation/base_feature_navigation.dart';
 
 /// Набор методов для вызова кросс-модульной навигации через context.router.
 /// Скрывает детали Service Locator (GetIt) от UI-слоя.

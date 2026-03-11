@@ -1,12 +1,12 @@
 import 'package:demo_project/core/l10n/l10n.dart';
 import 'package:demo_project/core/routing/routing.dart';
-import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart';
 import 'package:demo_project/features/login/src/presentation/widgets/email_field.dart';
 import 'package:demo_project/features/login/src/presentation/widgets/password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 /// Экран авторизации с формой email/пароль.
 @RoutePage()

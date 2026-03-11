@@ -1,6 +1,6 @@
 import 'package:demo_project/core/l10n/l10n.dart';
-import 'package:demo_project/core/ui_kit/ui_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;

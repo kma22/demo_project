@@ -1,5 +1,5 @@
+import 'package:api_client/api_client.dart';
 import 'package:demo_project/app/session/domain/base_session_repository.dart';
-import 'package:demo_project/core/api_client/api_client.dart';
 import 'package:injectable/injectable.dart';
 import 'package:local_storage/local_storage.dart';
 

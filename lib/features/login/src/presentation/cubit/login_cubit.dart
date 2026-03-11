@@ -1,4 +1,4 @@
-import 'package:demo_project/core/api_client/api_client.dart';
+import 'package:api_client/api_client.dart';
 import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,18 +1,19 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:demo_project/core/api_client/src/base_api_client.dart';
-import 'package:demo_project/core/api_client/src/exceptions/bad_request_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/connection_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/invalid_data_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/not_found_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/server_error_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/timeout_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/unauthorized_exception.dart';
-import 'package:demo_project/core/api_client/src/exceptions/unknown_api_exception.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger_manager/logger_manager.dart';
+
+import 'base_api_client.dart';
+import 'exceptions/bad_request_exception.dart';
+import 'exceptions/connection_exception.dart';
+import 'exceptions/invalid_data_exception.dart';
+import 'exceptions/not_found_exception.dart';
+import 'exceptions/server_error_exception.dart';
+import 'exceptions/timeout_exception.dart';
+import 'exceptions/unauthorized_exception.dart';
+import 'exceptions/unknown_api_exception.dart';
 
 /// Реализация [BaseApiClient] на базе Dio.
 /// Подробнее: [API_CLIENT_ARCHITECTURE.md](demo_project/docs/API_CLIENT_ARCHITECTURE.md)

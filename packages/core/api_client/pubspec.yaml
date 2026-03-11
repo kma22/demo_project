@@ -1,0 +1,41 @@
+name: api_client
+description: "API client — Dio wrapper, OAuth interceptor, domain exceptions."
+version: 0.0.1
+
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # DI
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+
+  # Networking
+  dio: ^5.9.1
+  equatable: ^2.0.8
+
+  # Core
+  environment_data:
+    path: ../environment_data
+  local_storage:
+    path: ../local_storage
+  logger_manager:
+    path: ../logger_manager
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.12.2
+  injectable_generator: ^2.11.1
+
+  # Linter
+  flutter_lints: ^6.0.0

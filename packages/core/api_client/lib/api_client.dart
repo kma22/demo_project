@@ -1,4 +1,5 @@
 export 'src/base_api_client.dart';
+export 'src/di/get_it.module.dart' show ApiClientPackageModule;
 export 'src/exceptions/api_exception.dart';
 export 'src/exceptions/bad_request_exception.dart';
 export 'src/exceptions/connection_exception.dart';

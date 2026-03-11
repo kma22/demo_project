@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:demo_project/core/local_storage/local_storage.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:environment_data/environment_data.dart';
 import 'package:flutter/widgets.dart';
+import 'package:logger_manager/logger_manager.dart';
 
 /// Интерцептор для управления авторизацией.
 /// Добавляет токены к запросам и обрабатывает автоматическое обновление при 401 ошибке.

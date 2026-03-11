@@ -7,9 +7,9 @@ import 'dart:async' as _i5;
 
 import 'package:demo_project/app/session/domain/base_session_repository.dart'
     as _i4;
-import 'package:demo_project/core/logger_manager/src/app_logger.dart' as _i6;
 import 'package:dio/dio.dart' as _i2;
 import 'package:flutter/cupertino.dart' as _i3;
+import 'package:logger_manager/src/app_logger.dart' as _i6;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

@@ -1,8 +1,8 @@
-import 'package:demo_project/core/logger_manager/src/app_logger.dart';
-import 'package:demo_project/core/logger_manager/src/talker_logger/custom_log/w_talker_dio_logger.dart';
-import 'package:demo_project/core/logger_manager/src/talker_logger/custom_log/w_talker_error_logger.dart';
-import 'package:demo_project/core/logger_manager/src/talker_logger/custom_log/w_talker_info_logger.dart';
-import 'package:demo_project/core/logger_manager/src/talker_logger/custom_log/w_talker_warning_logger.dart';
+import 'package:logger_manager/src/app_logger.dart';
+import 'package:logger_manager/src/talker_logger/custom_log/w_talker_dio_logger.dart';
+import 'package:logger_manager/src/talker_logger/custom_log/w_talker_error_logger.dart';
+import 'package:logger_manager/src/talker_logger/custom_log/w_talker_info_logger.dart';
+import 'package:logger_manager/src/talker_logger/custom_log/w_talker_warning_logger.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';

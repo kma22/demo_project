@@ -1,12 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:demo_project/core/api_client/api_client.dart';
-import 'package:demo_project/core/logger_manager/logger_manager.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_field.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_validation_error.dart';
 import 'package:demo_project/features/registration/src/domain/use_case/register_use_case.dart';
 import 'package:demo_project/features/registration/src/domain/use_case/validate_registration_use_case.dart';
 import 'package:demo_project/features/registration/src/presentation/cubit/registration_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:logger_manager/logger_manager.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

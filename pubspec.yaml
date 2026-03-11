@@ -10,7 +10,7 @@ environment:
 
 workspace:
   - packages/core/environment_data
-#   - packages/core/logger_manager
+  - packages/core/logger_manager
 #   - packages/core/routing
 #   - packages/core/l10n
 #   - packages/core/local_storage
@@ -66,6 +66,8 @@ dependencies:
   # Core Packages
   environment_data:
     path: packages/core/environment_data
+  logger_manager:
+    path: packages/core/logger_manager
 
 dev_dependencies:
   flutter_test:

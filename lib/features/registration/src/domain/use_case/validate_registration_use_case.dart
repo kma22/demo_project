@@ -15,49 +15,57 @@ class ValidateRegistrationUseCase {
     required String password,
     required String confirmPassword,
   }) {
-    final errors = <RegistrationField, RegistrationValidationError>{};
-
-    _validateEmail(email.trim(), errors);
-    _validatePassword(password, errors);
-    _validateConfirmPassword(password, confirmPassword, errors);
-
-    return errors;
+    return {
+      ..._validateEmail(email.trim()),
+      ..._validatePassword(password),
+      ..._validateConfirmPassword(password, confirmPassword),
+    };
   }
 
-  void _validateEmail(String email, Map<RegistrationField, RegistrationValidationError> errors) {
-    if (email.isEmpty) {
-      errors[RegistrationField.email] = RegistrationValidationError.empty;
-    } else if (!_emailRegExp.hasMatch(email)) {
-      errors[RegistrationField.email] = RegistrationValidationError.invalidEmail;
+  Map<RegistrationField, RegistrationValidationError> _validateEmail(String email) {
+    if (email.isEmpty) return {RegistrationField.email: RegistrationValidationError.empty};
+
+    if (!_emailRegExp.hasMatch(email)) {
+      return {RegistrationField.email: RegistrationValidationError.invalidEmail};
     }
+
+    return {};
   }
 
-  void _validatePassword(
-    String password,
-    Map<RegistrationField, RegistrationValidationError> errors,
-  ) {
-    if (password.isEmpty) {
-      errors[RegistrationField.password] = RegistrationValidationError.empty;
-    } else if (password.length < _minPasswordLength) {
-      errors[RegistrationField.password] = RegistrationValidationError.passwordTooShort;
-    } else if (!_uppercaseRegExp.hasMatch(password)) {
-      errors[RegistrationField.password] = RegistrationValidationError.passwordNoUppercase;
-    } else if (!_lowercaseRegExp.hasMatch(password)) {
-      errors[RegistrationField.password] = RegistrationValidationError.passwordNoLowercase;
-    } else if (!_digitRegExp.hasMatch(password)) {
-      errors[RegistrationField.password] = RegistrationValidationError.passwordNoDigit;
+  Map<RegistrationField, RegistrationValidationError> _validatePassword(String password) {
+    if (password.isEmpty) return {RegistrationField.password: RegistrationValidationError.empty};
+
+    if (password.length < _minPasswordLength) {
+      return {RegistrationField.password: RegistrationValidationError.passwordTooShort};
     }
+
+    if (!_uppercaseRegExp.hasMatch(password)) {
+      return {RegistrationField.password: RegistrationValidationError.passwordNoUppercase};
+    }
+
+    if (!_lowercaseRegExp.hasMatch(password)) {
+      return {RegistrationField.password: RegistrationValidationError.passwordNoLowercase};
+    }
+
+    if (!_digitRegExp.hasMatch(password)) {
+      return {RegistrationField.password: RegistrationValidationError.passwordNoDigit};
+    }
+
+    return {};
   }
 
-  void _validateConfirmPassword(
+  Map<RegistrationField, RegistrationValidationError> _validateConfirmPassword(
     String password,
     String confirmPassword,
-    Map<RegistrationField, RegistrationValidationError> errors,
   ) {
     if (confirmPassword.isEmpty) {
-      errors[RegistrationField.confirmPassword] = RegistrationValidationError.empty;
-    } else if (confirmPassword != password) {
-      errors[RegistrationField.confirmPassword] = RegistrationValidationError.passwordsDoNotMatch;
+      return {RegistrationField.confirmPassword: RegistrationValidationError.empty};
     }
+
+    if (confirmPassword != password) {
+      return {RegistrationField.confirmPassword: RegistrationValidationError.passwordsDoNotMatch};
+    }
+
+    return {};
   }
 }

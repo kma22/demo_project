@@ -1,6 +1,6 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/core/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:home/src/config/l10n/localization_extension.dart';
+import 'package:routing/routing.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 /// Временная заглушка главного экрана.
@@ -22,14 +22,14 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: colors.background,
         foregroundColor: colors.textPrimary,
-        title: Text(l10n.homeTitle, style: textStyles.h2),
+        title: Text(l10n.title, style: textStyles.h2),
         centerTitle: true,
         elevation: 0,
       ),
       body: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: layout.s16),
-          child: AppButton.primary(title: l10n.profileLogout, onTap: onLogout, expanded: true),
+          child: AppButton.primary(title: l10n.logout, onTap: onLogout, expanded: true),
         ),
       ),
     );

@@ -47,11 +47,6 @@
   "registrationHaveAccount": "Already have an account?",
   "registrationSignIn": "Sign In",
 
-  "homeTitle": "Home",
-
-  "profileTitle": "Profile",
-  "profileLogout": "Log out",
-
   "bottomNavHome": "Home",
   "bottomNavProfile": "Profile"
 }

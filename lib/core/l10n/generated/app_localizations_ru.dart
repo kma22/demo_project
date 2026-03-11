@@ -117,10 +117,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get registrationPasswordTooShort => 'Пароль менее 6 символов';
 
   @override
-  String get registrationPasswordNoUppercase => 'Нужна хотя бы одна заглавная буква';
+  String get registrationPasswordNoUppercase =>
+      'Нужна хотя бы одна заглавная буква';
 
   @override
-  String get registrationPasswordNoLowercase => 'Нужна хотя бы одна строчная буква';
+  String get registrationPasswordNoLowercase =>
+      'Нужна хотя бы одна строчная буква';
 
   @override
   String get registrationPasswordNoDigit => 'Нужна хотя бы одна цифра';
@@ -136,15 +138,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get registrationSignIn => 'Войти';
-
-  @override
-  String get homeTitle => 'Главная';
-
-  @override
-  String get profileTitle => 'Профиль';
-
-  @override
-  String get profileLogout => 'Выйти из аккаунта';
 
   @override
   String get bottomNavHome => 'Главная';

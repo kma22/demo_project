@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:demo_project/core/api_client/src/session_observer.dart' as _i4;
+import 'package:api_client/src/session_observer.dart' as _i4;
 import 'package:local_storage/src/token_storage/base_token_storage.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 

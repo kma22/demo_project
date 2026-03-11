@@ -1,4 +1,4 @@
-import 'package:demo_project/core/api_client/api_client.dart';
+import 'package:api_client/api_client.dart';
 import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart';
 import 'package:demo_project/features/login/src/data/dto/login_request_dto.dart';
 import 'package:demo_project/features/login/src/data/dto/login_response_dto.dart';

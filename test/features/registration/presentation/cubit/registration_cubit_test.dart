@@ -1,5 +1,5 @@
+import 'package:api_client/api_client.dart';
 import 'package:bloc_test/bloc_test.dart';
-import 'package:demo_project/core/api_client/api_client.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_field.dart';
 import 'package:demo_project/features/registration/src/domain/entity/registration_validation_error.dart';
 import 'package:demo_project/features/registration/src/domain/use_case/register_use_case.dart';

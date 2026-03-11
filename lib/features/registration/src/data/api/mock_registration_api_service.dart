@@ -1,4 +1,4 @@
-import 'package:demo_project/core/api_client/api_client.dart';
+import 'package:api_client/api_client.dart';
 import 'package:demo_project/features/registration/src/data/api/base_registration_api_service.dart';
 import 'package:demo_project/features/registration/src/data/dto/registration_request_dto.dart';
 import 'package:demo_project/features/registration/src/data/dto/registration_response_dto.dart';

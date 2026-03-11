@@ -14,7 +14,7 @@ workspace:
   - packages/core/routing
 #   - packages/core/l10n
   - packages/core/local_storage
-#   - packages/core/api_client
+  - packages/core/api_client
   - packages/core/ui_kit
 #   - packages/features/login
 #   - packages/features/registration
@@ -74,6 +74,8 @@ dependencies:
     path: packages/core/local_storage
   ui_kit:
     path: packages/core/ui_kit
+  api_client:
+    path: packages/core/api_client
 
 dev_dependencies:
   flutter_test:

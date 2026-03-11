@@ -1,0 +1,30 @@
+name: environment_data
+description: "Environment configuration — dev/prod URLs and settings."
+version: 0.0.1
+
+publish_to: none
+
+resolution: workspace
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # DI
+  get_it: ^9.2.0
+  injectable: ^2.7.1+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code Generation
+  build_runner: ^2.12.2
+  injectable_generator: ^2.11.1
+
+  # Linter
+  flutter_lints: ^6.0.0
+

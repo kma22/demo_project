@@ -6,7 +6,8 @@ part of 'login_response_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponseDto _$LoginResponseDtoFromJson(Map<String, dynamic> json) => LoginResponseDto(
-  accessToken: json['accessToken'] as String,
-  refreshToken: json['refreshToken'] as String,
-);
+LoginResponseDto _$LoginResponseDtoFromJson(Map<String, dynamic> json) =>
+    LoginResponseDto(
+      accessToken: json['accessToken'] as String,
+      refreshToken: json['refreshToken'] as String,
+    );

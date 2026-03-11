@@ -8,8 +8,8 @@ version: 1.0.1+1
 environment:
   sdk: ^3.9.2
 
-# workspace:
-#   - packages/core/environment_data
+workspace:
+  - packages/core/environment_data
 #   - packages/core/logger_manager
 #   - packages/core/routing
 #   - packages/core/l10n
@@ -62,6 +62,10 @@ dependencies:
   talker_flutter: ^5.1.13
   google_fonts: ^8.0.0
   skeletonizer: ^2.1.0+1
+
+  # Core Packages
+  environment_data:
+    path: packages/core/environment_data
 
 dev_dependencies:
   flutter_test:

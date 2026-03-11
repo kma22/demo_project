@@ -1,5 +1,5 @@
-import 'package:demo_project/core/environment_data/src/enums/environment_name.dart';
-import 'package:demo_project/core/environment_data/src/environment_data.dart';
+import 'package:environment_data/src/enums/environment_name.dart';
+import 'package:environment_data/src/environment_data.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: EnvironmentData, env: ['prod'])

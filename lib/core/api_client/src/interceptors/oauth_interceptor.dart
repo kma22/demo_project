@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:demo_project/core/local_storage/local_storage.dart';
 import 'package:dio/dio.dart';
 import 'package:environment_data/environment_data.dart';
 import 'package:flutter/widgets.dart';
+import 'package:local_storage/local_storage.dart';
 import 'package:logger_manager/logger_manager.dart';
 
 /// Интерцептор для управления авторизацией.

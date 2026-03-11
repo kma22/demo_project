@@ -1,6 +1,6 @@
-import 'package:demo_project/core/local_storage/src/storage_keys.dart';
-import 'package:demo_project/core/local_storage/src/theme_storage/base_theme_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:local_storage/src/storage_keys.dart';
+import 'package:local_storage/src/theme_storage/base_theme_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @Injectable(as: BaseThemeStorage)

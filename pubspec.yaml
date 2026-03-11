@@ -13,7 +13,7 @@ workspace:
   - packages/core/logger_manager
   - packages/core/routing
 #   - packages/core/l10n
-#   - packages/core/local_storage
+  - packages/core/local_storage
 #   - packages/core/api_client
 #   - packages/core/ui_kit
 #   - packages/features/login
@@ -70,6 +70,8 @@ dependencies:
     path: packages/core/logger_manager
   routing:
     path: packages/core/routing
+  local_storage:
+    path: packages/core/local_storage
 
 dev_dependencies:
   flutter_test:

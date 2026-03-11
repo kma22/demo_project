@@ -39,45 +39,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get commonNoResults => 'Ничего не найдено';
 
   @override
-  String get loginLoginTitle => 'Вход в аккаунт';
-
-  @override
-  String get loginLoginSubtitle => 'Введите данные для входа';
-
-  @override
-  String get loginEmailLabel => 'Email';
-
-  @override
-  String get loginEmailHint => 'example@mail.com';
-
-  @override
-  String get loginPasswordLabel => 'Пароль';
-
-  @override
-  String get loginPasswordHint => 'Минимум 6 символов';
-
-  @override
-  String get loginLoginButton => 'Войти';
-
-  @override
-  String get loginEmailEmpty => 'Введите email';
-
-  @override
-  String get loginEmailInvalid => 'Некорректный email';
-
-  @override
-  String get loginPasswordEmpty => 'Введите пароль';
-
-  @override
-  String get loginPasswordTooShort => 'Пароль менее 6 символов';
-
-  @override
-  String get loginNoAccount => 'Нет аккаунта?';
-
-  @override
-  String get loginSignUp => 'Зарегистрироваться';
-
-  @override
   String get registrationTitle => 'Регистрация';
 
   @override
@@ -117,12 +78,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get registrationPasswordTooShort => 'Пароль менее 6 символов';
 
   @override
-  String get registrationPasswordNoUppercase =>
-      'Нужна хотя бы одна заглавная буква';
+  String get registrationPasswordNoUppercase => 'Нужна хотя бы одна заглавная буква';
 
   @override
-  String get registrationPasswordNoLowercase =>
-      'Нужна хотя бы одна строчная буква';
+  String get registrationPasswordNoLowercase => 'Нужна хотя бы одна строчная буква';
 
   @override
   String get registrationPasswordNoDigit => 'Нужна хотя бы одна цифра';

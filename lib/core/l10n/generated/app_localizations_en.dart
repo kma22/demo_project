@@ -39,45 +39,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonNoResults => 'No results found';
 
   @override
-  String get loginLoginTitle => 'Sign In';
-
-  @override
-  String get loginLoginSubtitle => 'Enter your credentials';
-
-  @override
-  String get loginEmailLabel => 'Email';
-
-  @override
-  String get loginEmailHint => 'example@mail.com';
-
-  @override
-  String get loginPasswordLabel => 'Password';
-
-  @override
-  String get loginPasswordHint => 'At least 6 characters';
-
-  @override
-  String get loginLoginButton => 'Sign In';
-
-  @override
-  String get loginEmailEmpty => 'Enter email';
-
-  @override
-  String get loginEmailInvalid => 'Invalid email';
-
-  @override
-  String get loginPasswordEmpty => 'Enter password';
-
-  @override
-  String get loginPasswordTooShort => 'Password less than 6 characters';
-
-  @override
-  String get loginNoAccount => 'Don\'t have an account?';
-
-  @override
-  String get loginSignUp => 'Sign Up';
-
-  @override
   String get registrationTitle => 'Sign Up';
 
   @override
@@ -117,12 +78,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registrationPasswordTooShort => 'Password less than 6 characters';
 
   @override
-  String get registrationPasswordNoUppercase =>
-      'At least one uppercase letter required';
+  String get registrationPasswordNoUppercase => 'At least one uppercase letter required';
 
   @override
-  String get registrationPasswordNoLowercase =>
-      'At least one lowercase letter required';
+  String get registrationPasswordNoLowercase => 'At least one lowercase letter required';
 
   @override
   String get registrationPasswordNoDigit => 'At least one digit required';

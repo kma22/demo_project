@@ -6,6 +6,7 @@ import 'package:home/home.dart';
 import 'package:injectable/injectable.dart';
 import 'package:local_storage/local_storage.dart';
 import 'package:logger_manager/logger_manager.dart';
+import 'package:login/login.dart';
 import 'package:profile/profile.dart';
 import 'package:ui_kit/ui_kit.dart';
 
@@ -21,6 +22,7 @@ final getIt = GetIt.instance;
     ExternalModule(ApiClientPackageModule),
   ],
   externalPackageModulesAfter: [
+    ExternalModule(LoginPackageModule),
     ExternalModule(HomePackageModule),
     ExternalModule(ProfilePackageModule),
   ],

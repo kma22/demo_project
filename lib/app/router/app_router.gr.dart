@@ -43,63 +43,6 @@ class BottomNavigationRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LoginScreen]
-class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
-  LoginRoute({
-    required void Function({
-      required String accessToken,
-      required String refreshToken,
-    })
-    onSuccess,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-         LoginRoute.name,
-         args: LoginRouteArgs(onSuccess: onSuccess, key: key),
-         initialChildren: children,
-       );
-
-  static const String name = 'LoginRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<LoginRouteArgs>();
-      return WrappedRoute(
-        child: LoginScreen(onSuccess: args.onSuccess, key: args.key),
-      );
-    },
-  );
-}
-
-class LoginRouteArgs {
-  const LoginRouteArgs({required this.onSuccess, this.key});
-
-  final void Function({
-    required String accessToken,
-    required String refreshToken,
-  })
-  onSuccess;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'LoginRouteArgs{onSuccess: $onSuccess, key: $key}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! LoginRouteArgs) return false;
-    return key == other.key;
-  }
-
-  @override
-  int get hashCode => key.hashCode;
-}
-
-/// generated route for
 /// [RegistrationScreen]
 class RegistrationRoute extends PageRouteInfo<RegistrationRouteArgs> {
   RegistrationRoute({

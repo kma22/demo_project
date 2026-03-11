@@ -31,45 +31,6 @@
   "commonNoResults": "Ничего не найдено",
   "@commonNoResults": { "description": "Пустой результат поиска" },
 
-  "loginLoginTitle": "Вход в аккаунт",
-  "@loginLoginTitle": { "description": "Заголовок экрана логина" },
-
-  "loginLoginSubtitle": "Введите данные для входа",
-  "@loginLoginSubtitle": { "description": "Подзаголовок экрана логина" },
-
-  "loginEmailLabel": "Email",
-  "@loginEmailLabel": { "description": "Лейбл поля email" },
-
-  "loginEmailHint": "example@mail.com",
-  "@loginEmailHint": { "description": "Подсказка поля email" },
-
-  "loginPasswordLabel": "Пароль",
-  "@loginPasswordLabel": { "description": "Лейбл поля пароля" },
-
-  "loginPasswordHint": "Минимум 6 символов",
-  "@loginPasswordHint": { "description": "Подсказка поля пароля" },
-
-  "loginLoginButton": "Войти",
-  "@loginLoginButton": { "description": "Кнопка входа" },
-
-  "loginEmailEmpty": "Введите email",
-  "@loginEmailEmpty": { "description": "Ошибка: пустой email" },
-
-  "loginEmailInvalid": "Некорректный email",
-  "@loginEmailInvalid": { "description": "Ошибка: невалидный формат email" },
-
-  "loginPasswordEmpty": "Введите пароль",
-  "@loginPasswordEmpty": { "description": "Ошибка: пустой пароль" },
-
-  "loginPasswordTooShort": "Пароль менее 6 символов",
-  "@loginPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
-
-  "loginNoAccount": "Нет аккаунта?",
-  "@loginNoAccount": { "description": "Текст перед ссылкой на регистрацию" },
-
-  "loginSignUp": "Зарегистрироваться",
-  "@loginSignUp": { "description": "Ссылка на экран регистрации" },
-
   "registrationTitle": "Регистрация",
   "@registrationTitle": { "description": "Заголовок экрана регистрации" },
 

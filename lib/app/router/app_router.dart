@@ -4,11 +4,11 @@ import 'package:demo_project/app/session/presentation/screens/authenticated_cont
 import 'package:demo_project/app/session/presentation/screens/session_container_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/splash_screen.dart';
 import 'package:demo_project/app/session/presentation/screens/unauthenticated_container_screen.dart';
-import 'package:demo_project/features/login/login.dart';
 import 'package:demo_project/features/registration/registration.dart';
 import 'package:flutter/foundation.dart';
 import 'package:home/home.dart';
 import 'package:logger_manager/logger_manager.dart';
+import 'package:login/login.dart';
 import 'package:profile/profile.dart';
 
 part 'app_router.gr.dart';
@@ -19,6 +19,7 @@ part 'app_router.gr.dart';
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends RootStackRouter {
   final _loggerManagerRouter = LoggerManagerRouter();
+  final _loginRouter = LoginRouter();
   final _homeRouter = HomeRouter();
   final _profileRouter = ProfileRouter();
 
@@ -32,7 +33,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(
           page: UnauthenticatedContainerRoute.page,
           children: [
-            AutoRoute(page: LoginRoute.page, initial: true),
+            ..._loginRouter.routes,
             AutoRoute(page: RegistrationRoute.page),
           ],
         ),

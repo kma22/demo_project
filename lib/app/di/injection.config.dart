@@ -16,16 +16,6 @@ import 'package:demo_project/app/session/domain/base_session_repository.dart'
     as _i899;
 import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart'
     as _i184;
-import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart'
-    as _i173;
-import 'package:demo_project/features/login/src/data/api/mock_login_api_service.dart'
-    as _i40;
-import 'package:demo_project/features/login/src/data/repository/login_repository.dart'
-    as _i162;
-import 'package:demo_project/features/login/src/domain/repository/base_login_repository.dart'
-    as _i133;
-import 'package:demo_project/features/login/src/presentation/cubit/login_cubit.dart'
-    as _i267;
 import 'package:demo_project/features/registration/src/data/api/base_registration_api_service.dart'
     as _i40;
 import 'package:demo_project/features/registration/src/data/api/mock_registration_api_service.dart'
@@ -46,6 +36,7 @@ import 'package:home/home.dart' as _i1024;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:local_storage/local_storage.dart' as _i486;
 import 'package:logger_manager/logger_manager.dart' as _i127;
+import 'package:login/login.dart' as _i944;
 import 'package:profile/profile.dart' as _i16;
 import 'package:routing/routing.dart' as _i297;
 import 'package:ui_kit/ui_kit.dart' as _i66;
@@ -62,8 +53,6 @@ extension GetItInjectableX on _i174.GetIt {
     await _i486.LocalStoragePackageModule().init(gh);
     await _i66.UiKitPackageModule().init(gh);
     await _i633.ApiClientPackageModule().init(gh);
-    await _i1024.HomePackageModule().init(gh);
-    await _i16.ProfilePackageModule().init(gh);
     gh.factory<_i696.ValidateRegistrationUseCase>(
       () => _i696.ValidateRegistrationUseCase(),
     );
@@ -79,7 +68,6 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i633.SessionObserver>(),
       ),
     );
-    gh.factory<_i173.BaseLoginApiService>(() => _i40.MockLoginApiService());
     gh.factory<_i824.BaseRegistrationRepository>(
       () => _i500.RegistrationRepository(gh<_i40.BaseRegistrationApiService>()),
     );
@@ -92,9 +80,6 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i127.AppLogger>(),
       ),
     );
-    gh.factory<_i133.BaseLoginRepository>(
-      () => _i162.LoginRepository(gh<_i173.BaseLoginApiService>()),
-    );
     gh.factory<_i588.RegistrationCubit>(
       () => _i588.RegistrationCubit(
         gh<_i696.ValidateRegistrationUseCase>(),
@@ -102,12 +87,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i127.AppLogger>(),
       ),
     );
-    gh.factory<_i267.LoginCubit>(
-      () => _i267.LoginCubit(
-        gh<_i133.BaseLoginRepository>(),
-        gh<_i127.AppLogger>(),
-      ),
-    );
+    await _i944.LoginPackageModule().init(gh);
+    await _i1024.HomePackageModule().init(gh);
+    await _i16.ProfilePackageModule().init(gh);
     return this;
   }
 }

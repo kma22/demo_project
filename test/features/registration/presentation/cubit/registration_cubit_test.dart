@@ -121,11 +121,8 @@ void main() {
           ).thenAnswer((_) async => (accessToken: accessToken, refreshToken: refreshToken));
         },
         build: () => RegistrationCubit(mockValidate, mockRegister, mockLogger),
-        act: (cubit) => cubit.register(
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-        ),
+        act: (cubit) =>
+            cubit.register(email: email, password: password, confirmPassword: confirmPassword),
         expect: () => [
           const RegistrationLoadingState(),
           const RegistrationSuccessState(accessToken: accessToken, refreshToken: refreshToken),
@@ -150,16 +147,14 @@ void main() {
           });
         },
         build: () => RegistrationCubit(mockValidate, mockRegister, mockLogger),
-        act: (cubit) => cubit.register(
-          email: 'bad',
-          password: 'short',
-          confirmPassword: 'short',
-        ),
+        act: (cubit) => cubit.register(email: 'bad', password: 'short', confirmPassword: 'short'),
         expect: () => [
-          const RegistrationFormState(fieldErrors: {
-            RegistrationField.email: RegistrationValidationError.invalidEmail,
-            RegistrationField.password: RegistrationValidationError.passwordTooShort,
-          }),
+          const RegistrationFormState(
+            fieldErrors: {
+              RegistrationField.email: RegistrationValidationError.invalidEmail,
+              RegistrationField.password: RegistrationValidationError.passwordTooShort,
+            },
+          ),
         ],
         verify: (_) {
           verifyNever(mockRegister(email: anyNamed('email'), password: anyNamed('password')));
@@ -182,11 +177,8 @@ void main() {
           ).thenThrow(BadRequestException('Email уже зарегистрирован', 'EMAIL_ALREADY_EXISTS'));
         },
         build: () => RegistrationCubit(mockValidate, mockRegister, mockLogger),
-        act: (cubit) => cubit.register(
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-        ),
+        act: (cubit) =>
+            cubit.register(email: email, password: password, confirmPassword: confirmPassword),
         expect: () => [
           const RegistrationLoadingState(),
           const RegistrationErrorState(message: 'Email уже зарегистрирован'),
@@ -218,11 +210,8 @@ void main() {
           ).thenThrow(Exception('unexpected'));
         },
         build: () => RegistrationCubit(mockValidate, mockRegister, mockLogger),
-        act: (cubit) => cubit.register(
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-        ),
+        act: (cubit) =>
+            cubit.register(email: email, password: password, confirmPassword: confirmPassword),
         expect: () => [const RegistrationLoadingState(), const RegistrationErrorState()],
         verify: (_) {
           verify(
@@ -259,11 +248,7 @@ void main() {
         ),
         verify: (_) {
           verify(
-            mockValidate(
-              email: '  $email  ',
-              password: password,
-              confirmPassword: confirmPassword,
-            ),
+            mockValidate(email: '  $email  ', password: password, confirmPassword: confirmPassword),
           ).called(1);
           verify(mockRegister(email: '  $email  ', password: password)).called(1);
         },

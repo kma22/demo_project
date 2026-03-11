@@ -1,6 +1,6 @@
 import 'package:demo_project/features/login/src/data/api/base_login_api_service.dart';
-import 'package:demo_project/features/login/src/data/model/login_request_dto.dart';
-import 'package:demo_project/features/login/src/data/model/login_response_dto.dart';
+import 'package:demo_project/features/login/src/data/dto/login_request_dto.dart';
+import 'package:demo_project/features/login/src/data/dto/login_response_dto.dart';
 import 'package:demo_project/features/login/src/data/repository/login_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

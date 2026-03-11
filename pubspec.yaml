@@ -8,6 +8,19 @@ version: 1.0.1+1
 environment:
   sdk: ^3.9.2
 
+# workspace:
+#   - packages/core/environment_data
+#   - packages/core/logger_manager
+#   - packages/core/routing
+#   - packages/core/l10n
+#   - packages/core/local_storage
+#   - packages/core/api_client
+#   - packages/core/ui_kit
+#   - packages/features/login
+#   - packages/features/registration
+#   - packages/features/home
+#   - packages/features/profile
+
 dependencies:
   flutter:
     sdk: flutter
@@ -54,6 +67,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # Workspace
+  melos: ^7.2.0
+
   # Linter
   flutter_lints: ^6.0.0
 
@@ -66,6 +82,129 @@ dev_dependencies:
   flutter_gen_runner: ^5.12.0
   bloc_test: ^10.0.0
   mockito: ^5.6.3
+
+melos:
+  useRootAsPackage: true
+
+  command:
+    clean:
+      hooks:
+        post: melos exec -c 6 -- "flutter clean" && melos exec -c 6 --file-exists="pubspec.lock" -- rm pubspec.lock
+
+  scripts:
+    # -- Setup --
+
+    init:
+      description: Clean install — clean, bootstrap, generate everything.
+      run: melos clean && melos bs && melos run l10n:all && melos run build:all
+
+    rebuild:
+      description: Re-generate everything without clean.
+      run: melos bs && melos run l10n:all && melos run build:all
+
+    # -- Code Generation --
+
+    build:
+      description: Run build_runner for a specific package.
+      run: dart run build_runner build --delete-conflicting-outputs
+      exec:
+        concurrency: 6
+        failFast: true
+        orderDependents: true
+      packageFilters:
+        dependsOn:
+          - build_runner
+
+    build:all:
+      description: Run build_runner for all packages.
+      run: melos run build --no-select
+
+    l10n:
+      description: Run flutter gen-l10n for a specific package.
+      run: flutter gen-l10n
+      exec:
+        concurrency: 6
+      packageFilters:
+        fileExists:
+          - l10n.yaml
+
+    l10n:all:
+      description: Run flutter gen-l10n for all packages.
+      run: melos run l10n --no-select
+
+    # -- Quality --
+
+    analyze:
+      description: Analyze a specific package.
+      run: flutter analyze --fatal-infos
+      exec:
+        concurrency: 1
+        failFast: true
+
+    analyze:all:
+      description: Analyze all packages.
+      run: melos run analyze --no-select
+
+    format:
+      description: Format all Dart files (line length 100, skip generated).
+      run: >
+        find . -name '*.dart'
+        -not -name '*.g.dart'
+        -not -name '*.gr.dart'
+        -not -name '*.module.dart'
+        -not -name '*.config.dart'
+        -not -name '*.mocks.dart'
+        -not -name '*.gen.dart'
+        -not -path '*/.dart_tool/*'
+        -not -path '*/gen/*'
+        -not -path '*/build/*'
+        | xargs dart format -l 100
+
+    format:check:
+      description: Check formatting without applying changes.
+      run: >
+        find . -name '*.dart'
+        -not -name '*.g.dart'
+        -not -name '*.gr.dart'
+        -not -name '*.module.dart'
+        -not -name '*.config.dart'
+        -not -name '*.mocks.dart'
+        -not -name '*.gen.dart'
+        -not -path '*/.dart_tool/*'
+        -not -path '*/gen/*'
+        -not -path '*/build/*'
+        | xargs dart format -l 100 --set-exit-if-changed
+
+    # -- Testing --
+
+    test:
+      description: Run tests for a specific package.
+      run: flutter test --no-pub
+      exec:
+        concurrency: 6
+      packageFilters:
+        dirExists:
+          - test
+
+    test:all:
+      description: Run tests for all packages.
+      run: melos run test --no-select
+
+    # -- Build --
+
+    build:dev:
+      description: Create dev builds (ipa + appbundle).
+      run: >
+        flutter clean
+        && flutter build ipa --release --dart-define=ENV=dev
+        && flutter build appbundle --release --dart-define=ENV=dev
+
+    build:prod:
+      description: Create prod builds (ipa + appbundle).
+      run: >
+        flutter clean
+        && flutter build ipa --release --dart-define=ENV=prod
+        && flutter build appbundle --release --dart-define=ENV=prod
 
 flutter_gen:
   output: lib/core/gen/
@@ -83,4 +222,3 @@ flutter:
 
   assets:
     - assets/ui_kit/images/body_states/
-

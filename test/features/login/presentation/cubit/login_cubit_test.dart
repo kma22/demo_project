@@ -66,11 +66,7 @@ void main() {
         ],
         verify: (_) {
           verify(
-            mockLogger.error(
-              runtimeType: LoginCubit,
-              operation: 'login',
-              msg: 'Неверный пароль',
-            ),
+            mockLogger.error(runtimeType: LoginCubit, operation: 'login', msg: 'Неверный пароль'),
           ).called(1);
         },
       );

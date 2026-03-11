@@ -1,0 +1,4 @@
+bricks:
+  demo_template:
+    git:
+      url: https://github.com/kma22/demo_template.git

@@ -1,5 +1,5 @@
-import 'package:demo_project/app/router/app_router.dart';
 import 'package:injectable/injectable.dart';
+import 'package:registration/registration.dart';
 import 'package:routing/routing.dart';
 
 /// Реализация кросс-модульной навигации.
@@ -11,5 +11,5 @@ class FeatureNavigation implements BaseFeatureNavigation {
   void openRegistrationFeature(
     StackRouter router,
     void Function({required String accessToken, required String refreshToken}) onSuccess,
-  ) => router.push(RegistrationRoute(onSuccess: onSuccess));
+  ) => router.push(RegistrationContainerRoute(children: [RegistrationRoute(onSuccess: onSuccess)]));
 }

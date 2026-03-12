@@ -19,12 +19,10 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: colors.background,
-      appBar: AppBar(
-        backgroundColor: colors.background,
-        foregroundColor: colors.textPrimary,
+      appBar: AppAppBar(
         title: Text(l10n.title, style: textStyles.h2),
         centerTitle: true,
-        elevation: 0,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Padding(

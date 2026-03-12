@@ -31,66 +31,6 @@
   "commonNoResults": "Ничего не найдено",
   "@commonNoResults": { "description": "Пустой результат поиска" },
 
-  "registrationTitle": "Регистрация",
-  "@registrationTitle": { "description": "Заголовок экрана регистрации" },
-
-  "registrationSubtitle": "Создайте аккаунт",
-  "@registrationSubtitle": { "description": "Подзаголовок экрана регистрации" },
-
-  "registrationEmailLabel": "Email",
-  "@registrationEmailLabel": { "description": "Лейбл поля email" },
-
-  "registrationEmailHint": "example@mail.com",
-  "@registrationEmailHint": { "description": "Подсказка поля email" },
-
-  "registrationPasswordLabel": "Пароль",
-  "@registrationPasswordLabel": { "description": "Лейбл поля пароля" },
-
-  "registrationPasswordHint": "Минимум 6 символов",
-  "@registrationPasswordHint": { "description": "Подсказка поля пароля" },
-
-  "registrationConfirmPasswordLabel": "Подтвердите пароль",
-  "@registrationConfirmPasswordLabel": { "description": "Лейбл поля подтверждения пароля" },
-
-  "registrationConfirmPasswordHint": "Повторите пароль",
-  "@registrationConfirmPasswordHint": { "description": "Подсказка поля подтверждения пароля" },
-
-  "registrationButton": "Зарегистрироваться",
-  "@registrationButton": { "description": "Кнопка регистрации" },
-
-  "registrationEmailEmpty": "Введите email",
-  "@registrationEmailEmpty": { "description": "Ошибка: пустой email" },
-
-  "registrationEmailInvalid": "Некорректный email",
-  "@registrationEmailInvalid": { "description": "Ошибка: невалидный формат email" },
-
-  "registrationPasswordEmpty": "Введите пароль",
-  "@registrationPasswordEmpty": { "description": "Ошибка: пустой пароль" },
-
-  "registrationPasswordTooShort": "Пароль менее 6 символов",
-  "@registrationPasswordTooShort": { "description": "Ошибка: слишком короткий пароль" },
-
-  "registrationPasswordNoUppercase": "Нужна хотя бы одна заглавная буква",
-  "@registrationPasswordNoUppercase": { "description": "Ошибка: нет заглавной буквы" },
-
-  "registrationPasswordNoLowercase": "Нужна хотя бы одна строчная буква",
-  "@registrationPasswordNoLowercase": { "description": "Ошибка: нет строчной буквы" },
-
-  "registrationPasswordNoDigit": "Нужна хотя бы одна цифра",
-  "@registrationPasswordNoDigit": { "description": "Ошибка: нет цифры" },
-
-  "registrationConfirmPasswordEmpty": "Подтвердите пароль",
-  "@registrationConfirmPasswordEmpty": { "description": "Ошибка: пустое подтверждение пароля" },
-
-  "registrationPasswordsDoNotMatch": "Пароли не совпадают",
-  "@registrationPasswordsDoNotMatch": { "description": "Ошибка: пароли не совпадают" },
-
-  "registrationHaveAccount": "Уже есть аккаунт?",
-  "@registrationHaveAccount": { "description": "Текст перед ссылкой на вход" },
-
-  "registrationSignIn": "Войти",
-  "@registrationSignIn": { "description": "Ссылка на экран входа" },
-
   "bottomNavHome": "Главная",
   "@bottomNavHome": { "description": "Таб главного экрана" },
 

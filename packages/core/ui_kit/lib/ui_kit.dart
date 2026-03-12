@@ -7,6 +7,7 @@ export 'src/theme/extension/app_colors_extension.dart';
 export 'src/theme/extension/app_layout_extension.dart';
 export 'src/theme/extension/app_text_style_extension.dart';
 export 'src/theme/extension/app_theme_extension.dart';
+export 'src/widgets/app_bar/app_app_bar.dart';
 export 'src/widgets/body_state/app_body_state.dart';
 export 'src/widgets/bottom_sheet/drag_handle.dart';
 export 'src/widgets/buttons/app_button.dart';

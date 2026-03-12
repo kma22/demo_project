@@ -16,7 +16,7 @@ workspace:
   - packages/core/api_client
   - packages/core/ui_kit
   - packages/features/login
-#   - packages/features/registration
+  - packages/features/registration
   - packages/features/home
   - packages/features/profile
 
@@ -79,6 +79,8 @@ dependencies:
   # Feature Packages
   login:
     path: packages/features/login
+  registration:
+    path: packages/features/registration
   home:
     path: packages/features/home
   profile:

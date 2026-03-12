@@ -1,0 +1,25 @@
+{
+  "@@locale": "en",
+
+  "title": "Sign Up",
+  "subtitle": "Create an account",
+  "emailLabel": "Email",
+  "emailHint": "example@mail.com",
+  "passwordLabel": "Password",
+  "passwordHint": "At least 6 characters",
+  "confirmPasswordLabel": "Confirm password",
+  "confirmPasswordHint": "Repeat password",
+  "registerButton": "Sign Up",
+  "emailEmpty": "Enter email",
+  "emailInvalid": "Invalid email",
+  "passwordEmpty": "Enter password",
+  "passwordTooShort": "Password less than 6 characters",
+  "passwordNoUppercase": "At least one uppercase letter required",
+  "passwordNoLowercase": "At least one lowercase letter required",
+  "passwordNoDigit": "At least one digit required",
+  "confirmPasswordEmpty": "Confirm password",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "haveAccount": "Already have an account?",
+  "signIn": "Sign In",
+  "error": "An error occurred"
+}

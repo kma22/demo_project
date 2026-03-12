@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:demo_project/app/session/domain/base_session_repository.dart';
+import 'package:demo_project/session/domain/base_session_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';

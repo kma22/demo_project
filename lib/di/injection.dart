@@ -1,5 +1,5 @@
 import 'package:api_client/api_client.dart';
-import 'package:demo_project/app/di/injection.config.dart';
+import 'package:demo_project/di/injection.config.dart';
 import 'package:environment_data/environment_data.dart';
 import 'package:get_it/get_it.dart';
 import 'package:home/home.dart';

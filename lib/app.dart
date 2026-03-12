@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/app/router/app_router.dart';
-import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart';
-import 'package:demo_project/core/l10n/l10n.dart';
+import 'package:demo_project/l10n/l10n.dart';
+import 'package:demo_project/router/app_router.dart';
+import 'package:demo_project/session/presentation/cubit/session_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';

@@ -10,12 +10,12 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:api_client/api_client.dart' as _i633;
-import 'package:demo_project/app/router/feature_navigation.dart' as _i614;
-import 'package:demo_project/app/session/data/session_repository.dart' as _i209;
-import 'package:demo_project/app/session/domain/base_session_repository.dart'
-    as _i899;
-import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart'
-    as _i184;
+import 'package:demo_project/router/feature_navigation.dart' as _i123;
+import 'package:demo_project/session/data/session_repository.dart' as _i56;
+import 'package:demo_project/session/domain/base_session_repository.dart'
+    as _i490;
+import 'package:demo_project/session/presentation/cubit/session_cubit.dart'
+    as _i451;
 import 'package:environment_data/environment_data.dart' as _i72;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:home/home.dart' as _i1024;
@@ -41,17 +41,17 @@ extension GetItInjectableX on _i174.GetIt {
     await _i66.UiKitPackageModule().init(gh);
     await _i633.ApiClientPackageModule().init(gh);
     gh.lazySingleton<_i297.BaseFeatureNavigation>(
-      () => _i614.FeatureNavigation(),
+      () => _i123.FeatureNavigation(),
     );
-    gh.lazySingleton<_i899.BaseSessionRepository>(
-      () => _i209.SessionRepository(
+    gh.lazySingleton<_i490.BaseSessionRepository>(
+      () => _i56.SessionRepository(
         gh<_i486.BaseTokenStorage>(),
         gh<_i633.SessionObserver>(),
       ),
     );
-    gh.lazySingleton<_i184.SessionCubit>(
-      () => _i184.SessionCubit(
-        gh<_i899.BaseSessionRepository>(),
+    gh.lazySingleton<_i451.SessionCubit>(
+      () => _i451.SessionCubit(
+        gh<_i490.BaseSessionRepository>(),
         gh<_i127.AppLogger>(),
       ),
     );

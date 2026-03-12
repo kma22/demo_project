@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:demo_project/app/session/domain/base_session_repository.dart';
-import 'package:demo_project/app/session/presentation/cubit/session_cubit.dart';
+import 'package:demo_project/session/domain/base_session_repository.dart';
+import 'package:demo_project/session/presentation/cubit/session_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:mockito/annotations.dart';

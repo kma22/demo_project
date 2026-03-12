@@ -1,5 +1,5 @@
-import 'package:demo_project/app/app.dart';
-import 'package:demo_project/app/di/injection.dart';
+import 'package:demo_project/app.dart';
+import 'package:demo_project/di/injection.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

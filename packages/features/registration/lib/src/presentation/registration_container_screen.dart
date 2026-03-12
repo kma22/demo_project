@@ -3,7 +3,6 @@ import 'package:routing/routing.dart';
 
 import 'package:registration/src/config/l10n/gen/registration_localizations.dart';
 
-
 @RoutePage()
 class RegistrationContainerScreen extends StatelessWidget {
   const RegistrationContainerScreen({super.key});

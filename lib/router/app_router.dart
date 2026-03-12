@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_project/app/navigation/bottom_navigation_screen.dart';
-import 'package:demo_project/app/session/presentation/screens/authenticated_container_screen.dart';
-import 'package:demo_project/app/session/presentation/screens/session_container_screen.dart';
-import 'package:demo_project/app/session/presentation/screens/splash_screen.dart';
-import 'package:demo_project/app/session/presentation/screens/unauthenticated_container_screen.dart';
+import 'package:demo_project/navigation/bottom_navigation_screen.dart';
+import 'package:demo_project/session/presentation/screens/authenticated_container_screen.dart';
+import 'package:demo_project/session/presentation/screens/session_container_screen.dart';
+import 'package:demo_project/session/presentation/screens/splash_screen.dart';
+import 'package:demo_project/session/presentation/screens/unauthenticated_container_screen.dart';
 import 'package:home/home.dart';
 import 'package:logger_manager/logger_manager.dart';
 import 'package:login/login.dart';
@@ -32,10 +32,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: SplashRoute.page),
         AutoRoute(
           page: UnauthenticatedContainerRoute.page,
-          children: [
-            ..._loginRouter.routes,
-            ..._registrationRouter.routes,
-          ],
+          children: [..._loginRouter.routes, ..._registrationRouter.routes],
         ),
         AutoRoute(
           page: AuthenticatedContainerRoute.page,

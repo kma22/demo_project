@@ -1,0 +1,17 @@
+{
+  "@@locale": "en",
+
+  "commonRetry": "Retry",
+  "commonError": "An error occurred",
+  "commonLoading": "Loading…",
+  "commonCancel": "Cancel",
+  "commonSave": "Save",
+  "commonDelete": "Delete",
+  "commonEdit": "Edit",
+  "commonClose": "Close",
+  "commonSearch": "Search",
+  "commonNoResults": "No results found",
+
+  "bottomNavHome": "Home",
+  "bottomNavProfile": "Profile"
+}

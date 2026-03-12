@@ -1,0 +1,66 @@
+{
+  "@@locale": "ru",
+
+  "title": "Регистрация",
+  "@title": { "description": "Заголовок экрана регистрации" },
+
+  "subtitle": "Создайте аккаунт",
+  "@subtitle": { "description": "Подзаголовок экрана регистрации" },
+
+  "emailLabel": "Email",
+  "@emailLabel": { "description": "Лейбл поля email" },
+
+  "emailHint": "example@mail.com",
+  "@emailHint": { "description": "Подсказка поля email" },
+
+  "passwordLabel": "Пароль",
+  "@passwordLabel": { "description": "Лейбл поля пароля" },
+
+  "passwordHint": "Минимум 6 символов",
+  "@passwordHint": { "description": "Подсказка поля пароля" },
+
+  "confirmPasswordLabel": "Подтвердите пароль",
+  "@confirmPasswordLabel": { "description": "Лейбл поля подтверждения пароля" },
+
+  "confirmPasswordHint": "Повторите пароль",
+  "@confirmPasswordHint": { "description": "Подсказка поля подтверждения пароля" },
+
+  "registerButton": "Зарегистрироваться",
+  "@registerButton": { "description": "Кнопка регистрации" },
+
+  "emailEmpty": "Введите email",
+  "@emailEmpty": { "description": "Ошибка: пустой email" },
+
+  "emailInvalid": "Некорректный email",
+  "@emailInvalid": { "description": "Ошибка: невалидный формат email" },
+
+  "passwordEmpty": "Введите пароль",
+  "@passwordEmpty": { "description": "Ошибка: пустой пароль" },
+
+  "passwordTooShort": "Пароль менее 6 символов",
+  "@passwordTooShort": { "description": "Ошибка: слишком короткий пароль" },
+
+  "passwordNoUppercase": "Нужна хотя бы одна заглавная буква",
+  "@passwordNoUppercase": { "description": "Ошибка: нет заглавной буквы" },
+
+  "passwordNoLowercase": "Нужна хотя бы одна строчная буква",
+  "@passwordNoLowercase": { "description": "Ошибка: нет строчной буквы" },
+
+  "passwordNoDigit": "Нужна хотя бы одна цифра",
+  "@passwordNoDigit": { "description": "Ошибка: нет цифры" },
+
+  "confirmPasswordEmpty": "Подтвердите пароль",
+  "@confirmPasswordEmpty": { "description": "Ошибка: пустое подтверждение пароля" },
+
+  "passwordsDoNotMatch": "Пароли не совпадают",
+  "@passwordsDoNotMatch": { "description": "Ошибка: пароли не совпадают" },
+
+  "haveAccount": "Уже есть аккаунт?",
+  "@haveAccount": { "description": "Текст перед ссылкой на вход" },
+
+  "signIn": "Войти",
+  "@signIn": { "description": "Ссылка на экран входа" },
+
+  "error": "Произошла ошибка",
+  "@error": { "description": "Общее сообщение об ошибке" }
+}

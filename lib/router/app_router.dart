@@ -1,0 +1,51 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:demo_project/navigation/bottom_navigation_screen.dart';
+import 'package:demo_project/session/presentation/screens/authenticated_container_screen.dart';
+import 'package:demo_project/session/presentation/screens/session_container_screen.dart';
+import 'package:demo_project/session/presentation/screens/splash_screen.dart';
+import 'package:demo_project/session/presentation/screens/unauthenticated_container_screen.dart';
+import 'package:home/home.dart';
+import 'package:logger_manager/logger_manager.dart';
+import 'package:login/login.dart';
+import 'package:profile/profile.dart';
+import 'package:registration/registration.dart';
+
+part 'app_router.gr.dart';
+
+/// Главный навигационный оркестратор приложения.
+/// Объединяет маршруты всех независимых функциональных модулей.
+/// Подробнее: [NAVIGATION_ARCHITECTURE.md](demo_project/docs/NAVIGATION_ARCHITECTURE.md)
+@AutoRouterConfig(replaceInRouteName: 'Screen,Route')
+class AppRouter extends RootStackRouter {
+  final _loggerManagerRouter = LoggerManagerRouter();
+  final _loginRouter = LoginRouter();
+  final _homeRouter = HomeRouter();
+  final _registrationRouter = RegistrationRouter();
+  final _profileRouter = ProfileRouter();
+
+  @override
+  List<AutoRoute> get routes => [
+    AutoRoute(
+      page: SessionContainerRoute.page,
+      initial: true,
+      children: [
+        AutoRoute(page: SplashRoute.page),
+        AutoRoute(
+          page: UnauthenticatedContainerRoute.page,
+          children: [..._loginRouter.routes, ..._registrationRouter.routes],
+        ),
+        AutoRoute(
+          page: AuthenticatedContainerRoute.page,
+          children: [
+            AutoRoute(
+              page: BottomNavigationRoute.page,
+              initial: true,
+              children: [..._homeRouter.routes, ..._profileRouter.routes],
+            ),
+          ],
+        ),
+      ],
+    ),
+    ..._loggerManagerRouter.routes,
+  ];
+}
